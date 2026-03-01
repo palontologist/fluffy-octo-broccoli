@@ -14,10 +14,7 @@ export default function ImpactIntelligencePage() {
         </p>
       </section>
 
-      {/* Email subscribe */}
-      <section className="mx-auto mt-12 max-w-2xl">
-        <EmailSubscribe />
-      </section>
+
 
       {/* Article cards */}
       <section className="mx-auto mt-16 grid max-w-4xl gap-8 md:grid-cols-2">
@@ -54,9 +51,15 @@ export default function ImpactIntelligencePage() {
           Full article will be available on this page in April 2026.
         </p>
       </section>
+            {/* Podcast - horizontal carousel (auto-scrolling) */}
+            <PodcastCarousel />
 
-      {/* Podcast - horizontal carousel (auto-scrolling) */}
-      <PodcastCarousel />
+            {/* Email subscribe */}
+            <section className="mx-auto mt-12 max-w-2xl">
+        <EmailSubscribe />
+      </section>
+
+
     </main>
   );
 }
