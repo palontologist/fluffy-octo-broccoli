@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import { Navbar } from "./components/Navbar";
+import { PosthogProvider } from "./providers/PosthogProvider";
+import { PosthogPageView } from "./components/PosthogPageView";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -37,9 +40,14 @@ export default function RootLayout({
       <body
         className={`${cormorant.variable} ${dmSans.variable} ${jetbrainsMono.variable} font-sans antialiased bg-[#0a0a0a] text-zinc-200`}
       >
-        {children}
-        <Navbar />
-        <Analytics />
+        <PosthogProvider>
+          <Suspense>
+            <PosthogPageView />
+          </Suspense>
+          {children}
+          <Navbar />
+          <Analytics />
+        </PosthogProvider>
       </body>
     </html>
   );

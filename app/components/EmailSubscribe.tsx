@@ -13,9 +13,12 @@ export function EmailSubscribe() {
     if (!email.trim()) return;
     setStatus("loading");
     try {
-      // Replace with your newsletter API endpoint (e.g. Buttondown, ConvertKit, Resend)
-      // await fetch("/api/subscribe", { method: "POST", body: JSON.stringify({ email }) });
-      await new Promise((r) => setTimeout(r, 600));
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Subscribe failed");
       setStatus("success");
       setEmail("");
     } catch {
