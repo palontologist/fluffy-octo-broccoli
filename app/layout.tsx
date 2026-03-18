@@ -22,9 +22,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FrontForumFocus | Impact Stories That Win Alignment & Funding",
+  title: "FrontForumFocus | Human intelligence infrastructure",
   description:
-    "We help founders and teams turn daily work into clear, trusted impact stories so they can win alignment, partners, and funding with confidence.",
+    "We build AI tools that show founders, freelancers, and mission-driven organisations exactly what their work is worth — before anyone else gets to define it.",
 };
 
 export default function RootLayout({

@@ -15,23 +15,22 @@ export default function Home() {
         {/* Abstract focal element - minimal sphere-like gradient */}
 
         {/* Hero text */}
-        <h1 className="font-serif max-w-4xl text-3xl font-medium leading-tight tracking-tight text-white md:text-4xl lg:text-5xl">
-          We help founders and teams turn daily work into clear, trusted impact
-          stories so they can win alignment, partners, and funding with
-          confidence—otherwise their effort stays invisible, chaotic, and
-          underfunded.
+        <h1 className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
+          Human Intelligence Infrastructure
         </h1>
-
-        {/* CTA card 
-        <div className="mt-16 rounded-2xl border border-zinc-700/50 bg-zinc-900/60 px-8 py-6 backdrop-blur-sm">
-   
+        <p className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal">
+          Instead of tracking hours, see what each activity is worth — against your mission, your goals, and your real market rate.
+        </p>
+        <div className="mt-8 flex justify-center">
           <Link
-            href="/impact-intelligence"
-            className="inline-block rounded-lg bg-zinc-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-zinc-500"
+            href="https://greta-v2.vercel.app"
+            className="inline-flex items-center rounded-md bg-zinc-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-zinc-600 transition-colors"
           >
-            Explore Impact Intelligence
+            Try now for free
           </Link>
-        </div>*/}
+        </div>
+
+        
       </div>
     </main>
   );
