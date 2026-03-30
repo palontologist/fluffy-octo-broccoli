@@ -40,7 +40,7 @@ export default function OurStoryPage() {
             <div className="mx-auto flex-shrink-0 animate-fade-in delay-200">
               <div className="animate-float relative h-64 w-48 overflow-hidden rounded-2xl border border-zinc-700/60 shadow-2xl md:h-72 md:w-52">
                 <Image
-                  src="/mm.png"
+                  src="/george.jpg"
                   alt="George Karani – Founder of FrontForumFocus"
                   fill
                   className="object-cover object-top"
