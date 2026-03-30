@@ -101,7 +101,7 @@ export default function Home() {
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          Instead of tracking hours, see what each activity is worth — against your mission, your goals, and your real market rate.
+          Building the tools that show you what your work is compounding into — and connect you with the people building alongside you.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
           <Link
