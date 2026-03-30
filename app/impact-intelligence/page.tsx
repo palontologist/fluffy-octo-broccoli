@@ -1,13 +1,52 @@
+"use client";
+
+import { useEffect } from "react";
 import { PodcastCarousel } from "../components/PodcastCarousel";
 import { ArticleCard } from "../components/ArticleCard";
 import { EmailSubscribe } from "../components/EmailSubscribe";
 import { articles } from "../data/articles";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrollReveal } from "../components/useScrollReveal";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function ImpactIntelligencePage() {
+  useScrollReveal(".animate-on-scroll", { start: "top 80%" });
+  useScrollReveal(".stagger-children", { start: "top 75%" });
+
+  useEffect(() => {
+    // Stagger animation for card grids
+    const cardGrids = document.querySelectorAll(".card-grid");
+    cardGrids.forEach((grid) => {
+      const cards = grid.children;
+      gsap.fromTo(
+        cards,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: grid,
+            start: "top 80%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
+
   return (
     <main className="min-h-screen px-6 pb-32 pt-12 md:px-12 lg:px-24">
       {/* Intro */}
-      <section className="mx-auto max-w-3xl text-center">
+      <section className="mx-auto max-w-3xl text-center animate-on-scroll">
         <p className="font-sans text-lg leading-relaxed text-zinc-400">
           A newsletter and podcast on how impact, capital, and technology are
           turning into real infrastructure—not just PR stories.
@@ -33,7 +72,7 @@ export default function ImpactIntelligencePage() {
       </section>
 
       {/* Coming soon: Trends of Impact 2026 */}
-      <section className="mx-auto mt-20 max-w-3xl rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 md:p-10">
+      <section className="mx-auto mt-20 max-w-3xl rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 md:p-10 animate-on-scroll">
         <span className="font-mono text-xs uppercase tracking-wider text-zinc-500">
           Coming April 2026
         </span>
@@ -52,10 +91,12 @@ export default function ImpactIntelligencePage() {
         </p>
       </section>
             {/* Podcast - horizontal carousel (auto-scrolling) */}
-            <PodcastCarousel />
+            <div className="animate-on-scroll">
+              <PodcastCarousel />
+            </div>
 
             {/* Email subscribe */}
-            <section className="mx-auto mt-12 max-w-2xl">
+            <section className="mx-auto mt-12 max-w-2xl animate-on-scroll">
         <EmailSubscribe />
       </section>
 

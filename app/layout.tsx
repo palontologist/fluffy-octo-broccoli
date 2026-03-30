@@ -6,6 +6,7 @@ import "./globals.css";
 import { Navbar } from "./components/Navbar";
 import { PosthogProvider } from "./providers/PosthogProvider";
 import { PosthogPageView } from "./components/PosthogPageView";
+import { TypographyControls } from "./components/TypographyControls";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-serif",
@@ -46,6 +47,7 @@ export default function RootLayout({
           </Suspense>
           {children}
           <Navbar />
+          <TypographyControls />
           <Analytics />
         </PosthogProvider>
       </body>

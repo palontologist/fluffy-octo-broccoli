@@ -1,24 +1,101 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useScrollReveal } from "../components/useScrollReveal";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForOrganizationsPage() {
+  useScrollReveal(".animate-on-scroll", { start: "top 80%" });
+
+  useEffect(() => {
+    // Animate capability cards on scroll
+    const capabilityCards = document.querySelectorAll(".capability-card");
+    capabilityCards.forEach((card, i) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 40 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          delay: i * 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 85%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    // Animate stats on scroll with counter effect
+    const stats = document.querySelectorAll(".stat-item");
+    stats.forEach((stat, i) => {
+      gsap.fromTo(
+        stat,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.5,
+          delay: i * 0.15,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: stat,
+            start: "top 90%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    // Animate CTAs
+    const ctas = document.querySelectorAll(".cta-button");
+    gsap.fromTo(
+      ctas,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: ctas[0],
+          start: "top 90%",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach((st) => st.kill());
+    };
+  }, []);
+
   return (
     <main className="min-h-screen px-6 pb-32 pt-16 md:px-12 lg:px-24">
       <div className="mx-auto max-w-5xl">
-        <section className="text-center">
+        <section className="text-center animate-on-scroll">
           <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
             For Organizations
           </h1>
-          <p className="font-sans mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300">
+          <p className="font-sans mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 animate-on-scroll">
             Impact dashboard shows how trust and collaboration move across teams
             and programs. Helps enterprises, funds, or programs see where the
             real outcomes are happening.
           </p>
         </section>
 
-        <p className="font-sans mx-auto mt-6 max-w-3xl text-center text-zinc-400">
+        <p className="font-sans mx-auto mt-6 max-w-3xl text-center text-zinc-400 animate-on-scroll">
           A unified impact measurement platform that connects your operations,
           finances, and outcomes—giving you the real-time visibility you need to
           measure, report, and optimize.
@@ -26,11 +103,11 @@ export default function ForOrganizationsPage() {
 
         {/* Core capabilities */}
         <section className="mt-16">
-          <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
+          <h2 className="font-serif text-xl font-semibold text-white md:text-2xl animate-on-scroll">
             Core capabilities
           </h2>
           <ul className="mt-6 grid gap-4 sm:grid-cols-2">
-            <li className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
+            <li className="capability-card rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
               <h3 className="font-sans font-semibold text-white">
                 Unified Impact Dashboard
               </h3>
@@ -39,7 +116,7 @@ export default function ForOrganizationsPage() {
                 See the complete picture of your impact.
               </p>
             </li>
-            <li className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
+            <li className="capability-card rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
               <h3 className="font-sans font-semibold text-white">
                 ESG & Impact Reporting
               </h3>
@@ -48,7 +125,7 @@ export default function ForOrganizationsPage() {
                 boards, and regulators in minutes—not weeks.
               </p>
             </li>
-            <li className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
+            <li className="capability-card rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
               <h3 className="font-sans font-semibold text-white">
                 Decision Support Analytics
               </h3>
@@ -57,7 +134,7 @@ export default function ForOrganizationsPage() {
                 financial and social returns. Optimize intelligently.
               </p>
             </li>
-            <li className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
+            <li className="capability-card rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5">
               <h3 className="font-sans font-semibold text-white">
                 Real-Time Monitoring
               </h3>
@@ -66,7 +143,7 @@ export default function ForOrganizationsPage() {
                 outcome metrics in real-time.
               </p>
             </li>
-            <li className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5 sm:col-span-2">
+            <li className="capability-card rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-5 sm:col-span-2">
               <h3 className="font-sans font-semibold text-white">
                 Integration Ready
               </h3>
@@ -79,7 +156,7 @@ export default function ForOrganizationsPage() {
         </section>
 
         {/* Dashboard screenshot */}
-        <section className="mt-16">
+        <section className="mt-16 animate-on-scroll">
           <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
             Sample dashboard
           </h2>
@@ -95,7 +172,7 @@ export default function ForOrganizationsPage() {
             </div>
           </div>
           <div className="mt-6 flex flex-wrap justify-center gap-6">
-            <div className="text-center">
+            <div className="stat-item text-center">
               <p className="font-mono text-2xl font-semibold text-emerald-400">
                 $2.4M
               </p>
@@ -103,13 +180,13 @@ export default function ForOrganizationsPage() {
                 Financial impact
               </p>
             </div>
-            <div className="text-center">
+            <div className="stat-item text-center">
               <p className="font-mono text-2xl font-semibold text-emerald-400">
                 12,847
               </p>
               <p className="font-sans text-sm text-zinc-400">Lives impacted</p>
             </div>
-            <div className="text-center">
+            <div className="stat-item text-center">
               <p className="font-mono text-2xl font-semibold text-emerald-400">
                 8.6/10
               </p>
@@ -119,10 +196,10 @@ export default function ForOrganizationsPage() {
         </section>
 
         {/* CTAs */}
-        <div className="mt-12 flex flex-wrap items-center justify-center gap-4">
+        <div className="cta-group mt-12 flex flex-wrap items-center justify-center gap-4 animate-on-scroll">
           <Link
             href="/for-organizations/use-cases"
-            className="inline-flex items-center rounded-lg border border-zinc-600 bg-zinc-800/60 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
+            className="cta-button inline-flex items-center rounded-lg border border-zinc-600 bg-zinc-800/60 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
           >
             Explore use cases
           </Link>
@@ -130,7 +207,7 @@ export default function ForOrganizationsPage() {
             href={CAL_DEMO_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg border border-zinc-600 bg-transparent px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
+            className="cta-button inline-flex items-center rounded-lg border border-zinc-600 bg-transparent px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
           >
             Book a demo
           </a>

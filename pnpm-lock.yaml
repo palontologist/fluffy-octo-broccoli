@@ -17,6 +17,9 @@ importers:
       posthog-js:
         specifier: ^1.361.1
         version: 1.361.1
+      pretext:
+        specifier: ^0.3.0
+        version: 0.3.0
       react:
         specifier: 19.2.3
         version: 19.2.3
@@ -1791,6 +1794,10 @@ packages:
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+
+  pretext@0.3.0:
+    resolution: {integrity: sha512-Lw7xNZ0KL1N1pzcDr/y2rqsygNDCaZkwP4d/SglB9wFOkFtWPGj62MfYG63CAcf+J1Io5QBfGglzyULx3F9WdA==}
+    hasBin: true
 
   prop-types@15.8.1:
     resolution: {integrity: sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==}
@@ -3956,6 +3963,8 @@ snapshots:
   preact@10.29.0: {}
 
   prelude-ls@1.2.1: {}
+
+  pretext@0.3.0: {}
 
   prop-types@15.8.1:
     dependencies:

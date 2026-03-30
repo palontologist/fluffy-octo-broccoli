@@ -3,10 +3,17 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Article1 } from "@/app/components/articles/Article1";
 import { Article2 } from "@/app/components/articles/Article2";
+import { ArticleLayout } from "@/app/components/ArticleLayout";
+import { calculateReadingTime, formatReadingTime } from "@/app/components/ReadingTime";
 
 const articleComponents: Record<ArticleSlug, React.ComponentType> = {
   "rise-of-impact-investment": Article1,
   "where-will-trust-be-built-2030": Article2,
+};
+
+const articleContent: Record<ArticleSlug, string> = {
+  "rise-of-impact-investment": "Article content...",
+  "where-will-trust-be-built-2030": "Article content...",
 };
 
 export function generateStaticParams() {
@@ -34,7 +41,19 @@ export default async function ArticlePage({
         >
           ← Back to Impact Intelligence
         </Link>
-        <FullArticle />
+        
+        {/* Article metadata with reading time */}
+        <div className="mb-6 flex items-center gap-4 text-xs text-zinc-500">
+          <span>{article.date}</span>
+          <span className="text-zinc-700">·</span>
+          <span className="font-mono uppercase tracking-wider">
+            {article.series}
+          </span>
+        </div>
+
+        <ArticleLayout>
+          <FullArticle />
+        </ArticleLayout>
       </div>
     </main>
   );
