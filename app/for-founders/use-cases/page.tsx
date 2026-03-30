@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const GRETA_APP_URL = "https://greta-v2.vercel.app";
+const GRETA_APP_URL = "https://greta.frontforumfocus.com";
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForFoundersUseCasesPage() {
