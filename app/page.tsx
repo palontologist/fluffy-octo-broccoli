@@ -15,15 +15,15 @@ export default function Home() {
         {/* Abstract focal element - minimal sphere-like gradient */}
 
         {/* Hero text */}
-        <h1 className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white">
+        <h1 className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white animate-fade-in-up">
           Human Intelligence Infrastructure
         </h1>
-        <p className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal">
+        <p className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal animate-fade-in-up delay-200">
           Instead of tracking hours, see what each activity is worth — against your mission, your goals, and your real market rate.
         </p>
-        <div className="mt-8 flex justify-center">
+        <div className="mt-8 flex justify-center animate-fade-in-up delay-400">
           <Link
-            href="https://greta-v2.vercel.app"
+            href="https://greta.frontforumfocus.com"
             className="inline-flex items-center rounded-md bg-zinc-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-zinc-600 transition-colors"
           >
             Try now for free
