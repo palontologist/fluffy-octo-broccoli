@@ -95,13 +95,13 @@ export default function Home() {
           ref={titleRef}
           className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
         >
-          Human Intelligence Infrastructure
+          The accounting layer for the kindness economy.
         </h1>
         <p
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          Building the tools that show you what your work is compounding into — and connect you with the people building alongside you.
+          Impact accounting tools for founders, freelancers, and organisations who are done being invisible.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
           <Link
