@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { WelcomeEmailHtml } from "@/app/emails/WelcomeEmail";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   const authHeader = req.headers.get("authorization");
   if (authHeader !== `Bearer ${process.env.ROUTER_API_KEY}`) {
@@ -20,6 +18,7 @@ export async function POST(req: Request) {
   const recipients = Array.isArray(to) ? to : [to];
 
   try {
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const results = await Promise.allSettled(
       recipients.map((email) =>
         resend.emails.send({
