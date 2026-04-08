@@ -29,6 +29,11 @@ export const metadata: Metadata = {
   title: "FrontForumFocus | Human intelligence infrastructure",
   description:
     "We build AI tools that show founders, freelancers, and mission-driven organisations exactly what their work is worth — before anyone else gets to define it.",
+  icons: {
+    icon: '/s.png',
+    shortcut: '/s.png',
+    apple: '/s.png',
+  },
 };
 
 export default function RootLayout({
