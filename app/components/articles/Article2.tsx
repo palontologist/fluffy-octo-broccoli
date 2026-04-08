@@ -2,19 +2,19 @@ export function Article2() {
   return (
     <article className="border-b border-zinc-800 pb-16">
       <header>
-        <p className="font-sans text-xs text-zinc-500">21givenchy · Feb 18, 2026</p>
-        <p className="font-mono mt-1 text-xs uppercase tracking-wider text-zinc-500">
+        <p className="font-sans article-tiny text-zinc-500">21givenchy · Feb 18, 2026</p>
+        <p className="font-mono mt-1 article-tiny uppercase tracking-wider text-zinc-500">
           Edition 2 of 3, The Trust Series
         </p>
-        <p className="font-sans mt-1 text-sm text-zinc-400">
+        <p className="font-sans mt-1 article-small text-zinc-400">
           Authors: Rosa Schmidt & George Karani
         </p>
-        <h1 className="font-serif mt-6 text-3xl font-semibold text-white md:text-4xl">
+        <h1 className="font-serif mt-6 article-title font-semibold text-white">
           Where will trust actually be built in 2030 and who gets to shape it?
         </h1>
       </header>
 
-      <div className="mt-8 font-sans text-zinc-300 leading-relaxed space-y-6">
+      <div className="mt-8 font-sans text-zinc-300 leading-relaxed space-y-6 article-body">
         <p>
           Welcome back to Edition 2 of our trust series. Let&apos;s get straight into
           it.

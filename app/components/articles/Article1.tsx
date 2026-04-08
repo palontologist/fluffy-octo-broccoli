@@ -2,23 +2,23 @@ export function Article1() {
   return (
     <article className="border-b border-zinc-800 pb-16">
       <header>
-        <p className="font-sans text-xs text-zinc-500">21givenchy · Aug 02, 2025</p>
-        <p className="font-mono mt-1 text-xs uppercase tracking-wider text-zinc-500">
+        <p className="font-sans article-tiny text-zinc-500">21givenchy · Aug 02, 2025</p>
+        <p className="font-mono mt-1 article-tiny uppercase tracking-wider text-zinc-500">
           Edition 1 of 3, The Trust Series
         </p>
-        <p className="font-sans mt-1 text-sm text-zinc-400">
+        <p className="font-sans mt-1 article-small text-zinc-400">
           Authors George Karani & Rosa Schmidt
         </p>
-        <h1 className="font-serif mt-6 text-3xl font-semibold text-white md:text-4xl">
+        <h1 className="font-serif mt-6 article-title font-semibold text-white">
           The Rise of Impact Investment: What Does Trust Really Mean?
         </h1>
-        <p className="font-sans mt-4 text-lg text-zinc-300 italic">
+        <p className="font-sans mt-4 article-subtitle text-zinc-300 italic">
           Welcome to the new era of Impact. We&apos;ve opened the door and guess
           what? Proof&apos;s inside.
         </p>
       </header>
 
-      <div className="mt-8 font-sans text-zinc-300 leading-relaxed space-y-6">
+      <div className="mt-8 font-sans text-zinc-300 leading-relaxed space-y-6 article-body">
         <p>
           <strong className="text-white">Welcome.</strong>
         </p>
