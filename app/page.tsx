@@ -95,13 +95,13 @@ export default function Home() {
           ref={titleRef}
           className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
         >
-          The accounting layer for the kindness economy.
+          Your AI collaborator for longterm impact
         </h1>
         <p
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          Impact accounting tools for founders, freelancers, and organisations who are done being invisible.
+          A thinking partner that helps you track and compound your impact over time.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
           <Link
