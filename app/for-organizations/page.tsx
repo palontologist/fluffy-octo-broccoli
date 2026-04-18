@@ -158,7 +158,7 @@ export default function ForOrganizationsPage() {
         {/* Dashboard screenshot */}
         <section className="mt-16 animate-on-scroll">
           <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
-            Sample dashboard
+            Dashboard Preview
           </h2>
           <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/40">
             <div className="relative aspect-video w-full md:aspect-[2/1]">
@@ -171,26 +171,59 @@ export default function ForOrganizationsPage() {
               />
             </div>
           </div>
-          <div className="mt-6 flex flex-wrap justify-center gap-6">
-            <div className="stat-item text-center">
-              <p className="font-mono text-2xl font-semibold text-emerald-400">
-                $2.4M
+        </section>
+
+        {/* Products & Pricing */}
+        <section className="mt-16 animate-on-scroll">
+          <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
+            Products & Pricing
+          </h2>
+          <div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="capability-card rounded-xl border border-emerald-500/50 bg-zinc-900/40 p-6">
+              <span className="font-mono text-xs font-medium text-emerald-400">
+                FREE TOOL
+              </span>
+              <h3 className="font-sans mt-2 text-lg font-semibold text-white">
+                Carbon Calculator
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400">
+                Calculate your organization's carbon footprint instantly. 
+                Free tool at our dashboard.
               </p>
-              <p className="font-sans text-sm text-zinc-400">
-                Financial impact
-              </p>
+              <a
+                href="https://dashboard.frontforumfocus.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block font-sans text-sm text-emerald-400 hover:text-emerald-300"
+              >
+                Access Calculator →
+              </a>
             </div>
-            <div className="stat-item text-center">
-              <p className="font-mono text-2xl font-semibold text-emerald-400">
-                12,847
+            <div className="capability-card rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+              <span className="font-mono text-xs font-medium text-amber-400">
+                $500 / report
+              </span>
+              <h3 className="font-sans mt-2 text-lg font-semibold text-white">
+                Custom Impact Reports
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400">
+                Tailored analysis with 3 key metrics specific to your industry. 
+                Get actionable insights on what matters most to your stakeholders.
               </p>
-              <p className="font-sans text-sm text-zinc-400">Lives impacted</p>
-            </div>
-            <div className="stat-item text-center">
-              <p className="font-mono text-2xl font-semibold text-emerald-400">
-                8.6/10
-              </p>
-              <p className="font-sans text-sm text-zinc-400">ESG score</p>
+              <ul className="mt-4 space-y-2">
+                <li className="flex items-center gap-2 font-sans text-xs text-zinc-400">
+                  <span className="text-emerald-400">✓</span>
+                  3 industry-specific metrics
+                </li>
+                <li className="flex items-center gap-2 font-sans text-xs text-zinc-400">
+                  <span className="text-emerald-400">✓</span>
+                  Custom analysis & recommendations
+                </li>
+                <li className="flex items-center gap-2 font-sans text-xs text-zinc-400">
+                  <span className="text-emerald-400">✓</span>
+                  PDF report with actionable insights
+                </li>
+              </ul>
             </div>
           </div>
         </section>

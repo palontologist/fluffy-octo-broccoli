@@ -15,11 +15,11 @@ export default function ForFoundersUseCasesPage() {
         </Link>
 
         <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl">
-          Greta use cases
+          Greta for Founders
         </h1>
         <p className="font-sans mt-4 text-zinc-400">
-          How Greta helps founders map time to revenue, runway, and
-          mission-aligned impact.
+          Track your activities against your Life Mission and get The Verdict — 
+          an AI-powered Impact Score that's brutally honest about your impact.
         </p>
 
         {/* How it works */}
@@ -33,11 +33,10 @@ export default function ForFoundersUseCasesPage() {
                 1
               </span>
               <h3 className="font-serif mt-2 text-lg font-semibold text-white">
-                Connect Your Calendar
+                Define Your Life Mission
               </h3>
               <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Pull in meetings, work blocks, and projects automatically from
-                Google Calendar or Outlook.
+                Set your North Star — the core purpose that drives your work as a founder.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
@@ -45,11 +44,10 @@ export default function ForFoundersUseCasesPage() {
                 2
               </span>
               <h3 className="font-serif mt-2 text-lg font-semibold text-white">
-                AI Learns Your Patterns
+                Track Activities
               </h3>
               <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Greta automatically tags your activities and learns which types
-                of work you focus on most.
+                Log your daily work — meetings, building, fundraising, admin — and let Greta analyze it.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
@@ -57,46 +55,71 @@ export default function ForFoundersUseCasesPage() {
                 3
               </span>
               <h3 className="font-serif mt-2 text-lg font-semibold text-white">
-                Get Real Insights
+                Get The Verdict
               </h3>
               <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                See your effective hourly rate by client, time allocation by
-                project type, and mission-alignment scores.
+                Receive your Impact Score with brutal, sarcastic honesty about how aligned you are with your mission.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Sample insights */}
+        {/* Core Features */}
         <section className="mt-16">
           <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
-            Sample insights
+            Core Features
           </h2>
-          <ul className="mt-6 space-y-4">
-            <li className="flex flex-wrap items-center gap-2 rounded-lg border border-zinc-700/50 bg-zinc-900/40 p-4">
-              <span className="font-sans font-medium text-white">
-                Supplier Calls
-              </span>
-              <span className="font-sans text-zinc-400">87% mission-aligned</span>
-              <span className="font-sans text-emerald-400">— Double down</span>
-            </li>
-            <li className="flex flex-wrap items-center gap-2 rounded-lg border border-zinc-700/50 bg-zinc-900/40 p-4">
-              <span className="font-sans font-medium text-white">
-                Fundraising & Admin
-              </span>
-              <span className="font-sans text-zinc-400">65% mission-aligned</span>
-              <span className="font-sans text-amber-400">
-                — Keep, but optimize
-              </span>
-            </li>
-            <li className="flex flex-wrap items-center gap-2 rounded-lg border border-zinc-700/50 bg-zinc-900/40 p-4">
-              <span className="font-sans font-medium text-white">
-                Social Media Posting
-              </span>
-              <span className="font-sans text-zinc-400">23% mission-aligned</span>
-              <span className="font-sans text-zinc-400">— Delegate or cut</span>
-            </li>
-          </ul>
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+              <h3 className="font-serif text-lg font-semibold text-white">
+                The Verdict
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
+                AI that analyzes your activities against your mission and delivers a blunt, sarcastic Impact Score. No fluff — just the truth.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+              <h3 className="font-serif text-lg font-semibold text-white">
+                Connect with Changemakers
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
+                Find and connect with founders who share your goals and mission. Build your tribe of impact-driven peers.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+              <h3 className="font-serif text-lg font-semibold text-white">
+                Opportunity Tab
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
+                Access exclusive communities, job opportunities, and resources tailored to your mission and goals.
+              </p>
+            </div>
+            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+              <h3 className="font-serif text-lg font-semibold text-white">
+                Value over Noise
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
+                Greta isn't a productivity app — it's an impact instrument. Focus on quality, not just quantity.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Sample Verdict */}
+        <section className="mt-16">
+          <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
+            Sample Verdict
+          </h2>
+          <div className="mt-6 rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+            <div className="font-mono text-sm text-zinc-400 mb-4">
+              Your Impact Score: <span className="text-amber-400">62/100</span>
+            </div>
+            <p className="font-serif text-lg text-white italic">
+              "You're spending 40% of your time on investor updates. Noble, but the ROI is questionable. 
+              Your product work? That's where the magic happens — keep doubling down there. 
+              And please, stop doomscrolling LinkedIn at 2am thinking it's 'market research.'"
+            </p>
+          </div>
         </section>
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
@@ -106,7 +129,7 @@ export default function ForFoundersUseCasesPage() {
             rel="noopener noreferrer"
             className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
-            Try Greta free
+            Get Your Verdict
           </a>
           <a
             href={CAL_DEMO_URL}

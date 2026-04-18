@@ -77,44 +77,55 @@ export default function ForOrganizationsUseCasesPage() {
           </ul>
         </section>
 
-        {/* Sample dashboard */}
+        {/* Products & Pricing */}
         <section className="mt-16">
           <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
-            Sample dashboard
+            Products & Pricing
           </h2>
-          <div className="mt-6 overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/40">
-            <div className="relative aspect-video w-full md:aspect-[2/1]">
-              <Image
-                src="/impact-dash.png"
-                alt="FrontForumFocus Impact Dashboard – sample view"
-                fill
-                className="object-contain object-top"
-                sizes="(max-width: 768px) 100vw, 1024px"
-              />
+          <div className="mt-8 grid gap-6 md:grid-cols-2">
+            <div className="rounded-xl border border-emerald-500/50 bg-zinc-900/40 p-6">
+              <span className="font-mono text-xs font-medium text-emerald-400">
+                FREE TOOL
+              </span>
+              <h3 className="font-serif mt-2 text-lg font-semibold text-white">
+                Carbon Calculator
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
+                Calculate your organization's carbon footprint instantly. Free tool available at our dashboard.
+              </p>
+              <a
+                href="https://dashboard.frontforumfocus.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block font-sans text-sm text-emerald-400 hover:text-emerald-300"
+              >
+                Access Calculator →
+              </a>
             </div>
-          </div>
-          <div className="mt-6 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6 text-center">
-              <p className="font-mono text-2xl font-semibold text-emerald-400">
-                $2.4M
+            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
+              <span className="font-mono text-xs font-medium text-amber-400">
+                $500 / report
+              </span>
+              <h3 className="font-serif mt-2 text-lg font-semibold text-white">
+                Custom Impact Reports
+              </h3>
+              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
+                Tailored analysis with 3 key metrics specific to your industry. Get actionable insights on what matters most to your stakeholders.
               </p>
-              <p className="font-sans mt-1 text-sm text-zinc-400">
-                Financial impact
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6 text-center">
-              <p className="font-mono text-2xl font-semibold text-emerald-400">
-                12,847
-              </p>
-              <p className="font-sans mt-1 text-sm text-zinc-400">
-                Lives impacted
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6 text-center">
-              <p className="font-mono text-2xl font-semibold text-emerald-400">
-                8.6/10
-              </p>
-              <p className="font-sans mt-1 text-sm text-zinc-400">ESG score</p>
+              <ul className="mt-4 space-y-2">
+                <li className="flex items-center gap-2 font-sans text-xs text-zinc-400">
+                  <span className="text-emerald-400">✓</span>
+                  3 industry-specific metrics
+                </li>
+                <li className="flex items-center gap-2 font-sans text-xs text-zinc-400">
+                  <span className="text-emerald-400">✓</span>
+                  Custom analysis & recommendations
+                </li>
+                <li className="flex items-center gap-2 font-sans text-xs text-zinc-400">
+                  <span className="text-emerald-400">✓</span>
+                  PDF report with actionable insights
+                </li>
+              </ul>
             </div>
           </div>
         </section>
