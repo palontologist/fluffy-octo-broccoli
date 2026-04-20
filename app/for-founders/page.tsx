@@ -16,7 +16,6 @@ export default function ForFoundersPage() {
   useScrollReveal(".animate-on-scroll", { start: "top 80%" });
 
   useEffect(() => {
-    // Animate phone screenshots on scroll
     const screenshots = document.querySelectorAll(".phone-screenshot");
     screenshots.forEach((shot, i) => {
       gsap.fromTo(
@@ -38,7 +37,6 @@ export default function ForFoundersPage() {
       );
     });
 
-    // Animate CTAs
     const ctas = document.querySelectorAll(".cta-button");
     gsap.fromTo(
       ctas,
@@ -70,19 +68,17 @@ export default function ForFoundersPage() {
             For Founders
           </h1>
           <p className="font-sans mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 animate-on-scroll">
-            Greta maps your calendar, tasks, and payments into a live picture of
-            how your time turns into revenue, runway, and valuation—so you can
-            stop guessing and start compounding on purpose.
+            Greta helps freelancers and founders understand their real effective hourly rate.
+            Enter your rate and hours spent on meetings and emails—get instant clarity on what you're actually earning.
           </p>
         </section>
 
-        {/* Three screenshots - layout like reference (static, side by side) */}
         <section className="mt-16 flex flex-col items-center justify-center gap-6 md:flex-row md:gap-8">
           <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/40 shadow-xl md:w-[240px]">
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/n.png"
-                alt="Greta – Define your mission and North Star"
+                alt="Greta – Enter your rate"
                 fill
                 className="object-cover object-top"
                 sizes="280px"
@@ -93,7 +89,7 @@ export default function ForFoundersPage() {
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/nn.png"
-                alt="Greta – See your alignment and insights"
+                alt="Greta – Track your hours"
                 fill
                 className="object-cover object-top"
                 sizes="280px"
@@ -104,7 +100,7 @@ export default function ForFoundersPage() {
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/screenshot.png"
-                alt="Greta – Set up and measure your impact"
+                alt="Greta – See your effective rate"
                 fill
                 className="object-cover object-top"
                 sizes="280px"
@@ -113,7 +109,6 @@ export default function ForFoundersPage() {
           </div>
         </section>
 
-        {/* CTAs */}
         <div className="cta-group mt-12 flex flex-wrap items-center justify-center gap-4">
           <a
             href={GRETA_APP_URL}
@@ -121,13 +116,13 @@ export default function ForFoundersPage() {
             rel="noopener noreferrer"
             className="cta-button inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
-            Try Greta free
+            Try Greta Free
           </a>
           <Link
-            href="/for-founders/use-cases"
+            href="/products"
             className="cta-button inline-flex items-center rounded-lg border border-zinc-600 bg-zinc-800/60 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
           >
-            Explore use cases
+            View All Products
           </Link>
           <a
             href={CAL_DEMO_URL}
@@ -135,7 +130,7 @@ export default function ForFoundersPage() {
             rel="noopener noreferrer"
             className="cta-button inline-flex items-center rounded-lg border border-zinc-600 bg-transparent px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
           >
-            Book a demo
+            Book a Demo
           </a>
         </div>
       </div>

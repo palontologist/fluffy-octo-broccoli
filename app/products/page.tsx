@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScrollReveal } from "../components/useScrollReveal";
 import { EmailSubscribe } from "../components/EmailSubscribe";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,94 +14,84 @@ const GRETA_APP_URL = "https://greta.frontforumfocus.com";
 
 const products = [
   {
-    name: "Greta",
-    tagline: "The Impact Instrument for changemakers",
-    href: GRETA_APP_URL,
-    cta: "Get Your Verdict",
+    name: "Membership",
+    tagline: "The community for impact founders & changemakers",
+    href: "#join",
+    cta: "Join Now",
     features: [
-      "Track activities against your Life Mission",
-      "The Verdict: AI-powered Impact Score with brutal honesty",
-      "Connect with people who share your goals",
-      "Opportunity tab: exclusive communities & jobs",
-      "Value over Noise — not a productivity app",
+      "Curated introductions to members building in adjacent spaces",
+      "Access to the podcast guest network",
+      "Private community of impact founders",
+      "Weekly intelligence briefing on capital flows into African impact",
+      "Early access to deal flow from DFIs & impact investors",
     ],
-    pricing: "Free",
+    pricing: "$49/mo or $400/yr",
     popular: true,
   },
   {
-    name: "Enterprise Dashboard",
-    tagline: "Impact intelligence for organizations",
-    href: CAL_DEMO_URL,
-    cta: "Book a demo",
+    name: "Greta",
+    tagline: "Freelancers: know your real hourly rate",
+    href: GRETA_APP_URL,
+    cta: "Try Greta Free",
     features: [
-      "Unified impact dashboard",
-      "ESG & impact reporting",
-      "Real-time monitoring",
-      "Integration with existing systems",
-      "Team collaboration",
-      "Audit-ready reports",
+      "Enter your rate and billable hours",
+      "Track hours spent on meetings & emails",
+      "Auto-calculate your effective hourly rate",
+      "See what you're really earning after non-billable time",
+      "Make data-driven pricing decisions",
     ],
-    pricing: "Custom",
+    pricing: "Free",
     popular: false,
   },
   {
-    name: "Community Newsletter",
-    tagline: "Impact intelligence in your inbox",
-    href: "/#newsletter",
-    cta: "Subscribe free",
+    name: "Impact Dashboard",
+    tagline: "Operational carbon intelligence, ESG reporting, and CSRD compliance",
+    href: "/for-organizations",
+    cta: "Learn More",
     features: [
-      "Weekly impact insights",
-      "Founder & investor stories",
-      "Product updates & features",
-      "Early access to new tools",
+      "Unified impact dashboard",
+      "Operational carbon intelligence",
+      "ESG & impact reporting",
+      "CSRD compliance",
+      "Real-time monitoring",
+      "Audit-ready reports",
     ],
-    pricing: "Free",
+    pricing: "From $299/mo",
     popular: false,
   },
 ];
 
-const sponsorships = [
+const services = [
   {
-    tier: "Partner",
-    price: "$500/mo",
-    features: [
-      " Logo in newsletter footer",
-      " Dedicated introduction email",
-      " Quarterly sponsor spotlight",
-    ],
+    name: "For Founders",
+    description: "Tools and programs designed specifically for impact founders building in Africa and the global south.",
+    href: "/for-founders",
+    cta: "Explore",
   },
   {
-    tier: "Featured",
-    price: "$1,500/mo",
-    features: [
-      " Banner in newsletter",
-      " Dedicated email to list",
-      " Blog post feature",
-      " Social media shoutout",
-    ],
+    name: "For Organizations",
+    description: "Enterprise-grade impact measurement, ESG reporting, and sustainability solutions for organizations.",
+    href: "/for-organizations",
+    cta: "Explore",
   },
 ];
 
 const faqs = [
   {
-    question: "What is an Impact Score?",
-    answer: "The Impact Score is an AI-powered metric that evaluates your activities against your defined Life Mission. It provides blunt, honest feedback on how aligned your daily actions are with your core purpose.",
+    question: "What's included in the membership?",
+    answer: "Members get curated introductions to other impact founders, access to our podcast guest network, a private community, weekly intelligence on capital flows into African impact, and early access to deal flow from DFIs and impact investors.",
   },
   {
-    question: "Is Greta a productivity app?",
-    answer: "No. Greta is designed as an impact instrument, not a productivity tool. It focuses on value over noise, helping changemakers understand the quality and impact of their work, not just the quantity.",
+    question: "How does Greta calculate effective rate?",
+    answer: "You enter your hourly rate and the hours you spend on meetings and emails each month. Greta automatically computes your effective rate after subtracting non-billable time, helping you price your services more accurately.",
   },
   {
-    question: "How does The Verdict work?",
-    answer: "The Verdict analyzes your activities, goals, and mission to generate a personalized Impact Score. It's designed to be brutally honest and sarcastic, cutting through self-deception to show you the truth about your impact.",
+    question: "What's included in the Impact Dashboard?",
+    answer: "The Impact Dashboard includes operational carbon intelligence, ESG and impact reporting, CSRD compliance, real-time monitoring, and audit-ready reports. It's designed for organizations that need comprehensive sustainability tracking.",
   },
   {
-    question: "Can I connect with other changemakers?",
-    answer: "Yes! Greta includes a social feature where you can connect with people who share similar goals and missions. Find your tribe of like-minded impact-driven individuals.",
-  },
-  {
-    question: "What opportunities are available on Greta?",
-    answer: "The Opportunity tab provides access to exclusive communities, job openings, and other opportunities tailored to your mission and impact goals.",
+    question: "Can I cancel my membership anytime?",
+    answer: "Yes, you can cancel your membership at any time. Annual subscriptions can be refunded prorated at our discretion.",
   },
 ];
 
@@ -145,7 +136,6 @@ export default function ProductsPage() {
           </p>
         </section>
 
-        {/* Products */}
         <section className="mt-16">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {products.map((product) => (
@@ -194,84 +184,54 @@ export default function ProductsPage() {
                     </li>
                   ))}
                 </ul>
-                {(product.name === "Community Newsletter" ? (
+                {product.name === "Membership" ? (
                   <div className="mt-6">
                     <EmailSubscribe />
                   </div>
                 ) : (
-                  <a
+                  <Link
                     href={product.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     className="mt-6 inline-flex items-center justify-center rounded-lg bg-emerald-600 px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
                   >
                     {product.cta}
-                  </a>
-                ))}
+                  </Link>
+                )}
               </div>
             ))}
           </div>
         </section>
 
-        {/* Sponsorships */}
         <section className="mt-20 animate-on-scroll">
           <h2 className="font-serif text-2xl font-semibold text-white">
-            Sponsor the newsletter
+            Services
           </h2>
           <p className="font-sans mt-2 max-w-2xl text-zinc-400">
-            Reach our community of founders, investors, and impact-driven
-            organizations. Open for Q2 sponsorship.
+            Additional programs and solutions tailored to your needs.
           </p>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
-            {sponsorships.map((sponsorship, i) => (
+            {services.map((service) => (
               <div
-                key={sponsorship.tier}
+                key={service.name}
                 className="product-card rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-6"
               >
                 <h3 className="font-serif text-lg font-semibold text-white">
-                  {sponsorship.tier}
+                  {service.name}
                 </h3>
-                <p className="font-mono mt-2 text-xl font-semibold text-emerald-400">
-                  {sponsorship.price}
+                <p className="font-sans mt-2 text-sm text-zinc-400">
+                  {service.description}
                 </p>
-                <ul className="mt-4 space-y-2">
-                  {sponsorship.features.map((feature) => (
-                    <li
-                      key={feature}
-                      className="flex items-start gap-2 font-sans text-sm text-zinc-300"
-                    >
-                      <svg
-                        className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-400"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={CAL_DEMO_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center justify-center rounded-lg border border-zinc-600 bg-zinc-800/60 px-4 py-3 font-sans text-sm font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
+                <Link
+                  href={service.href}
+                  className="mt-4 inline-flex items-center font-sans text-sm text-emerald-400 hover:text-emerald-300"
                 >
-                  Get in touch
-                </a>
+                  {service.cta} →
+                </Link>
               </div>
             ))}
           </div>
         </section>
 
-        {/* CTA */}
         <section className="mt-16 text-center animate-on-scroll">
           <p className="font-sans text-zinc-400">
             Questions about pricing or need a custom plan?{" "}
@@ -286,7 +246,6 @@ export default function ProductsPage() {
           </p>
         </section>
 
-        {/* FAQ Section for AEO */}
         <section className="mt-20 animate-on-scroll">
           <h2 className="font-serif text-2xl font-semibold text-white">
             Frequently Asked Questions

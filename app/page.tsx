@@ -1,22 +1,73 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+function JoinCommunity() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("Subscribe failed");
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="flex w-full max-w-md flex-col gap-3 sm:flex-row">
+      <input
+        type="email"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        placeholder="you@company.com"
+        disabled={status === "loading"}
+        className="flex-1 rounded-lg border border-zinc-600 bg-zinc-800/80 px-4 py-3 font-sans text-sm text-white placeholder:text-zinc-500 focus:border-zinc-500 focus:outline-none focus:ring-1 focus:ring-zinc-500 disabled:opacity-50"
+        required
+      />
+      <button
+        type="submit"
+        disabled={status === "loading"}
+        className="rounded-lg bg-emerald-600 px-5 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500 disabled:opacity-50"
+      >
+        {status === "loading" ? "Joining..." : "Join Community"}
+      </button>
+      {status === "success" && (
+        <p className="font-sans mt-2 text-sm text-emerald-400 sm:absolute sm:bottom-[-2rem]">
+          Thanks! Check your inbox to confirm.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="font-sans mt-2 text-sm text-red-400 sm:absolute sm:bottom-[-2rem]">
+          Something went wrong. Please try again.
+        </p>
+      )}
+    </form>
+  );
+}
+
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
   const ctaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero entrance animation
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
       tl.fromTo(
@@ -37,7 +88,6 @@ export default function Home() {
           "-=0.4"
         );
 
-      // Parallax background on scroll
       gsap.to(".hero-bg", {
         yPercent: 30,
         ease: "none",
@@ -49,7 +99,6 @@ export default function Home() {
         },
       });
 
-      // Subtle scale on background
       gsap.to(".hero-bg", {
         scale: 1.1,
         ease: "none",
@@ -67,7 +116,6 @@ export default function Home() {
 
   return (
     <main ref={containerRef} className="relative min-h-screen overflow-hidden">
-      {/* Background Image with Parallax */}
       <div
         className="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -75,10 +123,8 @@ export default function Home() {
         }}
       />
       
-      {/* Dark overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
       
-      {/* Subtle vertical light streaks */}
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
@@ -88,31 +134,21 @@ export default function Home() {
       />
 
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6 pb-24 pt-16 text-center md:px-12">
-        {/* Abstract focal element - minimal sphere-like gradient */}
-
-        {/* Hero text */}
         <h1
           ref={titleRef}
           className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
         >
-          The membership community for impact founders building in Africa and the global south.
+          Where changemakers connect, compound, and unlock what's next.
         </h1>
         <p
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          
+          $49/month or $400/year. Curated introductions, private community, podcast guest network, weekly intelligence on capital flows, and early access to deal flow.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
-          <Link
-            href="https://greta.frontforumfocus.com"
-            className="inline-flex items-center rounded-md bg-zinc-700 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-zinc-600 transition-colors"
-          >
-            Try now for free
-          </Link>
+          <JoinCommunity />
         </div>
-
-        
       </div>
     </main>
   );
