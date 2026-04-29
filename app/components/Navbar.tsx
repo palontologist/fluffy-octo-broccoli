@@ -6,8 +6,9 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/impact-intelligence", label: "Impact Intelligence" },
-  { href: "/products", label: "Products" },
-  { href: "mailto:hello@frontforumfocus.com", label: "Contact" },
+  { href: "/podcasts", label: "Podcast" },
+  { href: "/team", label: "Team" },
+  { href: "mailto:support@frontforumfocus.com", label: "Contact" },
 ];
 
 export function Navbar() {

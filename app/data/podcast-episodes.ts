@@ -1,5 +1,33 @@
 export const podcastEpisodes = [
   {
+    id: "urbCLXh7dHY",
+    title: "Latest FrontForumFocus Podcast Episode",
+    guest: "FrontForumFocus",
+    description:
+      "Our newest conversation from the FrontForumFocus channel on the future of the impact economy.",
+  },
+  {
+    id: "jUtzqaV69_M",
+    title: "Impact Economy Insights",
+    guest: "FrontForumFocus",
+    description:
+      "Exploring the intersection of impact, capital, and technology in building real infrastructure.",
+  },
+  {
+    id: "F2KoEqPdYtM",
+    title: "Conversations on Impact",
+    guest: "FrontForumFocus",
+    description:
+      "Deep dive into the future of the impact economy with founders and innovators.",
+  },
+  {
+    id: "aDrdYQqoXoI",
+    title: "Building What Matters",
+    guest: "FrontForumFocus",
+    description:
+      "Conversations focused on scaling impact-driven ventures and sustainable infrastructure.",
+  },
+  {
     id: "USR50RCZXXM",
     title: "Dropout: Building the Future of Learning",
     guest: "Leeland Zhang",

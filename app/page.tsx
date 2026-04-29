@@ -136,15 +136,21 @@ export default function Home() {
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6 pb-24 pt-16 text-center md:px-12">
         <h1
           ref={titleRef}
-          className="font-serif max-w-2xl text-3xl md:text-4xl lg:text-5xl font-bold leading-tight tracking-tight text-white"
+          className="font-serif max-w-3xl text-white leading-tight tracking-tight"
         >
-          Where changemakers connect, compound, and unlock what's next.
+          <div className="text-xl md:text-2xl font-normal text-zinc-300 mb-4">
+            frontforumfocus
+          </div>
+          <div className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3">
+            the intelligence network  for the impact economy
+          </div>
+
         </h1>
         <p
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          $49/month or $400/year. Curated introductions, private community, podcast guest network, weekly intelligence on capital flows, and early access to deal flow.
+          Weekly briefings, curated introductions, and a private community of founders who are building what matters.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
           <JoinCommunity />

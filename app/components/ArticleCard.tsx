@@ -21,25 +21,42 @@ export function ArticleCard({
   excerpt,
 }: ArticleCardProps) {
   return (
-    <article className="rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-6 md:p-8 transition-colors hover:border-zinc-600">
-      <p className="font-sans text-xs text-zinc-500">{date}</p>
-      <p className="font-mono mt-1 text-xs uppercase tracking-wider text-zinc-500">
-        {series}
-      </p>
-      <p className="font-sans mt-1 text-sm text-zinc-400">{authors}</p>
-      <h2 className="font-serif mt-4 text-xl font-semibold text-white md:text-2xl">
-        {title}
-      </h2>
-      {subtitle && (
-        <p className="font-sans mt-2 text-zinc-400 italic">{subtitle}</p>
-      )}
-      <p className="font-sans mt-4 text-zinc-300 leading-relaxed">{excerpt}</p>
-      <Link
-        href={`/impact-intelligence/articles/${slug}`}
-        className="font-sans mt-6 inline-block text-sm font-medium text-white underline decoration-zinc-500 underline-offset-2 hover:decoration-white"
-      >
-        Read full article →
-      </Link>
-    </article>
+    <Link href={`/impact-intelligence/articles/${slug}`}>
+      <article className="group rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-6 md:p-8 transition-all duration-300 hover:border-zinc-500 hover:bg-zinc-900/60 hover:shadow-lg hover:shadow-zinc-900/50 cursor-pointer h-full flex flex-col">
+        {/* Metadata */}
+        <div className="space-y-1 mb-4">
+          <p className="font-sans text-xs text-zinc-500">{date}</p>
+          <p className="font-mono text-xs uppercase tracking-wider text-zinc-500">
+            {series}
+          </p>
+          <p className="font-sans text-xs text-zinc-400">{authors}</p>
+        </div>
+
+        {/* Title */}
+        <h2 className="font-serif text-xl md:text-2xl font-semibold text-white mb-3 group-hover:text-emerald-400 transition-colors duration-200 line-clamp-3">
+          {title}
+        </h2>
+
+        {/* Subtitle */}
+        {subtitle && (
+          <p className="font-sans text-sm md:text-base text-zinc-300 italic mb-4">
+            {subtitle}
+          </p>
+        )}
+
+        {/* Excerpt */}
+        <p className="font-sans text-sm md:text-base text-zinc-300 leading-relaxed mb-6 flex-grow line-clamp-3">
+          {excerpt}
+        </p>
+
+        {/* CTA */}
+        <div className="inline-flex items-center gap-2 text-sm font-medium text-white group-hover:text-emerald-400 transition-colors duration-200">
+          <span>Read full article</span>
+          <span className="group-hover:translate-x-1 transition-transform duration-200">
+            →
+          </span>
+        </div>
+      </article>
+    </Link>
   );
 }

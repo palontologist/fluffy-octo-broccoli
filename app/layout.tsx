@@ -50,23 +50,33 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "FrontForumFocus | Human intelligence infrastructure",
+  title: "FrontForumFocus | The intelligence network for the impact economy",
   description:
-    "We build AI tools that show founders, freelancers, and mission-driven organisations exactly what their work is worth — before anyone else gets to define it.",
+    "FrontForumFocus is the intelligence network for the impact economy: weekly briefings, curated introductions, and a private community of founders who are building what matters.",
   keywords: ["impact measurement", "AI tools", "founder tools", "mission tracking", "impact score", "life mission"],
   authors: [{ name: "FrontForumFocus" }],
+  metadataBase: new URL("https://frontforumfocus.com"),
   openGraph: {
-    title: "FrontForumFocus | Human intelligence infrastructure",
-    description: "We build AI tools that show founders, freelancers, and mission-driven organisations exactly what their work is worth.",
+    title: "FrontForumFocus | The intelligence network for the impact economy",
+    description: "Weekly briefings, curated introductions, and a private community of founders building what matters.",
     url: "https://frontforumfocus.com",
     siteName: "FrontForumFocus",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/s.png",
+        width: 512,
+        height: 512,
+        alt: "FrontForumFocus logo",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "FrontForumFocus | Human intelligence infrastructure",
-    description: "We build AI tools that show founders, freelancers, and mission-driven organisations exactly what their work is worth.",
+    title: "FrontForumFocus | The intelligence network for the impact economy",
+    description: "Weekly briefings, curated introductions, and a private community of founders building what matters.",
+    images: ["/s.png"],
   },
   robots: {
     index: true,
