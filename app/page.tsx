@@ -142,7 +142,7 @@ export default function Home() {
             frontforumfocus
           </div>
           <div className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3">
-            the intelligence network  for the impact economy
+            The execution network for impact founders.
           </div>
 
         </h1>
@@ -150,7 +150,7 @@ export default function Home() {
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          Weekly briefings, curated introductions, and a private community of founders who are building what matters.
+          Powering impact startup execution through founder accountability.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
           <JoinCommunity />
