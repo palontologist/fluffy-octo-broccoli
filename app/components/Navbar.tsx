@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/impact-intelligence", label: "Impact Intelligence" },
+  { href: "/community", label: "Community" },
   { href: "/podcasts", label: "Podcast" },
   { href: "/team", label: "Team" },
   { href: "mailto:support@frontforumfocus.com", label: "Contact" },

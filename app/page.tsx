@@ -150,7 +150,7 @@ export default function Home() {
           ref={subtitleRef}
           className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
         >
-          Powering impact startup execution through founder accountability.
+          Powering impact execution through accountability.
         </p>
         <div ref={ctaRef} className="mt-8 flex justify-center">
           <JoinCommunity />
