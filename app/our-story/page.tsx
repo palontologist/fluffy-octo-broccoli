@@ -51,14 +51,11 @@ export default function OurStoryPage() {
           </p>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
             We turn your impact into numbers investors actually trust — revenue, lives changed, and verified outcomes. 
-           
           </p>
         </section>
-
+        
         {/* Events Gallery - Hero Section */}
         <section className="mt-12 animate-on-scroll">
-
-
           {/* Photo Grid */}
           <div className="mt-8 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 stagger-children">
             {/* Large feature image - group event */}
@@ -77,7 +74,7 @@ export default function OurStoryPage() {
                 </p>
               </div>
             </div>
-
+        
             {/* Presentation image */}
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-zinc-700/50 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
               <Image
@@ -92,7 +89,7 @@ export default function OurStoryPage() {
                 Leading workshops
               </p>
             </div>
-
+        
             {/* Team selfie */}
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-700/50 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
               <Image
@@ -107,7 +104,7 @@ export default function OurStoryPage() {
                 Team moments
               </p>
             </div>
-
+        
             {/* Remote collaboration */}
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-700/50 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
               <Image
@@ -122,7 +119,7 @@ export default function OurStoryPage() {
                 Virtual collaboration
               </p>
             </div>
-
+        
             {/* Personal photo */}
             <div className="relative aspect-square overflow-hidden rounded-2xl border border-zinc-700/50 shadow-xl transition-transform duration-300 hover:scale-[1.02]">
               <Image
@@ -139,21 +136,32 @@ export default function OurStoryPage() {
             </div>
           </div>
         </section>
-
+        
         {/* Divider */}
         <div className="my-16 border-t border-zinc-800 animate-on-scroll" />
       </div>
-
+    
       {/* Story and Details - Narrower Width */}
-      <div className="mx-auto max-w-3xl">
-        {/* What We Do / Identity Block */}
-       
+      <div className="mx-auto max-w-3xl space-y-24">
+        
+        {/* Mission Section */}
+        <section className="text-center animate-on-scroll space-y-6">
+          <h2 className="text-emerald-500 font-bold uppercase text-sm tracking-widest">Our Mission</h2>
+          <p className="text-3xl md:text-4xl font-serif leading-tight text-white">
+            To make positive impact financially inevitable by building the global infrastructure for pricing, verifying, and trading real-world outcomes.
+          </p>
+        </section>
+
+        {/* Vision Section */}
+        <section className="text-center animate-on-scroll space-y-6">
+          <h2 className="text-emerald-500 font-bold uppercase text-sm tracking-widest">The Big Picture</h2>
+          <p className="text-xl md:text-2xl leading-relaxed text-zinc-300">
+            FrontForumFocus becomes the global layer for the &quot;Value of Impact.&quot; We move the world from a system where doing good is a charity act to a system where doing good is the most profitable way to run a business.
+          </p>
+        </section>
 
         {/* Divider */}
         <div className="my-16 border-t border-zinc-800" />
-
-        {/* 4. Vision / Where We're Headed Strip */}
-     
       </div>
     </main>
   );

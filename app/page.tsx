@@ -115,7 +115,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main ref={containerRef} className="relative min-h-screen overflow-hidden">
+    <main ref={containerRef} className="relative min-h-screen overflow-hidden bg-black text-white">
       <div
         className="hero-bg absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
@@ -123,7 +123,7 @@ export default function Home() {
         }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black" />
       
       <div
         className="absolute inset-0 opacity-[0.03]"
@@ -132,27 +132,27 @@ export default function Home() {
           backgroundSize: "120px 100%",
         }}
       />
-
+    
       <div className="relative flex min-h-screen flex-col items-center justify-center px-6 pb-24 pt-16 text-center md:px-12">
         <h1
           ref={titleRef}
-          className="font-serif max-w-3xl text-white leading-tight tracking-tight"
+          className="font-serif max-w-4xl text-white leading-tight tracking-tight"
         >
-          <div className="text-xl md:text-2xl font-normal text-zinc-300 mb-4">
-            frontforumfocus
+          <div className="text-xl md:text-2xl font-normal text-zinc-400 mb-4 uppercase tracking-widest">
+            FrontForumFocus
           </div>
-          <div className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3">
-            The execution network for impact founders.
+          <div className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+            The value-capture engine for the impact economy.
           </div>
-
         </h1>
         <p
           ref={subtitleRef}
-          className="mt-4 max-w-md text-sm md:text-base text-zinc-300 font-sans font-normal"
+          className="mt-4 max-w-2xl text-lg md:text-xl text-zinc-300 font-sans font-normal leading-relaxed"
         >
-          Powering impact execution through accountability.
+          A data-driven platform that turns verified social and environmental impact into tradable financial assets.
         </p>
-        <div ref={ctaRef} className="mt-8 flex justify-center">
+        
+        <div ref={ctaRef} className="mt-12 flex justify-center">
           <JoinCommunity />
         </div>
       </div>
