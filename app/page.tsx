@@ -4,15 +4,13 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [activeTab, setActiveTab] = useState<"inverter" | "app">("inverter");
-  const [energyMWh, setEnergyMWh] = useState<number>(45);
-  const [isPlayingVideo, setIsPlayingVideo] = useState<boolean>(true);
-  const [isMuted, setIsMuted] = useState<boolean>(true);
+  const [hourlyRate, setHourlyRate] = useState(100);
+  const [billableHours, setBillableHours] = useState(24);
+  const [nonBillableHours, setNonBillableHours] = useState(16);
 
-  // Dynamic calculations based on slider
-  const carbonAbated = (energyMWh * 0.72).toFixed(1);
-  const premiumRevenue = Math.round(energyMWh * 42);
-  const contributorRewards = Math.round(energyMWh * 18);
+  const totalHours = billableHours + nonBillableHours;
+  const revenue = hourlyRate * billableHours;
+  const effectiveRate = totalHours > 0 ? revenue / totalHours : 0;
 
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-start px-6 pt-32 pb-32 selection:bg-neutral-800 selection:text-white font-sans antialiased">
@@ -24,236 +22,93 @@ export default function Home() {
       </div>
 
       {/* Hero Section */}
-      <div className="max-w-3xl text-center space-y-5">
-        <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[52px] text-white font-normal tracking-tight leading-[1.18]">
-          Turn clean energy data into <br className="hidden sm:inline" />
-          <span className="italic font-serif text-emerald-400">
-            audit-ready carbon assets.
-          </span>
-        </h1>
-        
-        <p className="text-sm sm:text-base md:text-lg text-neutral-400 max-w-xl mx-auto font-normal leading-relaxed">
-          Connect solar inverters, microgrids, and mobile field contributors to automate dMRV, eliminate audit lag, and capture premium credit pricing.
-        </p>
-
-        {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3.5 pt-4">
-          <Link
-            href="mailto:george.karani@startupgrind.com?subject=Greta%20Telemetry%20Pilot"
-            className="px-5 py-2.5 rounded-full bg-white hover:bg-neutral-200 text-neutral-950 font-medium text-xs sm:text-sm transition-all duration-150 shadow-md hover:scale-[1.01]"
-          >
-            Connect Your Telemetry →
-          </Link>
-          <Link
-            href="/products"
-            className="px-5 py-2.5 rounded-full border border-neutral-800 bg-neutral-900/80 hover:bg-neutral-800 text-neutral-300 font-medium text-xs sm:text-sm transition-all duration-150"
-          >
-            Explore Greta App
-          </Link>
-        </div>
-      </div>
-
-      {/* 1. Authentic Documentary Brand Film Window */}
-      <div className="w-full max-w-3xl mt-14 rounded-3xl border border-neutral-800/80 bg-neutral-900/30 overflow-hidden shadow-2xl relative group">
-        <div className="relative aspect-video w-full bg-neutral-900">
-          <video
-            autoPlay
-            loop
-            muted={isMuted}
-            playsInline
-            className="w-full h-full object-cover opacity-80 group-hover:opacity-90 transition-opacity"
-            poster="https://images.unsplash.com/photo-1509391365360-2e959784a276?q=80&w=1600&auto=format&fit=crop"
-          >
-            <source
-              src="https://assets.mixkit.co/videos/preview/mixkit-solar-panels-in-a-field-at-sunset-42861-large.mp4"
-              type="video/mp4"
-            />
-          </video>
-          
-          {/* Subtle Video Gradient Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent pointer-events-none" />
-
-          {/* Documentary Title Tag */}
-          <div className="absolute bottom-5 left-6 right-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3 pointer-events-auto">
-            <div className="space-y-1">
-              <span className="text-[10px] font-mono uppercase tracking-widest text-emerald-400 bg-emerald-950/80 px-2 py-0.5 rounded border border-emerald-800/60">
-                Ground-Truth Film
-              </span>
-              <p className="text-sm sm:text-base font-serif text-white font-medium">
-                “The people building what matters.”
-              </p>
-              <p className="text-xs text-neutral-400 font-light max-w-md">
-                Continuous IoT telemetry from East African microgrids and field builders to institutional registries.
-              </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <button
-                onClick={() => setIsMuted(!isMuted)}
-                className="px-3 py-1.5 rounded-full bg-neutral-900/80 hover:bg-neutral-800 border border-neutral-700/80 text-[11px] text-neutral-300 backdrop-blur-md transition-colors"
-              >
-                {isMuted ? "🔇 Unmute" : "🔊 Mute"}
-              </button>
-            </div>
+      <section className="relative isolate w-full max-w-6xl overflow-hidden rounded-[2rem] border border-neutral-800/80 bg-neutral-900 shadow-2xl">
+        <iframe
+          src="https://player.mux.com/LnNXvJqpq6Q9bZ02uChMl6Ib16DHbaeLs9nO5kOP7bQ00?autoplay=true&muted=true&loop=true&controls=false"
+          title="FrontForumFocus brand film"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.08] border-0 opacity-50"
+          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+          aria-hidden="true"
+        />
+        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.16),transparent_45%),linear-gradient(90deg,rgba(10,10,10,0.98),rgba(10,10,10,0.7),rgba(10,10,10,0.86))]" />
+        <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-center px-6 py-20 text-center sm:px-12">
+          <h1 className="max-w-4xl font-serif text-3xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+            Make your work count.
+            <br />
+            <span className="italic text-emerald-300">Know your real impact.</span>
+          </h1>
+          <p className="mt-6 max-w-2xl text-sm font-normal leading-relaxed text-neutral-200 sm:text-base md:text-lg">
+            Greta helps founders and changemakers see what their time is really
+            worth, focus on meaningful work, and build with proof.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-3.5 pt-8">
+            <Link
+              href="/products/greta"
+              className="rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
+            >
+              Explore Greta →
+            </Link>
+            <Link
+              href="/community"
+              className="rounded-full border border-neutral-600/80 bg-neutral-950/50 px-5 py-2.5 text-xs font-medium text-neutral-100 transition-all duration-150 hover:bg-neutral-800 sm:text-sm"
+            >
+              Meet the community
+            </Link>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 2. Live Impact Pulse Stats Strip */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-3xl w-full mt-10">
-        <div className="p-4 rounded-2xl border border-neutral-800/80 bg-neutral-900/30 text-center space-y-1">
-          <div className="text-xs font-mono text-neutral-500 uppercase">Energy Telemetry</div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-white">54.8 MWh</div>
-          <div className="text-[10px] text-emerald-400">● Live Ingesting</div>
-        </div>
-        <div className="p-4 rounded-2xl border border-neutral-800/80 bg-neutral-900/30 text-center space-y-1">
-          <div className="text-xs font-mono text-neutral-500 uppercase">Verified Abated</div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-400">38.2 tCO₂e</div>
-          <div className="text-[10px] text-neutral-400">Registry-Ready</div>
-        </div>
-        <div className="p-4 rounded-2xl border border-neutral-800/80 bg-neutral-900/30 text-center space-y-1">
-          <div className="text-xs font-mono text-neutral-500 uppercase">Hardware Nodes</div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-white">120+ Sites</div>
-          <div className="text-[10px] text-neutral-400">Modbus &amp; Smart IoT</div>
-        </div>
-        <div className="p-4 rounded-2xl border border-neutral-800/80 bg-neutral-900/30 text-center space-y-1">
-          <div className="text-xs font-mono text-neutral-500 uppercase">Manual Audit Lag</div>
-          <div className="text-xl sm:text-2xl font-bold font-mono text-white">0 Days</div>
-          <div className="text-[10px] text-emerald-400">Automated dMRV</div>
-        </div>
-      </div>
-
-      {/* 3. Interactive Greta Dashboard & Value Calculator */}
-      <div className="w-full max-w-3xl mt-16 p-6 sm:p-8 rounded-3xl border border-neutral-800/80 bg-neutral-900/40 backdrop-blur-xl shadow-2xl space-y-6">
-        <div className="space-y-1 text-center sm:text-left">
-          <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Interactive Calculator</div>
-          <h2 className="text-xl sm:text-2xl font-serif text-white">Estimate Your Verifiable Impact &amp; Revenue Delta</h2>
-          <p className="text-xs text-neutral-400">Adjust your clean energy generation to see real-time carbon abatement and financial upside.</p>
-        </div>
-
-        {/* Slider Input */}
-        <div className="space-y-3 pt-2 bg-neutral-950/60 p-5 rounded-2xl border border-neutral-800/60">
-          <div className="flex items-center justify-between text-xs sm:text-sm">
-            <span className="text-neutral-300 font-medium">Monthly Clean Energy Telemetry:</span>
-            <span className="font-mono font-bold text-emerald-400 text-base">{energyMWh} MWh</span>
-          </div>
-          <input
-            type="range"
-            min="5"
-            max="250"
-            step="5"
-            value={energyMWh}
-            onChange={(e) => setEnergyMWh(Number(e.target.value))}
-            className="w-full h-2 bg-neutral-800 rounded-lg appearance-none cursor-pointer accent-emerald-500"
-          />
-          <div className="flex justify-between text-[10px] text-neutral-500 font-mono">
-            <span>5 MWh (1 microgrid)</span>
-            <span>125 MWh (Regional Fleet)</span>
-            <span>250 MWh (C&amp;I Portfolio)</span>
-          </div>
-        </div>
-
-        {/* Dynamic Calculator Results */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          <div className="p-4 rounded-xl border border-neutral-800 bg-neutral-950/50 space-y-1">
-            <div className="text-[11px] font-mono text-neutral-500 uppercase">Verified Carbon Abated</div>
-            <div className="text-xl font-bold font-mono text-emerald-400">{carbonAbated} tCO₂e</div>
-            <div className="text-[10px] text-neutral-400">Audit-ready compliance</div>
-          </div>
-          <div className="p-4 rounded-xl border border-neutral-800 bg-neutral-950/50 space-y-1">
-            <div className="text-[11px] font-mono text-neutral-500 uppercase">Premium Credit Delta</div>
-            <div className="text-xl font-bold font-mono text-white">+${premiumRevenue.toLocaleString()}</div>
-            <div className="text-[10px] text-neutral-400">2x–5x price premium unlocked</div>
-          </div>
-          <div className="p-4 rounded-xl border border-neutral-800 bg-neutral-950/50 space-y-1">
-            <div className="text-[11px] font-mono text-neutral-500 uppercase">Contributor Rewards</div>
-            <div className="text-xl font-bold font-mono text-teal-400">${contributorRewards.toLocaleString()}</div>
-            <div className="text-[10px] text-neutral-400">Distributed to field users</div>
-          </div>
-        </div>
-      </div>
-
-      {/* 4. Real People Building What Matters (Founder & Partner Stories) */}
-      <div className="max-w-3xl w-full mt-24 space-y-8">
-        <div className="text-center space-y-2">
-          <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Case Studies &amp; Ecosystem</div>
-          <h2 className="text-2xl sm:text-3xl font-serif text-white">People Building What Matters</h2>
-          <p className="text-xs text-neutral-400 max-w-md mx-auto">
-            How clean energy operators and edge AI developers use FrontForumFocus to verify physical impact.
+      {/* Transparent real-rate calculator */}
+      <section className="mt-20 w-full max-w-3xl rounded-2xl border border-neutral-800/80 bg-neutral-900/40 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
+        <div className="space-y-2 text-center">
+          <div className="text-xs font-mono uppercase tracking-wider text-emerald-400">Try Greta</div>
+          <h2 className="font-serif text-2xl text-white sm:text-3xl">What is your real hourly rate?</h2>
+          <p className="mx-auto max-w-xl text-xs leading-relaxed text-neutral-400 sm:text-sm">
+            Your effective rate includes every hour spent delivering the work,
+            not only the hours you can invoice.
           </p>
         </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-          {/* Story 1 */}
-          <div className="p-5 rounded-2xl border border-neutral-800 bg-neutral-900/30 flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-emerald-950 border border-emerald-700/60 flex items-center justify-center text-xs font-bold text-emerald-400">
-                  ⚡
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-white">East Africa Solar C&amp;I</div>
-                  <div className="text-[10px] text-neutral-500">Commercial Mini-grid Fleet</div>
-                </div>
+        <div className="mt-8 grid gap-4 sm:grid-cols-3">
+          {[
+            ["Hourly rate", hourlyRate, setHourlyRate, "$"],
+            ["Billable hours", billableHours, setBillableHours, "h"],
+            ["Other hours", nonBillableHours, setNonBillableHours, "h"],
+          ].map(([label, value, setter, suffix]) => (
+            <label key={label as string} className="space-y-2 text-xs text-neutral-400">
+              <span>{label as string}</span>
+              <div className="flex items-center rounded-xl border border-neutral-800 bg-neutral-950/70 px-3 focus-within:border-emerald-500/60">
+                <span className="text-neutral-500">{suffix as string}</span>
+                <input
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={value as number}
+                  onChange={(event) => (setter as (value: number) => void)(Math.max(0, Number(event.target.value) || 0))}
+                  className="w-full bg-transparent px-2 py-3 text-sm text-white outline-none"
+                />
               </div>
-              <p className="text-xs text-neutral-300 italic leading-relaxed">
-                “Greta plugged into our smart inverters via Modbus in under an hour. We eliminated 8 months of third-party audit delays.”
-              </p>
-            </div>
-            <div className="text-[10px] font-mono text-emerald-400 border-t border-neutral-800/80 pt-2">
-              Outcome: 100% automated dMRV
+            </label>
+          ))}
+        </div>
+        <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-emerald-500/20 bg-emerald-950/20 p-5 sm:flex-row">
+          <div>
+            <div className="text-xs text-neutral-400">Effective hourly rate</div>
+            <div className="mt-1 font-mono text-3xl font-bold text-emerald-300">
+              ${effectiveRate.toFixed(2)}
             </div>
           </div>
-
-          {/* Story 2 */}
-          <div className="p-5 rounded-2xl border border-neutral-800 bg-neutral-900/30 flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-teal-950 border border-teal-700/60 flex items-center justify-center text-xs font-bold text-teal-400">
-                  📱
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-white">ClawCamp Nairobi</div>
-                  <div className="text-[10px] text-neutral-500">Edge AI &amp; Hardware Hackers</div>
-                </div>
-              </div>
-              <p className="text-xs text-neutral-300 italic leading-relaxed">
-                “We deployed LiteRT micro-models on Android devices to verify e-waste and battery drop-offs with zero cloud dependencies.”
-              </p>
-            </div>
-            <div className="text-[10px] font-mono text-teal-400 border-t border-neutral-800/80 pt-2">
-              Outcome: Offline-first verification
-            </div>
-          </div>
-
-          {/* Story 3 */}
-          <div className="p-5 rounded-2xl border border-neutral-800 bg-neutral-900/30 flex flex-col justify-between space-y-4">
-            <div className="space-y-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-cyan-950 border border-cyan-700/60 flex items-center justify-center text-xs font-bold text-cyan-400">
-                  🌿
-                </div>
-                <div>
-                  <div className="text-xs font-semibold text-white">Carbon Market Advisory</div>
-                  <div className="text-[10px] text-neutral-500">Gold Standard Origination</div>
-                </div>
-              </div>
-              <p className="text-xs text-neutral-300 italic leading-relaxed">
-                “Tamper-proof telemetry allowed our developer clients to sell verified credits at 3.2x over baseline commodity offsets.”
-              </p>
-            </div>
-            <div className="text-[10px] font-mono text-cyan-400 border-t border-neutral-800/80 pt-2">
-              Outcome: 3.2x Price Premium
-            </div>
+          <div className="text-right text-xs text-neutral-400">
+            <div>${revenue.toFixed(2)} revenue ÷ {totalHours.toFixed(1)} total hours</div>
+            <div className="mt-1 text-neutral-500">A transparent estimate, not financial advice.</div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 5. End-to-End Visual Architecture */}
-      <div className="max-w-3xl w-full mt-24 p-6 sm:p-8 rounded-2xl border border-neutral-800/80 bg-neutral-900/20 space-y-6">
+      {/* Visual Telemetry Architecture Diagram */}
+      <div className="max-w-3xl w-full mt-20 p-6 sm:p-8 rounded-2xl border border-neutral-800/80 bg-neutral-900/20 space-y-6">
         <div className="text-center space-y-1">
-          <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Technical Data Pipeline</div>
-          <h2 className="text-xl sm:text-2xl font-serif text-white">How Ground-Truth Telemetry Becomes Bankable Capital</h2>
+          <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">End-to-End Architecture</div>
+          <h2 className="text-xl sm:text-2xl font-serif text-white">How Physical Telemetry Becomes Bankable Capital</h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
@@ -286,8 +141,35 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 6. Pricing Section */}
-      <div className="max-w-3xl w-full mt-24 space-y-6">
+      {/* 3-Pillar Value Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl w-full mt-16">
+        <div className="p-5 rounded-xl border border-neutral-800/80 bg-neutral-900/30 space-y-2">
+          <div className="text-xs font-mono text-neutral-500 font-bold">01</div>
+          <h3 className="text-sm font-semibold text-white">Direct Telemetry</h3>
+          <p className="text-xs text-neutral-400 leading-relaxed">
+            Ingest live feeds from inverters, smart meters, and field sensors with zero manual data entry.
+          </p>
+        </div>
+        
+        <div className="p-5 rounded-xl border border-neutral-800/80 bg-neutral-900/30 space-y-2">
+          <div className="text-xs font-mono text-neutral-500 font-bold">02</div>
+          <h3 className="text-sm font-semibold text-white">Automated dMRV</h3>
+          <p className="text-xs text-neutral-400 leading-relaxed">
+            Standardize raw generation logs into UN SDG compliance metrics and registry-ready carbon proof.
+          </p>
+        </div>
+        
+        <div className="p-5 rounded-xl border border-neutral-800/80 bg-neutral-900/30 space-y-2">
+          <div className="text-xs font-mono text-neutral-500 font-bold">03</div>
+          <h3 className="text-sm font-semibold text-white">Monetize Premium</h3>
+          <p className="text-xs text-neutral-400 leading-relaxed">
+            Eliminate audit latency and unlock 2x–5x price premiums on environmental commodity exchanges.
+          </p>
+        </div>
+      </div>
+
+      {/* Pricing Section */}
+      <div className="max-w-3xl w-full mt-20 space-y-6">
         <div className="text-center space-y-1">
           <h2 className="text-xl sm:text-2xl font-serif text-white">Pricing &amp; Pilot Deployment</h2>
           <p className="text-xs text-neutral-400">Deploy on 1–2 test sites or scale across distributed regional portfolios.</p>
