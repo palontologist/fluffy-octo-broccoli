@@ -1,14 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 200" fill="none">
-  <!-- F -->
-  <path d="M 60 40 L 130 40 L 130 65 L 88 65 L 88 95 L 125 95 L 125 120 L 88 120 L 88 160 L 60 160 Z" fill="#2d7d46" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="48" fill="#14532d" />
+  <circle cx="50" cy="50" r="46" fill="#15803d" stroke="#22c55e" stroke-width="3" />
   
-  <!-- Globe O -->
-  <circle cx="220" cy="100" r="58" fill="#2d7d46" />
-  <path d="M 185 85 Q 200 65 220 70 Q 235 75 240 90 Q 250 110 235 125 Q 220 140 205 130 Q 190 120 185 85 Z" fill="#52b774" opacity="0.9" />
-  <path d="M 230 75 Q 255 70 265 85 Q 270 100 255 115 Q 245 105 240 90 Z" fill="#52b774" opacity="0.9" />
-  <path d="M 195 130 Q 210 145 225 150 Q 230 155 220 158 Q 200 155 195 130 Z" fill="#52b774" opacity="0.9" />
-  <circle cx="220" cy="100" r="58" stroke="#2d7d46" stroke-width="2" />
+  <!-- Continents in Bright Emerald -->
+  <path d="M 26 34 Q 38 18 54 22 Q 68 26 72 38 Q 78 54 66 70 Q 52 82 38 74 Q 26 64 26 34 Z" fill="#4ade80" opacity="0.9" />
+  <path d="M 62 26 Q 80 22 86 34 Q 90 48 78 60 Q 70 52 66 40 Z" fill="#4ade80" opacity="0.9" />
+  <path d="M 32 72 Q 44 84 56 88 Q 62 92 52 94 Q 36 92 32 72 Z" fill="#4ade80" opacity="0.9" />
   
-  <!-- 3 -->
-  <path d="M 305 45 C 330 45 355 55 355 78 C 355 93 342 102 330 105 C 348 108 360 120 360 138 C 360 162 335 170 305 170 C 290 170 280 166 270 160 L 282 138 C 290 143 298 147 308 147 C 322 147 332 142 332 133 C 332 122 320 117 302 117 L 292 117 L 292 95 L 305 95 C 318 95 328 90 328 80 C 328 72 320 68 308 68 C 298 68 288 71 280 77 L 270 55 C 280 48 292 45 305 45 Z" fill="#2d7d46" />
+  <!-- High-contrast bold FO3 text overlay -->
+  <rect x="14" y="34" width="72" height="32" rx="16" fill="#052e16" fill-opacity="0.85" stroke="#4ade80" stroke-width="1.5" />
+  <text x="50" y="56" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="20" fill="#ffffff" text-anchor="middle" letter-spacing="0.5">FO3</text>
 </svg>
