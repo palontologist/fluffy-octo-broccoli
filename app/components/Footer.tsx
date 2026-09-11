@@ -4,7 +4,7 @@ import { EmailSubscribe } from "./EmailSubscribe";
 
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-800/80 bg-neutral-950 px-6 pb-10 pt-16">
+    <footer className="border-t border-neutral-800/80 bg-neutral-950 px-4 pb-10 pt-12 sm:px-6 sm:pt-16">
       <div className="mx-auto max-w-6xl space-y-12">
         <div className="grid gap-10 lg:grid-cols-[1fr_1.2fr]">
           <div className="max-w-sm space-y-4">
