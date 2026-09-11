@@ -4,25 +4,22 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Home() {
-  const [hourlyRate, setHourlyRate] = useState(100);
-  const [billableHours, setBillableHours] = useState(24);
-  const [nonBillableHours, setNonBillableHours] = useState(16);
-
-  const totalHours = billableHours + nonBillableHours;
-  const revenue = hourlyRate * billableHours;
-  const effectiveRate = totalHours > 0 ? revenue / totalHours : 0;
+  const activities = {
+    solar: { label: "Clean energy generated", unit: "MWh", sdg: "SDG 7 · Affordable & Clean Energy", coefficient: 0.72, outcome: "tonnes of CO₂e avoided" },
+    education: { label: "Learner hours supported", unit: "hours", sdg: "SDG 4 · Quality Education", coefficient: 0.04, outcome: "learners reached" },
+    waste: { label: "Waste diverted", unit: "tonnes", sdg: "SDG 12 · Responsible Consumption", coefficient: 18, outcome: "household-equivalent waste days avoided" },
+  } as const;
+  type ActivityKey = keyof typeof activities;
+  const [activity, setActivity] = useState<ActivityKey>("solar");
+  const [activityAmount, setActivityAmount] = useState(45);
+  const selectedActivity = activities[activity];
+  const contribution = activityAmount * selectedActivity.coefficient;
 
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-start px-6 pt-32 pb-32 selection:bg-neutral-800 selection:text-white font-sans antialiased">
       
-      {/* Top Subtle Pill */}
-      <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-neutral-800/80 bg-neutral-900/60 text-xs text-neutral-400 mb-8 backdrop-blur-md">
-        <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-        <span className="tracking-wide">frontforumfocus • the verifiable impact layer</span>
-      </div>
-
       {/* Hero Section */}
-      <section className="relative isolate w-full max-w-6xl overflow-hidden rounded-[2rem] border border-neutral-800/80 bg-neutral-900 shadow-2xl">
+      <section className="relative isolate flex min-h-[calc(100vh-8rem)] w-full max-w-6xl items-center overflow-hidden rounded-[2rem] border border-neutral-800/80 bg-neutral-900 shadow-2xl">
         <iframe
           src="https://player.mux.com/LnNXvJqpq6Q9bZ02uChMl6Ib16DHbaeLs9nO5kOP7bQ00?autoplay=true&muted=true&loop=true&controls=false"
           title="FrontForumFocus brand film"
@@ -33,75 +30,84 @@ export default function Home() {
         <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.16),transparent_45%),linear-gradient(90deg,rgba(10,10,10,0.98),rgba(10,10,10,0.7),rgba(10,10,10,0.86))]" />
         <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-center px-6 py-20 text-center sm:px-12">
           <h1 className="max-w-4xl font-serif text-3xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
-            Make your work count.
+            Turn clean energy data into
             <br />
-            <span className="italic text-emerald-300">Know your real impact.</span>
+            <span className="italic text-emerald-300">audit-ready carbon assets.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-sm font-normal leading-relaxed text-neutral-200 sm:text-base md:text-lg">
-            Greta helps founders and changemakers see what their time is really
-            worth, focus on meaningful work, and build with proof.
+            Connect solar inverters, microgrids, and mobile field contributors
+            to automate dMRV, eliminate audit lag, and capture premium credit
+            pricing.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-8">
             <Link
-              href="/products/greta"
+              href="mailto:george.karani@startupgrind.com?subject=Greta%20Telemetry%20Pilot"
               className="rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
             >
-              Explore Greta →
+              Connect Your Telemetry →
             </Link>
             <Link
-              href="/community"
+              href="/products"
               className="rounded-full border border-neutral-600/80 bg-neutral-950/50 px-5 py-2.5 text-xs font-medium text-neutral-100 transition-all duration-150 hover:bg-neutral-800 sm:text-sm"
             >
-              Meet the community
+              Explore Greta App
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Transparent real-rate calculator */}
+      {/* Interactive SDG impact calculator */}
       <section className="mt-20 w-full max-w-3xl rounded-2xl border border-neutral-800/80 bg-neutral-900/40 p-6 shadow-2xl backdrop-blur-xl sm:p-8">
         <div className="space-y-2 text-center">
-          <div className="text-xs font-mono uppercase tracking-wider text-emerald-400">Try Greta</div>
-          <h2 className="font-serif text-2xl text-white sm:text-3xl">What is your real hourly rate?</h2>
+          <div className="text-xs font-mono uppercase tracking-wider text-emerald-400">Try the impact mapper</div>
+          <h2 className="font-serif text-2xl text-white sm:text-3xl">See how an activity contributes to global goals</h2>
           <p className="mx-auto max-w-xl text-xs leading-relaxed text-neutral-400 sm:text-sm">
-            Your effective rate includes every hour spent delivering the work,
-            not only the hours you can invoice.
+            Choose an activity, add a measured amount, and see the SDG outcome
+            it can help evidence.
           </p>
         </div>
-        <div className="mt-8 grid gap-4 sm:grid-cols-3">
-          {[
-            ["Hourly rate", hourlyRate, setHourlyRate, "$"],
-            ["Billable hours", billableHours, setBillableHours, "h"],
-            ["Other hours", nonBillableHours, setNonBillableHours, "h"],
-          ].map(([label, value, setter, suffix]) => (
-            <label key={label as string} className="space-y-2 text-xs text-neutral-400">
-              <span>{label as string}</span>
-              <div className="flex items-center rounded-xl border border-neutral-800 bg-neutral-950/70 px-3 focus-within:border-emerald-500/60">
-                <span className="text-neutral-500">{suffix as string}</span>
-                <input
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={value as number}
-                  onChange={(event) => (setter as (value: number) => void)(Math.max(0, Number(event.target.value) || 0))}
-                  className="w-full bg-transparent px-2 py-3 text-sm text-white outline-none"
-                />
-              </div>
-            </label>
-          ))}
-        </div>
-        <div className="mt-6 flex flex-col items-center justify-between gap-4 rounded-xl border border-emerald-500/20 bg-emerald-950/20 p-5 sm:flex-row">
-          <div>
-            <div className="text-xs text-neutral-400">Effective hourly rate</div>
-            <div className="mt-1 font-mono text-3xl font-bold text-emerald-300">
-              ${effectiveRate.toFixed(2)}
+        <div className="mt-8 grid gap-4 sm:grid-cols-[1.35fr_1fr]">
+          <label className="space-y-2 text-xs text-neutral-400">
+            <span>Activity</span>
+            <select
+              value={activity}
+              onChange={(event) => setActivity(event.target.value as ActivityKey)}
+              className="w-full rounded-xl border border-neutral-800 bg-neutral-950/70 px-3 py-3 text-sm text-white outline-none focus:border-emerald-500/60"
+            >
+              {Object.entries(activities).map(([key, item]) => (
+                <option key={key} value={key}>{item.label}</option>
+              ))}
+            </select>
+          </label>
+          <label className="space-y-2 text-xs text-neutral-400">
+            <span>Measured amount</span>
+            <div className="flex items-center rounded-xl border border-neutral-800 bg-neutral-950/70 px-3 focus-within:border-emerald-500/60">
+              <input
+                type="number"
+                min="0"
+                step="1"
+                value={activityAmount}
+                onChange={(event) => setActivityAmount(Math.max(0, Number(event.target.value) || 0))}
+                className="w-full bg-transparent py-3 text-sm text-white outline-none"
+              />
+              <span className="text-neutral-500">{selectedActivity.unit}</span>
             </div>
+          </label>
+        </div>
+        <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-xl border border-emerald-500/20 bg-emerald-950/20 p-5 sm:flex-row sm:items-center">
+          <div>
+            <div className="text-xs text-neutral-400">Mapped SDG contribution</div>
+            <div className="mt-1 text-sm font-semibold text-emerald-300">{selectedActivity.sdg}</div>
           </div>
-          <div className="text-right text-xs text-neutral-400">
-            <div>${revenue.toFixed(2)} revenue ÷ {totalHours.toFixed(1)} total hours</div>
-            <div className="mt-1 text-neutral-500">A transparent estimate, not financial advice.</div>
+          <div className="text-left sm:text-right">
+            <div className="font-mono text-2xl font-bold text-white">{contribution.toFixed(1)}</div>
+            <div className="text-xs text-neutral-400">{selectedActivity.outcome}</div>
           </div>
         </div>
+        <p className="mt-4 text-center text-[11px] leading-relaxed text-neutral-500">
+          Illustrative conversion for exploration. Verified impact depends on
+          methodology, baseline, geography, and supporting evidence.
+        </p>
       </section>
 
       {/* Visual Telemetry Architecture Diagram */}
