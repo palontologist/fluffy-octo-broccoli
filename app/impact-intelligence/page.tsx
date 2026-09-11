@@ -44,7 +44,7 @@ export default function ImpactIntelligencePage() {
                 : "text-neutral-400 hover:text-white"
             }`}
           >
-            Part II: dMRV &amp; Sovereign Data
+            Part II: Trust &amp; Transparency
           </button>
           <button
             onClick={() => setActiveEdition("part1")}
@@ -54,7 +54,7 @@ export default function ImpactIntelligencePage() {
                 : "text-neutral-400 hover:text-white"
             }`}
           >
-            Part I: The Great Reallocation
+            Part I: The Rise of Impact Investment
           </button>
         </div>
 
@@ -105,15 +105,23 @@ export default function ImpactIntelligencePage() {
               </div>
 
               <div className="pt-4 border-t border-neutral-800 flex flex-wrap items-center justify-between gap-4">
-                <a
-                  href="https://www.linkedin.com/pulse/death-performative-impact-frontforumfocus-wgbsf/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-semibold text-xs transition-colors"
-                >
-                  Read &amp; Discuss on LinkedIn ↗
-                </a>
-                <span className="text-xs font-mono text-neutral-500">Edition 3 of 3 • Series Complete</span>
+                <div className="flex flex-wrap items-center gap-4">
+                  <Link
+                    href="/impact-intelligence/articles/death-of-performative-impact"
+                    className="px-5 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-semibold text-xs transition-colors"
+                  >
+                    Read the full article →
+                  </Link>
+                  <a
+                    href="https://www.linkedin.com/pulse/death-performative-impact-frontforumfocus-wgbsf/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs font-mono text-emerald-400 hover:underline"
+                  >
+                    Discuss on LinkedIn ↗
+                  </a>
+                </div>
+                <span className="text-xs font-mono text-neutral-500">May 20, 2026 • Series Complete</span>
               </div>
             </div>
           )}
@@ -123,42 +131,36 @@ export default function ImpactIntelligencePage() {
               <div className="space-y-2 border-b border-neutral-800 pb-6">
                 <div className="flex items-center justify-between text-xs font-mono text-teal-400 uppercase tracking-wider">
                   <span>Impact Intelligence • Part II</span>
-                  <span>Technical &amp; Data Layer</span>
+                  <span>The Trust Series</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-serif text-white font-normal pt-2">
-                  dMRV &amp; The Sovereign Data Layer
+                  Where will trust actually be built in 2030 and who gets to shape it?
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-400 italic">
-                  How on-device AI and edge IoT replace manual ESG consulting bottlenecks.
+                  Edition 2 of our trust series.
                 </p>
               </div>
 
               <div className="space-y-6 text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
                 <p>
-                  The bottleneck in climate finance has never been capital deployment alone; it has been the verification gap. When a solar mini-grid generates 100 MWh in rural Kenya, verifying that generation for international carbon buyers historically required an auditor on an airplane with a clipboard months after the fact.
+                  We used to think of brand-building as a straight path: tell the story, sell the promise, collect the growth. That line is bending.
                 </p>
                 <p>
-                  Part II explores how edge intelligence transforms this dynamic. By running micro-models (LiteRT / sub-3B micro-LLMs) directly on smart inverters and field mobile devices, telemetry is validated at the edge before syncing to cloud registries.
+                  In a world where new products appear hourly and distribution is almost infinite, the scarce resource is not attention anymore—it is belief and trust. Both are earned inside communities that can see the work, test the claims, and talk to each other while they do it.
                 </p>
-                
-                <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-950/60 font-mono text-xs text-neutral-300 space-y-2">
-                  <div className="text-emerald-400">// The dMRV Pipeline Architecture</div>
-                  <div>[Solar Inverter / Microgrid] → (Modbus RS485) → [Greta Engine] → (UN SDG Mapping) → [Audit-Ready Registry API]</div>
-                </div>
-
                 <p>
-                  The result is zero-latency verification and carbon credits that trade at a 2x–5x premium because their provenance is unassailable.
+                  This edition explores how online communities, physical gatherings, transparent processes, and shared practice are becoming the architecture of trust.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-neutral-800 flex items-center justify-between">
-                <button
-                  onClick={() => setActiveEdition("final")}
+                <Link
+                  href="/impact-intelligence/articles/where-will-trust-be-built-2030"
                   className="text-xs font-mono text-emerald-400 hover:underline"
                 >
-                  Next: Read Final Edition →
-                </button>
-                <span className="text-xs font-mono text-neutral-500">Edition 2 of 3</span>
+                  Read the full Part II article →
+                </Link>
+                <span className="text-xs font-mono text-neutral-500">Feb 18, 2026</span>
               </div>
             </div>
           )}
@@ -168,36 +170,36 @@ export default function ImpactIntelligencePage() {
               <div className="space-y-2 border-b border-neutral-800 pb-6">
                 <div className="flex items-center justify-between text-xs font-mono text-cyan-400 uppercase tracking-wider">
                   <span>Impact Intelligence • Part I</span>
-                  <span>Macroeconomic Shift</span>
+                  <span>The Trust Series</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-serif text-white font-normal pt-2">
-                  The Great Reallocation
+                  The Rise of Impact Investment: What Does Trust Really Mean?
                 </h2>
                 <p className="text-sm sm:text-base text-neutral-400 italic">
-                  Capital moving from corporate pledges to physical energy and sovereign capabilities.
+                  Welcome to the new era of Impact. We&apos;ve opened the door and guess what? Proof&apos;s inside.
                 </p>
               </div>
 
               <div className="space-y-6 text-sm sm:text-base text-neutral-300 leading-relaxed font-light">
                 <p>
-                  In the opening installment of Impact Intelligence, we examined the macro capital rotation. The era of low interest rates permitted companies to spend heavily on symbolic CSR. But as capital costs rose and climate events accelerated, institutional LPs demanded tangible, cash-flow-generative infrastructure.
+                  This is the first edition of our limited 3-part series exploring the changing role of trust in the impact economy.
                 </p>
                 <p>
-                  Clean energy, decentralized microgrids, local manufacturing, and verifiable data infrastructure became the core recipients of global blended finance.
+                  The central premise is that a mere statement of purpose is no longer sufficient to drive results; verifiability has emerged as the definitive differentiator.
                 </p>
                 <p>
-                  Part I sets the foundation: impact is not an expense line item; it is the most lucrative operational infrastructure of the next century.
+                  Impact, when measurable, becomes strategic. Trust, when verifiable, becomes investable.
                 </p>
               </div>
 
               <div className="pt-4 border-t border-neutral-800 flex items-center justify-between">
-                <button
-                  onClick={() => setActiveEdition("part2")}
+                <Link
+                  href="/impact-intelligence/articles/rise-of-impact-investment"
                   className="text-xs font-mono text-emerald-400 hover:underline"
                 >
-                  Next: Read Part II →
-                </button>
-                <span className="text-xs font-mono text-neutral-500">Edition 1 of 3</span>
+                  Read the full Part I article →
+                </Link>
+                <span className="text-xs font-mono text-neutral-500">Aug 02, 2025</span>
               </div>
             </div>
           )}

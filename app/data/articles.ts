@@ -19,6 +19,16 @@ export const articles = [
     excerpt:
       "We used to think of brand-building as a straight path: tell the story, sell the promise, collect the growth. That line is bending. In a world where new products appear hourly, the scarce resource isn't attention anymore—it's belief and trust.",
   },
+  {
+    slug: "death-of-performative-impact",
+    title: "The Death of Performative Impact",
+    subtitle: "Why resilience, sovereignty, and infrastructure became the new language of impact in 2026.",
+    date: "May 20, 2026",
+    series: "Edition 3 of 3, The Trust Series",
+    authors: "FrontForumFocus",
+    excerpt:
+      "Impact is moving from narrative and disclosure into the operating systems of energy, compute, people, and physical infrastructure.",
+  },
 ] as const;
 
 export type ArticleSlug = (typeof articles)[number]["slug"];

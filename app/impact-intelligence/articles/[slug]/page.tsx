@@ -3,17 +3,13 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Article1 } from "@/app/components/articles/Article1";
 import { Article2 } from "@/app/components/articles/Article2";
+import { Article3 } from "@/app/components/articles/Article3";
 import { ArticleLayout } from "@/app/components/ArticleLayout";
-import { calculateReadingTime, formatReadingTime } from "@/app/components/ReadingTime";
 
 const articleComponents: Record<ArticleSlug, React.ComponentType> = {
   "rise-of-impact-investment": Article1,
   "where-will-trust-be-built-2030": Article2,
-};
-
-const articleContent: Record<ArticleSlug, string> = {
-  "rise-of-impact-investment": "Article content...",
-  "where-will-trust-be-built-2030": "Article content...",
+  "death-of-performative-impact": Article3,
 };
 
 export function generateStaticParams() {
