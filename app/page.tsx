@@ -16,10 +16,10 @@ export default function Home() {
   const contribution = activityAmount * selectedActivity.coefficient;
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-start px-6 pt-32 pb-32 selection:bg-neutral-800 selection:text-white font-sans antialiased">
+    <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-start px-6 pt-20 pb-32 selection:bg-neutral-800 selection:text-white font-sans antialiased">
       
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[calc(100vh-8rem)] w-full max-w-6xl items-center overflow-hidden rounded-[2rem] border border-neutral-800/80 bg-neutral-900 shadow-2xl">
+      <section className="relative isolate flex min-h-[calc(100vh-5rem)] w-full max-w-6xl items-center justify-center overflow-hidden rounded-[2rem] border border-neutral-800/80 bg-neutral-900 shadow-2xl">
         <iframe
           src="https://player.mux.com/LnNXvJqpq6Q9bZ02uChMl6Ib16DHbaeLs9nO5kOP7bQ00?autoplay=true&muted=true&loop=true&controls=false"
           title="FrontForumFocus brand film"
@@ -28,7 +28,7 @@ export default function Home() {
           aria-hidden="true"
         />
         <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.16),transparent_45%),linear-gradient(90deg,rgba(10,10,10,0.98),rgba(10,10,10,0.7),rgba(10,10,10,0.86))]" />
-        <div className="relative z-10 flex min-h-[560px] flex-col items-center justify-center px-6 py-20 text-center sm:px-12">
+        <div className="relative z-10 flex min-h-[560px] w-full flex-col items-center justify-center px-6 py-20 text-center sm:px-12">
           <h1 className="max-w-4xl font-serif text-3xl font-normal leading-[1.08] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
             Turn clean energy data into
             <br />
