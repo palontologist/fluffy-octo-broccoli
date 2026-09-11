@@ -41,10 +41,12 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-8">
             <Link
-              href="mailto:george.karani@startupgrind.com?subject=Greta%20Telemetry%20Pilot"
+              href="https://cal.com/georgeka/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
             >
-              Connect Your Telemetry →
+              Book a demo →
             </Link>
             <Link
               href="/products"
@@ -108,6 +110,31 @@ export default function Home() {
           Illustrative conversion for exploration. Verified impact depends on
           methodology, baseline, geography, and supporting evidence.
         </p>
+      </section>
+
+      <section className="mt-20 w-full max-w-3xl space-y-4">
+        <div className="space-y-2 text-center">
+          <div className="text-xs font-mono uppercase tracking-wider text-emerald-400">Questions, answered</div>
+          <h2 className="font-serif text-2xl text-white sm:text-3xl">Frequently asked questions</h2>
+        </div>
+        <div className="divide-y divide-neutral-800/80 rounded-2xl border border-neutral-800/80 bg-neutral-900/30">
+          {[
+            ["What is Greta?", "Greta turns activity and telemetry data into measurable impact signals, including SDG mappings and evidence-ready reports."],
+            ["Who is the pilot for?", "The pilot is designed for clean-energy developers, microgrid operators, and organizations that need reliable impact evidence."],
+            ["How does the impact calculator work?", "It maps a measured activity to an SDG and applies an illustrative conversion. Verified results require an agreed methodology, baseline, geography, and supporting evidence."],
+            ["Can I see a demo before sharing data?", "Yes. Book a 30-minute call and we can walk through the workflow before discussing a pilot or integration."],
+          ].map(([question, answer]) => (
+            <details key={question} className="group p-5">
+              <summary className="cursor-pointer list-none pr-6 text-sm font-medium text-white marker:hidden">
+                <span className="flex items-center justify-between gap-4">
+                  {question}
+                  <span className="text-lg text-emerald-400 transition-transform group-open:rotate-45">+</span>
+                </span>
+              </summary>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-neutral-400">{answer}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
       {/* Visual Telemetry Architecture Diagram */}
@@ -194,10 +221,12 @@ export default function Home() {
               </ul>
             </div>
             <Link
-              href="mailto:george.karani@startupgrind.com?subject=Starter%20Pilot%20Inquiry"
+              href="https://cal.com/georgeka/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-2 rounded-lg border border-neutral-700 bg-neutral-800 hover:bg-neutral-700 text-center text-xs font-medium text-white transition-colors"
             >
-              Start Pilot
+              Book a demo
             </Link>
           </div>
 
@@ -214,10 +243,12 @@ export default function Home() {
               </ul>
             </div>
             <Link
-              href="mailto:george.karani@startupgrind.com?subject=Commercial%20Developer%20Inquiry"
+              href="https://cal.com/georgeka/30min?overlayCalendar=true"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-center text-xs font-semibold text-neutral-950 transition-colors"
             >
-              Deploy Fleet
+              Book a demo
             </Link>
           </div>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Newsreader } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import { Footer } from "./components/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const newsreader = Newsreader({
@@ -38,6 +39,7 @@ export default function RootLayout({
       <body className={`${inter.variable} ${newsreader.variable} bg-neutral-950 text-neutral-100 antialiased selection:bg-emerald-500 selection:text-black`}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
