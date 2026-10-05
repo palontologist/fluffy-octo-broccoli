@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useScrollReveal } from "../components/useScrollReveal";
+import { TrackedCta } from "../components/TrackedCta";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -124,14 +125,15 @@ export default function ForFoundersPage() {
           >
             View All Products
           </Link>
-          <a
+          <TrackedCta
             href={CAL_DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            label="Book a Demo"
+            location="for_founders:hero"
+            kind="demo_booking"
             className="cta-button inline-flex items-center rounded-lg border border-zinc-600 bg-transparent px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
           >
             Book a Demo
-          </a>
+          </TrackedCta>
         </div>
       </div>
     </main>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { EmailSubscribe } from "./EmailSubscribe";
+import { TrackedCta } from "./TrackedCta";
 
 export function Footer() {
   return (
@@ -18,14 +19,15 @@ export function Footer() {
               The intelligence layer for measurable impact, verifiable
               infrastructure, and the people building what matters.
             </p>
-            <a
+            <TrackedCta
               href="https://cal.com/georgeka/30min?overlayCalendar=true"
-              target="_blank"
-              rel="noopener noreferrer"
+              label="Book a demo"
+              location="footer:brand_block"
+              kind="demo_booking"
               className="inline-flex rounded-full border border-emerald-500/40 px-4 py-2 text-xs font-medium text-emerald-300 transition-colors hover:bg-emerald-500/10"
             >
               Book a demo
-            </a>
+            </TrackedCta>
           </div>
           <EmailSubscribe />
         </div>
@@ -51,8 +53,8 @@ export function Footer() {
           </div>
           <div className="space-y-3">
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">Start</h2>
-            <a className="block text-neutral-400 hover:text-white" href="https://cal.com/georgeka/30min?overlayCalendar=true" target="_blank" rel="noopener noreferrer">Book a demo</a>
-            <a className="block text-neutral-400 hover:text-white" href="https://greta.frontforumfocus.com" target="_blank" rel="noopener noreferrer">Open Greta</a>
+            <TrackedCta className="block text-neutral-400 hover:text-white" href="https://cal.com/georgeka/30min?overlayCalendar=true" label="Book a demo" location="footer:start_column" kind="demo_booking">Book a demo</TrackedCta>
+            <TrackedCta className="block text-neutral-400 hover:text-white" href="https://greta.frontforumfocus.com" label="Open Greta" location="footer:start_column" kind="product">Open Greta</TrackedCta>
           </div>
         </div>
 

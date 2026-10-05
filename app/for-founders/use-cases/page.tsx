@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { TrackedCta } from "../../components/TrackedCta";
 
 const GRETA_APP_URL = "https://greta.frontforumfocus.com";
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
@@ -131,14 +132,15 @@ export default function ForFoundersUseCasesPage() {
           >
             Get Your Verdict
           </a>
-          <a
+          <TrackedCta
             href={CAL_DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            label="Book a demo"
+            location="for_founders:use_cases"
+            kind="demo_booking"
             className="inline-flex items-center rounded-lg border border-zinc-600 px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
           >
             Book a demo
-          </a>
+          </TrackedCta>
         </div>
       </div>
     </main>
