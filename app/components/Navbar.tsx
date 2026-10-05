@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { TrackedCta } from "./TrackedCta";
+
+const GET_STARTED_HREF = "/products";
+const GET_STARTED_LABEL = "Get started";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -45,6 +49,15 @@ export default function Navbar() {
               const isActive = pathname === link.href;
               return <Link key={link.href} href={link.href} className={`rounded-full px-2.5 py-1 transition-all duration-150 ${isActive ? "bg-neutral-800 font-medium text-emerald-400" : "text-neutral-400 hover:text-white"}`}>{link.label}</Link>;
             })}
+            <TrackedCta
+              href={GET_STARTED_HREF}
+              label={GET_STARTED_LABEL}
+              location="navbar:desktop"
+              kind="product"
+              className="ml-1 rounded-full bg-emerald-500 px-3 py-1 font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
+            >
+              {GET_STARTED_LABEL}
+            </TrackedCta>
           </div>
         </div>
         {isOpen && (
@@ -53,6 +66,16 @@ export default function Navbar() {
               const isActive = pathname === link.href;
               return <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`rounded-xl px-3 py-2.5 text-sm ${isActive ? "bg-neutral-800 font-medium text-emerald-400" : "text-neutral-300 hover:bg-neutral-800"}`}>{link.label}</Link>;
             })}
+            <TrackedCta
+              href={GET_STARTED_HREF}
+              label={GET_STARTED_LABEL}
+              location="navbar:mobile_menu"
+              kind="product"
+              onClick={() => setIsOpen(false)}
+              className="mt-1 rounded-xl bg-emerald-500 px-3 py-2.5 text-center text-sm font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
+            >
+              {GET_STARTED_LABEL}
+            </TrackedCta>
           </div>
         )}
       </nav>

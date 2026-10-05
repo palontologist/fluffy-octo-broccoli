@@ -1,6 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import {
+  trackLeadFailed,
+  trackLeadSubmitted,
+  trackLeadSucceeded,
+} from "@/app/lib/analytics";
+
+function currentSource() {
+  if (typeof window === "undefined") return "newsletter";
+  return window.location.pathname.replace(/^\//, "").replace(/\//g, "_") || "home";
+}
 
 export function EmailSubscribe() {
   const [email, setEmail] = useState("");
@@ -11,14 +21,21 @@ export function EmailSubscribe() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email.trim()) return;
+    const submitted = email;
+    const source = currentSource();
     setStatus("loading");
+    trackLeadSubmitted(submitted, source);
     try {
-      const res = await fetch("/api/subscribe", {
+      const res = await fetch(`/api/subscribe?source=${encodeURIComponent(source)}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email: submitted }),
       });
-      if (!res.ok) throw new Error("Subscribe failed");
+      if (!res.ok) {
+        trackLeadFailed(submitted, source, res.status);
+        throw new Error("Subscribe failed");
+      }
+      trackLeadSucceeded(submitted, source);
       setStatus("success");
       setEmail("");
     } catch {

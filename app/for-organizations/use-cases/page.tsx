@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { TrackedCta } from "../../components/TrackedCta";
 
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
@@ -131,14 +132,15 @@ export default function ForOrganizationsUseCasesPage() {
         </section>
 
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
-          <a
+          <TrackedCta
             href={CAL_DEMO_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            label="Book a demo"
+            location="for_organizations:use_cases"
+            kind="demo_booking"
             className="inline-flex items-center rounded-lg border border-zinc-600 bg-zinc-800/60 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:border-zinc-500 hover:bg-zinc-800"
           >
             Book a demo
-          </a>
+          </TrackedCta>
           <Link
             href="/for-organizations"
             className="font-sans text-sm text-zinc-400 underline hover:text-white"

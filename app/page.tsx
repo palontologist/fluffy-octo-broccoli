@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { TrackedCta } from "./components/TrackedCta";
+import { trackCalculatorAdjusted } from "./lib/analytics";
 
 export default function Home() {
   const activities = {
@@ -14,6 +16,19 @@ export default function Home() {
   const [activityAmount, setActivityAmount] = useState(45);
   const selectedActivity = activities[activity];
   const contribution = activityAmount * selectedActivity.coefficient;
+
+  const lastTracked = useRef<string>("");
+  useEffect(() => {
+    const key = `${activity}:${activityAmount}`;
+    if (key === lastTracked.current) return;
+    lastTracked.current = key;
+    trackCalculatorAdjusted({
+      activity,
+      amount: activityAmount,
+      contribution,
+      sdg: selectedActivity.sdg,
+    });
+  }, [activity, activityAmount, contribution, selectedActivity.sdg]);
 
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-start px-6 pt-20 pb-32 selection:bg-neutral-800 selection:text-white font-sans antialiased">
@@ -40,20 +55,24 @@ export default function Home() {
             pricing.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-8">
-            <Link
+            <TrackedCta
               href="https://cal.com/georgeka/30min?overlayCalendar=true"
-              target="_blank"
-              rel="noopener noreferrer"
+              label="Book a demo"
+              location="homepage:hero"
+              kind="demo_booking"
               className="rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
             >
               Book a demo →
-            </Link>
-            <Link
+            </TrackedCta>
+            <TrackedCta
               href="/products"
+              label="Explore Greta App"
+              location="homepage:hero"
+              kind="product"
               className="rounded-full border border-neutral-600/80 bg-neutral-950/50 px-5 py-2.5 text-xs font-medium text-neutral-100 transition-all duration-150 hover:bg-neutral-800 sm:text-sm"
             >
               Explore Greta App
-            </Link>
+            </TrackedCta>
           </div>
         </div>
       </section>
@@ -220,14 +239,15 @@ export default function Home() {
                 <li>✓ Monthly PDF audit reports</li>
               </ul>
             </div>
-            <Link
+            <TrackedCta
               href="https://cal.com/georgeka/30min?overlayCalendar=true"
-              target="_blank"
-              rel="noopener noreferrer"
+              label="Book a demo"
+              location="homepage:pricing:starter_pilot"
+              kind="demo_booking"
               className="w-full py-2 rounded-lg border border-neutral-700 bg-neutral-800 hover:bg-neutral-700 text-center text-xs font-medium text-white transition-colors"
             >
               Book a demo
-            </Link>
+            </TrackedCta>
           </div>
 
           <div className="p-5 rounded-xl border border-emerald-500/40 bg-emerald-950/20 flex flex-col justify-between space-y-4 relative shadow-lg shadow-emerald-950/20">
@@ -242,14 +262,15 @@ export default function Home() {
                 <li>✓ $0.05 / MWh verified</li>
               </ul>
             </div>
-            <Link
+            <TrackedCta
               href="https://cal.com/georgeka/30min?overlayCalendar=true"
-              target="_blank"
-              rel="noopener noreferrer"
+              label="Book a demo"
+              location="homepage:pricing:commercial_developer"
+              kind="demo_booking"
               className="w-full py-2 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-center text-xs font-semibold text-neutral-950 transition-colors"
             >
               Book a demo
-            </Link>
+            </TrackedCta>
           </div>
 
           <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/30 flex flex-col justify-between space-y-4">
