@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TrackedCta } from "../../components/TrackedCta";
 
-const GRETA_APP_URL = "https://greta.frontforumfocus.com";
+const GRETA_APP_URL = "/impact-brain.apk";
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForFoundersUseCasesPage() {
@@ -16,7 +16,7 @@ export default function ForFoundersUseCasesPage() {
         </Link>
 
         <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl">
-          Greta for Founders
+          Impact Brain for Founders
         </h1>
         <p className="font-sans mt-4 text-zinc-400">
           Track your activities against your Life Mission and get The Verdict — 
@@ -26,7 +26,7 @@ export default function ForFoundersUseCasesPage() {
         {/* How it works */}
         <section className="mt-16">
           <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
-            How Greta works
+            How Impact Brain works
           </h2>
           <div className="mt-8 grid gap-8 md:grid-cols-3">
             <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
@@ -48,7 +48,7 @@ export default function ForFoundersUseCasesPage() {
                 Track Activities
               </h3>
               <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Log your daily work — meetings, building, fundraising, admin — and let Greta analyze it.
+                Log your daily work — meetings, building, fundraising, admin — and let Impact Brain analyze it.
               </p>
             </div>
             <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
@@ -100,7 +100,7 @@ export default function ForFoundersUseCasesPage() {
                 Value over Noise
               </h3>
               <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Greta isn't a productivity app — it's an impact instrument. Focus on quality, not just quantity.
+                Impact Brain isn't a productivity app — it's an impact instrument. Focus on quality, not just quantity.
               </p>
             </div>
           </div>
@@ -126,11 +126,10 @@ export default function ForFoundersUseCasesPage() {
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
           <a
             href={GRETA_APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
-            Get Your Verdict
+            Download Impact Brain
           </a>
           <TrackedCta
             href={CAL_DEMO_URL}

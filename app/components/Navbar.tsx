@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TrackedCta } from "./TrackedCta";
 
-const GET_STARTED_HREF = "/products";
+const GET_STARTED_HREF = "/impact-brain.apk";
 const GET_STARTED_LABEL = "Get started";
 
 export default function Navbar() {
@@ -16,8 +16,8 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
     { href: "/community", label: "Community" },
+    { href: "/podcasts", label: "Podcasts" },
     { href: "/impact-intelligence", label: "Impact Intelligence" },
-    { href: "/team", label: "Team" },
   ];
 
   return (
@@ -54,6 +54,7 @@ export default function Navbar() {
               label={GET_STARTED_LABEL}
               location="navbar:desktop"
               kind="product"
+              download
               className="ml-1 rounded-full bg-emerald-500 px-3 py-1 font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}
@@ -71,6 +72,7 @@ export default function Navbar() {
               label={GET_STARTED_LABEL}
               location="navbar:mobile_menu"
               kind="product"
+              download
               onClick={() => setIsOpen(false)}
               className="mt-1 rounded-xl bg-emerald-500 px-3 py-2.5 text-center text-sm font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >

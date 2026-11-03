@@ -10,7 +10,7 @@ import { TrackedCta } from "../components/TrackedCta";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GRETA_APP_URL = "https://greta.frontforumfocus.com";
+const GRETA_APP_URL = "/impact-brain.apk";
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForFoundersPage() {
@@ -69,7 +69,7 @@ export default function ForFoundersPage() {
             For Founders
           </h1>
           <p className="font-sans mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 animate-on-scroll">
-            Greta helps freelancers and founders understand their real effective hourly rate.
+            Impact Brain helps freelancers and founders understand their real effective hourly rate.
             Enter your rate and hours spent on meetings and emails—get instant clarity on what you're actually earning.
           </p>
         </section>
@@ -79,7 +79,7 @@ export default function ForFoundersPage() {
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/n.png"
-                alt="Greta – Enter your rate"
+                alt="Impact Brain – Enter your rate"
                 fill
                 className="object-cover object-top"
                 sizes="280px"
@@ -90,7 +90,7 @@ export default function ForFoundersPage() {
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/nn.png"
-                alt="Greta – Track your hours"
+                alt="Impact Brain – Track your hours"
                 fill
                 className="object-cover object-top"
                 sizes="280px"
@@ -101,7 +101,7 @@ export default function ForFoundersPage() {
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/screenshot.png"
-                alt="Greta – See your effective rate"
+                alt="Impact Brain – See your effective rate"
                 fill
                 className="object-cover object-top"
                 sizes="280px"
@@ -113,11 +113,10 @@ export default function ForFoundersPage() {
         <div className="cta-group mt-12 flex flex-wrap items-center justify-center gap-4">
           <a
             href={GRETA_APP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             className="cta-button inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
-            Try Greta Free
+            Download Impact Brain
           </a>
           <Link
             href="/products"

@@ -9,6 +9,7 @@ type TrackedCtaProps = {
   location: string;
   kind?: CtaKind;
   className?: string;
+  download?: boolean;
   onClick?: () => void;
   children: React.ReactNode;
 };
@@ -24,6 +25,7 @@ export function TrackedCta({
   location,
   kind,
   className,
+  download,
   onClick,
   children,
 }: TrackedCtaProps) {
@@ -39,6 +41,21 @@ export function TrackedCta({
         href={href}
         target="_blank"
         rel="noopener noreferrer"
+        download={download}
+        onClick={handleClick}
+        className={className}
+        data-analytics="cta"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  if (download) {
+    return (
+      <a
+        href={href}
+        download
         onClick={handleClick}
         className={className}
         data-analytics="cta"

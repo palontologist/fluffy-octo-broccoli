@@ -20,8 +20,8 @@ export default function UseCasesHubPage() {
               For Founders
             </h2>
             <p className="font-sans mt-2 text-sm text-zinc-400">
-              How Greta works: connect your calendar, get AI-powered insights,
-              and see your mission alignment. Try Greta free or book a demo.
+              How Impact Brain works: connect your calendar, get AI-powered insights,
+              and see your mission alignment. Try Impact Brain free or book a demo.
             </p>
             <span className="font-sans mt-4 inline-block text-sm font-medium text-emerald-400">
               View founder use cases →

@@ -15,16 +15,16 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "FrontForumFocus | The Verifiable Impact Layer",
-  description: "Connect solar inverters, microgrids, and field contributors. Automate dMRV, eliminate audit lag, and capture premium credit pricing.",
+  title: "Impact Brain | Turn what you did into proof",
+  description: "Impact Brain scores any activity across the 17 UN SDGs. Type what you did, get its impact. Runs on your phone.",
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
     apple: "/logo.svg",
   },
   openGraph: {
-    title: "FrontForumFocus | The Verifiable Impact Layer",
-    description: "Automated dMRV and verifiable ground-truth telemetry for clean energy assets.",
+    title: "Impact Brain | Turn what you did into proof",
+    description: "Impact Brain scores any activity across the 17 UN SDGs. Runs on your phone.",
     images: ["/logo.svg"],
   },
 };

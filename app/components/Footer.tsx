@@ -37,13 +37,14 @@ export function Footer() {
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">Explore</h2>
             <Link className="block text-neutral-400 hover:text-white" href="/products">Products</Link>
             <Link className="block text-neutral-400 hover:text-white" href="/community">Community</Link>
+            <Link className="block text-neutral-400 hover:text-white" href="/podcasts">Podcasts</Link>
             <Link className="block text-neutral-400 hover:text-white" href="/impact-intelligence">Impact Intelligence</Link>
           </div>
           <div className="space-y-3">
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">For</h2>
             <Link className="block text-neutral-400 hover:text-white" href="/for-founders">Founders</Link>
-            <Link className="block text-neutral-400 hover:text-white" href="/for-organizations">Organizations</Link>
-            <Link className="block text-neutral-400 hover:text-white" href="/team">Team</Link>
+
+
           </div>
           <div className="space-y-3">
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">Connect</h2>
@@ -54,7 +55,7 @@ export function Footer() {
           <div className="space-y-3">
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">Start</h2>
             <TrackedCta className="block text-neutral-400 hover:text-white" href="https://cal.com/georgeka/30min?overlayCalendar=true" label="Book a demo" location="footer:start_column" kind="demo_booking">Book a demo</TrackedCta>
-            <TrackedCta className="block text-neutral-400 hover:text-white" href="https://greta.frontforumfocus.com" label="Open Greta" location="footer:start_column" kind="product">Open Greta</TrackedCta>
+            <TrackedCta className="block text-neutral-400 hover:text-white" href="/products" label="Open Impact Brain" location="footer:start_column" kind="product">Open Impact Brain</TrackedCta>
           </div>
         </div>
 

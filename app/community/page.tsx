@@ -40,21 +40,22 @@ export default function CommunityPage() {
             </Link>
           </div>
 
-          {/* Card 2: Greta Field Contributors */}
+          {/* Card 2: Impact Brain Field Contributors */}
           <div className="p-6 rounded-2xl border border-emerald-500/30 bg-emerald-950/20 space-y-4 flex flex-col justify-between shadow-lg shadow-emerald-950/30">
             <div className="space-y-3">
               <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">02. Ground-Truth Data</div>
-              <h3 className="text-xl font-semibold text-white">Greta Contributors</h3>
+              <h3 className="text-xl font-semibold text-white">Impact Brain Contributors</h3>
               <p className="text-xs text-neutral-300 leading-relaxed">
-                Log real-world sustainability actions (e-waste, solar, clean transport) through the Greta APK. Earn verified impact points redeemable for mobile airtime and rewards.
+                Log real-world sustainability actions (e-waste, solar, clean transport) through the Impact Brain APK. Earn verified impact points redeemable for mobile airtime and rewards.
               </p>
             </div>
-            <Link
-              href="mailto:george.karani@startupgrind.com?subject=Greta%20APK%20Beta%20Tester"
+            <a
+              href="/impact-brain.apk"
+              download
               className="w-full py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-center text-xs font-semibold text-neutral-950 transition-colors"
             >
-              Get Greta APK (Beta) →
-            </Link>
+              Get Impact Brain APK (Beta) →
+            </a>
           </div>
 
           {/* Card 3: Impact Founders & Pitch Nights */}

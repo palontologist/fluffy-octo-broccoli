@@ -4,11 +4,13 @@ import { podcastEpisodes } from "@/app/data/podcast-episodes";
 
 function EpisodeCard({
   id,
+  youtubeId,
   title,
   guest,
   description,
 }: {
   id: string;
+  youtubeId?: string;
   title: string;
   guest: string;
   description: string;
@@ -17,7 +19,7 @@ function EpisodeCard({
     <div className="flex-shrink-0 w-[320px] rounded-xl border border-zinc-700/50 bg-zinc-900/80 overflow-hidden transition-all hover:border-zinc-500">
       <div className="relative aspect-video bg-black">
         <iframe
-          src={`https://www.youtube.com/embed/${id}?autoplay=0`}
+          src={`https://www.youtube.com/embed/${youtubeId || id}?autoplay=0`}
           title={title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
@@ -49,6 +51,7 @@ export function PodcastCarousel() {
             <EpisodeCard
               key={`${ep.id}-${i}`}
               id={ep.id}
+              youtubeId={ep.youtubeId}
               title={ep.title}
               guest={ep.guest}
               description={ep.description}

@@ -8,18 +8,18 @@ import { useScrollReveal } from "../../components/useScrollReveal";
 gsap.registerPlugin(ScrollTrigger);
 
 
-const GRETA_APP_URL = "https://greta.frontforumfocus.com";
+const GRETA_APP_URL = "/impact-brain.apk";
 
 const features = [
   {
     title: "Know Your Real Rate",
     description:
-      "Enter your hourly rate and billable hours. Greta tracks the time you spend on meetings, emails, and admin. Then it shows you what you're actually earning per hour.",
+      "Enter your hourly rate and billable hours. Impact Brain tracks the time you spend on meetings, emails, and admin. Then it shows you what you're actually earning per hour.",
   },
   {
     title: "Impact Score",
     description:
-      "Track activities aligned with your Life Mission. Greta gives you an Impact Score based on how much of your time goes toward what actually matters to you.",
+      "Track activities aligned with your Life Mission. Impact Brain gives you an Impact Score based on how much of your time goes toward what actually matters to you.",
   },
   {
     title: "Data-Driven Pricing",
@@ -29,7 +29,7 @@ const features = [
   {
     title: "Weekly Calibration",
     description:
-      "A simple weekly check-in. What did you work on? Was it high-impact? Greta helps you spot patterns and optimize where your time goes.",
+      "A simple weekly check-in. What did you work on? Was it high-impact? Impact Brain helps you spot patterns and optimize where your time goes.",
   },
 ];
 
@@ -47,7 +47,7 @@ const howItWorks = [
   {
     step: "03",
     title: "See Your Real Rate",
-    description: "Greta calculates your effective hourly rate after all costs.",
+    description: "Impact Brain calculates your effective hourly rate after all costs.",
   },
   {
     step: "04",
@@ -61,7 +61,7 @@ const tiers = [
     name: "Core",
     price: "$20",
     period: "one-time",
-    description: "The full Greta tool. Calculate your real rate, track your Impact Score, and make data-driven pricing decisions.",
+    description: "The full Impact Brain tool. Calculate your real rate, track your Impact Score, and make data-driven pricing decisions.",
     features: [
       "Real rate calculator",
       "Impact Score tracking",
@@ -92,7 +92,7 @@ const tiers = [
   },
 ];
 
-export default function GretaPage() {
+export default function ImpactBrainPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   useScrollReveal(".animate-on-scroll", { start: "top 80%" });
 
@@ -135,7 +135,7 @@ export default function GretaPage() {
             Now Available
           </div>
           <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl lg:text-5xl">
-            Greta
+            Impact Brain
           </h1>
           <p className="font-sans mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
             The Impact Instrument for changemakers. Know what your work is really worth.
@@ -220,7 +220,7 @@ export default function GretaPage() {
               "Most freelancers don't know what they actually earn. They charge $100/hour, work 40 hours, and think they made $4,000. But after meetings, emails, revisions, and chasing invoices, their real rate is closer to $40."
             </blockquote>
             <p className="mt-4 font-sans text-zinc-400">
-              — The problem Greta solves
+              — The problem Impact Brain solves
             </p>
           </div>
         </section>
@@ -228,7 +228,7 @@ export default function GretaPage() {
         {/* Features */}
         <section className="mt-16">
           <h2 className="font-serif text-2xl font-semibold text-white animate-on-scroll">
-            What Greta Does
+            What Impact Brain Does
           </h2>
           <div className="mt-8 grid gap-6 sm:grid-cols-2">
             {features.map((feature) => (
