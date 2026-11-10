@@ -47,7 +47,7 @@ export default function Home() {
     } catch {
       // ignore
     }
-    window.location.href = "/impact-brain.apk";
+    window.location.href = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
   };
 
   const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Impact Brain?","acceptedAnswer":{"@type":"Answer","text":"Impact Brain turns what you did into a score across the 17 UN SDGs. Type an activity, get its impact. Runs on your phone."}},{"@type":"Question","name":"How does the impact calculator work?","acceptedAnswer":{"@type":"Answer","text":"You type an activity. Impact Brain maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score."}},{"@type":"Question","name":"Why can I trust the calculations?","acceptedAnswer":{"@type":"Answer","text":"Rules are open and inspectable, each SDG has a documented rationale, scores are bounded from -100 to 100, confidence is reported with every result, and it runs on your phone with no cloud black box."}},{"@type":"Question","name":"Who is Impact Brain for?","acceptedAnswer":{"@type":"Answer","text":"Freelancers and founders who want to prove their value, and individual contributors who want to track and grow their impact."}}]};
@@ -84,13 +84,7 @@ export default function Home() {
             >
               Book a demo →
             </TrackedCta>
-            <a
-              href="/impact-brain.apk"
-              download
-              className="rounded-full border border-neutral-600/80 bg-neutral-950/50 px-5 py-2.5 text-xs font-medium text-neutral-100 transition-all duration-150 hover:bg-neutral-800 sm:text-sm"
-            >
-              Get started
-            </a>
+
           </div>
         </div>
       </section>
@@ -181,14 +175,6 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-serif text-white">Download Impact Brain</h2>
           <p className="text-xs text-neutral-400">Free. Runs on your phone. Android APK.</p>
         </div>
-        <a
-          href="/impact-brain.apk"
-          download
-          onClick={handleDownload}
-          className="inline-flex px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-neutral-950 font-semibold text-sm transition-colors"
-        >
-          Download APK →
-        </a>
         <p className="text-xs text-neutral-500">
           {downloadCount === null ? "Loading downloads…" : `${downloadCount} beta download${downloadCount === 1 ? "" : "s"}`}
         </p>

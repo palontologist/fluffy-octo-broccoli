@@ -22,7 +22,7 @@ export default function ProductsPage() {
     } catch {
       // ignore
     }
-    window.location.href = "/impact-brain.apk";
+    window.location.href = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
   };
 
   return (
@@ -136,7 +136,7 @@ export default function ProductsPage() {
         {/* Download */}
         <section className="space-y-4 text-center">
           <a
-            href="/impact-brain.apk"
+            href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk"
             download
             onClick={handleDownload}
             className="inline-flex px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-semibold text-sm transition-colors"

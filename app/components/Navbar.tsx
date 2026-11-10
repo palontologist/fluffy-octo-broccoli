@@ -5,8 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TrackedCta } from "./TrackedCta";
 
-const GET_STARTED_HREF = "/impact-brain.apk";
+const GET_STARTED_HREF = "/waitlist";
 const GET_STARTED_LABEL = "Get started";
+const DOWNLOAD_HREF = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -54,11 +55,18 @@ export default function Navbar() {
               label={GET_STARTED_LABEL}
               location="navbar:desktop"
               kind="product"
-              download
               className="ml-1 rounded-full bg-emerald-500 px-3 py-1 font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}
             </TrackedCta>
+            <a
+              href={DOWNLOAD_HREF}
+              download
+              onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
+              className="ml-1 rounded-full border border-neutral-600/80 bg-neutral-950/50 px-3 py-1 font-medium text-neutral-100 transition-colors hover:bg-neutral-800"
+            >
+              Download
+            </a>
           </div>
         </div>
         {isOpen && (
@@ -72,12 +80,19 @@ export default function Navbar() {
               label={GET_STARTED_LABEL}
               location="navbar:mobile_menu"
               kind="product"
-              download
               onClick={() => setIsOpen(false)}
               className="mt-1 rounded-xl bg-emerald-500 px-3 py-2.5 text-center text-sm font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}
             </TrackedCta>
+            <a
+              href={DOWNLOAD_HREF}
+              download
+              onClick={() => setIsOpen(false)}
+              className="mt-1 rounded-xl border border-neutral-700 bg-neutral-800 px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-neutral-700"
+            >
+              Download APK
+            </a>
           </div>
         )}
       </nav>
