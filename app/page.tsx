@@ -50,9 +50,13 @@ export default function Home() {
     window.location.href = "/impact-brain.apk";
   };
 
+  const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Impact Brain?","acceptedAnswer":{"@type":"Answer","text":"Impact Brain turns what you did into a score across the 17 UN SDGs. Type an activity, get its impact. Runs on your phone."}},{"@type":"Question","name":"How does the impact calculator work?","acceptedAnswer":{"@type":"Answer","text":"You type an activity. Impact Brain maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score."}},{"@type":"Question","name":"Why can I trust the calculations?","acceptedAnswer":{"@type":"Answer","text":"Rules are open and inspectable, each SDG has a documented rationale, scores are bounded from -100 to 100, confidence is reported with every result, and it runs on your phone with no cloud black box."}},{"@type":"Question","name":"Who is Impact Brain for?","acceptedAnswer":{"@type":"Answer","text":"Freelancers and founders who want to prove their value, and individual contributors who want to track and grow their impact."}}]};
+
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col items-center justify-start px-6 pt-20 pb-32 selection:bg-neutral-800 selection:text-white font-sans antialiased">
       
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+
       {/* Hero Section */}
       <section className="relative isolate flex min-h-[calc(100vh-5rem)] w-full max-w-6xl items-center justify-center overflow-hidden rounded-[2rem] border border-neutral-800/80 bg-neutral-900 shadow-2xl">
         <iframe
@@ -153,9 +157,9 @@ export default function Home() {
         <div className="divide-y divide-neutral-800/80 rounded-2xl border border-neutral-800/80 bg-neutral-900/30">
           {[
             ["What is Impact Brain?", "Impact Brain turns what you did into a score across the 17 UN SDGs. Type an activity, get its impact. Runs on your phone."],
-            ["Who is the pilot for?", "The pilot is designed for clean-energy developers, microgrid operators, and organizations that need reliable impact evidence."],
-            ["How does the impact calculator work?", "It maps a measured activity to an SDG and applies an illustrative conversion. Verified results require an agreed methodology, baseline, geography, and supporting evidence."],
-            ["Can I see a demo before sharing data?", "Yes. Book a 30-minute call and we can walk through the workflow before discussing a pilot or integration."],
+            ["How does the impact calculator work?", "You type an activity. Impact Brain maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score."],
+            ["Why can I trust the calculations?", "Rules are open and inspectable, each SDG has a documented rationale, scores are bounded from -100 to 100, confidence is reported with every result, and it runs on your phone with no cloud black box."],
+            ["Who is Impact Brain for?", "Freelancers and founders who want to prove their value, and individual contributors who want to track and grow their impact."],
           ].map(([question, answer]) => (
             <details key={question} className="group p-5">
               <summary className="cursor-pointer list-none pr-6 text-sm font-medium text-white marker:hidden">
