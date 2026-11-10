@@ -1,0 +1,32 @@
+# FrontForumFocus
+
+> FrontForumFocus builds Impact Brain: an app that turns what you did into proof. Type an activity, get its impact across the 17 UN SDGs. Runs on your phone, no cloud.
+
+## About
+- [Home](https://frontforumfocus.com/): The FrontForumFocus landing page and value proposition.
+- [Products](https://frontforumfocus.com/products): Impact App (Impact Brain) — philosophy, calculator, trust, and beta download.
+- [Podcast](https://frontforumfocus.com/podcasts): Conversations with founders and builders shaping the impact economy.
+- [Community](https://frontforumfocus.com/community): Join the frontforumfocus community.
+- [Impact Intelligence](https://frontforumfocus.com/impact-intelligence): Articles and insights on impact measurement.
+- [Use Cases](https://frontforumfocus.com/use-cases): How Impact Brain is used.
+- [For Founders](https://frontforumfocus.com/for-founders): Impact Brain for freelancers and founders.
+- [Our Story](https://frontforumfocus.com/our-story): The story behind FrontForumFocus.
+
+## Product: Impact Brain
+- [Download APK (Android)](https://frontforumfocus.com/impact-brain.apk): Free beta. Runs on your phone, no cloud, no accounts.
+
+## What it does
+- Translates any activity into a score across the 17 UN SDGs.
+- Scores four dimensions: economic, social, environmental, and time (time = money: hours × your rate).
+- Every result includes a confidence score.
+- Rules are open and inspectable; scores are bounded (-100 to 100).
+- Inputs are your own words and your own hours — nothing is estimated behind your back.
+
+## Who it is for
+- Freelancers and founders: prove your value to clients and collaborators.
+- Individual contributors: track and grow real impact toward goals.
+- Mission-driven organizations: demonstrate measurable impact.
+
+## Optional
+- [Sitemap](https://frontforumfocus.com/sitemap.xml)
+- [Robots](https://frontforumfocus.com/robots.txt)
