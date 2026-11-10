@@ -5,9 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TrackedCta } from "./TrackedCta";
 
-const GET_STARTED_HREF = "/waitlist";
+const GET_STARTED_HREF = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
 const GET_STARTED_LABEL = "Get started";
-const DOWNLOAD_HREF = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -15,7 +14,7 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: "Home" },
-    { href: "/products", label: "Products" },
+    { href: "/products", label: "About" },
     { href: "/community", label: "Community" },
     { href: "/podcasts", label: "Podcast" },
     { href: "/impact-intelligence", label: "Impact Intelligence" },
@@ -50,22 +49,13 @@ export default function Navbar() {
               const isActive = pathname === link.href;
               return <Link key={link.href} href={link.href} className={`rounded-full px-2.5 py-1 transition-all duration-150 ${isActive ? "bg-neutral-800 font-medium text-emerald-400" : "text-neutral-400 hover:text-white"}`}>{link.label}</Link>;
             })}
-            <TrackedCta
+            <a
               href={GET_STARTED_HREF}
-              label={GET_STARTED_LABEL}
-              location="navbar:desktop"
-              kind="product"
+              download
+              onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
               className="ml-1 rounded-full bg-emerald-500 px-3 py-1 font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}
-            </TrackedCta>
-            <a
-              href={DOWNLOAD_HREF}
-              download
-              onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
-              className="ml-1 rounded-full border border-neutral-600/80 bg-neutral-950/50 px-3 py-1 font-medium text-neutral-100 transition-colors hover:bg-neutral-800"
-            >
-              Download
             </a>
           </div>
         </div>
@@ -75,23 +65,13 @@ export default function Navbar() {
               const isActive = pathname === link.href;
               return <Link key={link.href} href={link.href} onClick={() => setIsOpen(false)} className={`rounded-xl px-3 py-2.5 text-sm ${isActive ? "bg-neutral-800 font-medium text-emerald-400" : "text-neutral-300 hover:bg-neutral-800"}`}>{link.label}</Link>;
             })}
-            <TrackedCta
+            <a
               href={GET_STARTED_HREF}
-              label={GET_STARTED_LABEL}
-              location="navbar:mobile_menu"
-              kind="product"
-              onClick={() => setIsOpen(false)}
+              download
+              onClick={() => { setIsOpen(false); fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
               className="mt-1 rounded-xl bg-emerald-500 px-3 py-2.5 text-center text-sm font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}
-            </TrackedCta>
-            <a
-              href={DOWNLOAD_HREF}
-              download
-              onClick={() => setIsOpen(false)}
-              className="mt-1 rounded-xl border border-neutral-700 bg-neutral-800 px-3 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-neutral-700"
-            >
-              Download APK
             </a>
           </div>
         )}
