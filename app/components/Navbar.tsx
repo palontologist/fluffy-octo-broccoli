@@ -16,7 +16,7 @@ export default function Navbar() {
     { href: "/", label: "Home" },
     { href: "/products", label: "Products" },
     { href: "/community", label: "Community" },
-    { href: "/podcasts", label: "Podcasts" },
+    { href: "/podcasts", label: "Podcast" },
     { href: "/impact-intelligence", label: "Impact Intelligence" },
   ];
 
