@@ -15,17 +15,39 @@ const newsreader = Newsreader({
 });
 
 export const metadata: Metadata = {
-  title: "Impact Brain | Turn what you did into proof",
-  description: "Impact Brain scores any activity across the 17 UN SDGs. Type what you did, get its impact. Runs on your phone.",
+  title: "frontforumfocus | impact OS",
+  description: "Impact Brain scores any activity across the 17 UN SDGs. Turn what you did into proof. Runs on your phone.",
   icons: {
     icon: "/logo.svg",
     shortcut: "/logo.svg",
     apple: "/logo.svg",
   },
   openGraph: {
-    title: "Impact Brain | Turn what you did into proof",
-    description: "Impact Brain scores any activity across the 17 UN SDGs. Runs on your phone.",
-    images: ["/logo.svg"],
+    title: "frontforumfocus | impact OS",
+    description: "Impact Brain scores any activity across the 17 UN SDGs. Turn what you did into proof. Runs on your phone.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "FrontForumFocus Impact OS" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "frontforumfocus | impact OS",
+    description: "Impact Brain scores any activity across the 17 UN SDGs. Turn what you did into proof. Runs on your phone.",
+    images: ["/og-image.png"],
+  },
+  alternates: {
+    canonical: "https://frontforumfocus.com",
+  },
+  keywords: [
+    "impact brain",
+    "frontforumfocus",
+    "SDG impact",
+    "impact tracking",
+    "freelancer value",
+    "impact app",
+    "verify impact",
+  ],
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -38,6 +60,43 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "FrontForumFocus",
+              "url": "https://frontforumfocus.com",
+              "logo": "https://frontforumfocus.com/og-image.png",
+              "description": "Impact Brain scores any activity across the 17 UN SDGs. Turn what you did into proof.",
+              "sameAs": [
+                "https://www.linkedin.com/in/georgekarani",
+                "https://www.facebook.com/frontforumfocus/",
+                "https://www.instagram.com/frontforumfocus"
+              ]
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Impact Brain",
+              "applicationCategory": "UtilitiesApplication",
+              "operatingSystem": "Android",
+              "url": "https://frontforumfocus.com",
+              "description": "Type what you did. Get its impact across the 17 UN SDGs. Runs on your phone.",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} ${newsreader.variable} bg-neutral-950 text-neutral-100 antialiased selection:bg-emerald-500 selection:text-black`}>
         <PosthogProvider>
