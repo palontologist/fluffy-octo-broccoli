@@ -24,88 +24,129 @@ export default function ProductsPage() {
     }
     window.location.href = "/impact-brain.apk";
   };
+
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-50 px-6 pt-24 pb-24 selection:bg-emerald-500 selection:text-black">
-      <div className="max-w-4xl mx-auto space-y-20">
-        
+      <div className="max-w-3xl mx-auto space-y-16">
+
         {/* Header */}
-        <div className="text-center space-y-4">
+        <div className="space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neutral-800 bg-neutral-900 text-xs text-emerald-400">
-            FrontForumFocus Products
+            About
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-white">
-            Impact App
+            Impact Brain
           </h1>
-          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl mx-auto">
-            Turn what you did into proof. Type an activity, get its impact across the 17 UN SDGs. Runs on your phone.
+          <p className="text-base sm:text-lg text-neutral-400 max-w-2xl">
+            Turn what you did into proof.
           </p>
         </div>
 
-        {/* The calculator */}
-        <div className="p-8 sm:p-10 rounded-2xl border border-neutral-800 bg-neutral-900/40 space-y-6">
-          <div className="space-y-2">
-            <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">The calculator</div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white">How the impact score is calculated</h2>
+        {/* Philosophy */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">The philosophy</h2>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Every existing tool treats humans like stopwatches instead of value creators. Impact Brain does the opposite. You type what you did, and it turns that into an outcome you can show. The north star is simple: translate your work into outcomes.
+          </p>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            The core loop is universal. One log, one translation, one counter. Surface copy varies lightly depending on what you want to do, but the engine underneath is the same for everyone.
+          </p>
+        </section>
+
+        {/* How it came to be */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">How it came to be</h2>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            It started as a way to prove value. Freelancers and founders do real work, then have nothing to show for it. Hours disappear into meetings and emails, and the actual outcome never gets written down. Impact Brain fixes that: you type what you did, it maps it to the 17 UN SDGs and scores it.
+          </p>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Then it became clear the same loop works for impact. An individual contributor tracking real contributions toward a goal uses the exact same log. So instead of two products, there is one, with intent-aware copy on top.
+          </p>
+        </section>
+
+        {/* Who it is for */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">Who it is for</h2>
+          <div className="space-y-4">
+            <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/40 space-y-2">
+              <h3 className="text-sm font-semibold text-white">Freelancers and founders (prove value)</h3>
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                Turn hours worked into outcomes you can pitch, invoice, or share. See your real effective rate after meetings, emails, and admin. Client and value proof, built from the same translated outcomes.
+              </p>
+            </div>
+            <div className="p-5 rounded-xl border border-neutral-800 bg-neutral-900/40 space-y-2">
+              <h3 className="text-sm font-semibold text-white">Individual contributors (track and grow impact)</h3>
+              <p className="text-xs text-neutral-400 leading-relaxed">
+                Count real contributions toward goals. Build proof for collaborations, brands, and rewards. Impact proof, derived from the same log, with SDG counter contributions attached.
+              </p>
+            </div>
           </div>
           <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
-            You type what you did. Impact App maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every assessment comes with a confidence score.
+            Founders of ventures are coming next. Your proof carries forward.
+          </p>
+        </section>
+
+        {/* The calculator */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">The calculator</h2>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Type an activity. Impact App maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score.
           </p>
           <div className="space-y-2">
             <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Why you can trust it</div>
             <ul className="text-sm sm:text-base text-neutral-300 leading-relaxed space-y-2 list-disc list-inside">
-              <li>Rules are open and inspectable — each SDG has a documented rationale.</li>
-              <li>Scores are bounded (-100 to 100) and confidence is reported with every result.</li>
+              <li>Rules are open and inspectable. Each SDG has a documented rationale.</li>
+              <li>Scores are bounded, from -100 to 100, and confidence is reported with every result.</li>
               <li>It runs on your phone. No cloud, no hidden black box.</li>
               <li>Inputs are your own words and your own hours. Nothing is estimated behind your back.</li>
             </ul>
           </div>
-        </div>
+        </section>
 
-        {/* Product: Impact App (APK Beta) */}
-        <div className="p-8 sm:p-10 rounded-2xl border border-emerald-900/40 bg-emerald-950/10 space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <span className="text-xs font-mono text-teal-400 uppercase tracking-wider">Individuals &amp; Communities</span>
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mt-1">Impact App</h2>
-            </div>
-            <span className="px-3 py-1 rounded-full bg-teal-950/80 border border-teal-800/80 text-teal-400 text-xs font-mono">
-              Android APK Beta
-            </span>
-          </div>
-
+        {/* Share Proof */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">Share Proof</h2>
           <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
-            Type what you did. Get its impact across the 17 UN SDGs. Scores economic, social, environmental, and time. Runs on your phone, no cloud.
+            Pitch became Share Proof. Two formats, one log: Client and value proof for pitches, invoices, renewals, and collaborations. Impact proof for SDG-aligned partners, brands, and rewards, with SDG counter contributions attached. The founder view is deferred, and framed as coming next.
           </p>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Coming later: opportunities and rewards from impact-focused brands, powered by the same verified translated outcomes and SDG counters. A layer on top, not a new identity system or a separate app.
+          </p>
+        </section>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-emerald-900/40">
-            <div className="space-y-1">
-              <div className="text-xs text-neutral-400 uppercase font-mono">On-Device AI</div>
-              <div className="text-sm font-semibold text-white">LiteRT / Edge Vision</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-xs text-neutral-400 uppercase font-mono">Contributor Reward</div>
-              <div className="text-sm font-semibold text-teal-400">Mobile Airtime &amp; Tokens</div>
-            </div>
-            <div className="space-y-1">
-              <div className="text-xs text-neutral-400 uppercase font-mono">B2B Corporate ESG</div>
-              <div className="text-sm font-semibold text-white">Sponsored Impact Proof</div>
-            </div>
-          </div>
+        {/* Marketplace layer */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">The marketplace layer</h2>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Brands and private buyers onboard as Partners, not as a separate product. They post outcome-based briefs. Individuals apply with Share Proof generated from relevant translated outcomes. Brands evaluate fit and evidence, not a score. No fake universal impact price. Pricing is agreed per engagement, and the log is the system of record.
+          </p>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Start narrow. Pilot with one segment, curate the first matches by hand, learn what pricing impact means in practice before building open discovery.
+          </p>
+        </section>
 
-          <div className="pt-2">
-            <a
-              href="/impact-brain.apk"
-              download
-              onClick={handleDownload}
-              className="inline-flex px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-semibold text-xs transition-colors"
-            >
-              Download Impact App APK (Beta) →
-            </a>
-            <p className="mt-2 text-xs text-neutral-500">
-              {downloadCount === null ? "Loading downloads…" : `${downloadCount} beta download${downloadCount === 1 ? "" : "s"}`}
-            </p>
-          </div>
-        </div>
+        {/* Onboarding as intent */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-white">Onboarding as intent</h2>
+          <p className="text-sm sm:text-base text-neutral-300 leading-relaxed">
+            Onboarding asks what you want to use this for, not who you are. Prove my value to clients and collaborators. Track and grow my impact. Show progress for my venture, coming next. Everyone gets the same tools. The intent only tailors prompts and defaults.
+          </p>
+        </section>
+
+        {/* Download */}
+        <section className="space-y-4 text-center">
+          <a
+            href="/impact-brain.apk"
+            download
+            onClick={handleDownload}
+            className="inline-flex px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-semibold text-sm transition-colors"
+          >
+            Download Impact App APK (Beta) →
+          </a>
+          <p className="text-xs text-neutral-500">
+            {downloadCount === null ? "Loading downloads…" : `${downloadCount} beta download${downloadCount === 1 ? "" : "s"}`}
+          </p>
+        </section>
 
       </div>
     </main>
