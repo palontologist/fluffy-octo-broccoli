@@ -76,15 +76,14 @@ export default function Home() {
             an impact brain that lives on your phone. turn what you did into proof.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-8">
-            <TrackedCta
-              href="https://cal.com/georgeka/30min?overlayCalendar=true"
-              label="Book a demo"
-              location="homepage:hero"
-              kind="demo_booking"
+            <a
+              href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk"
+              download
+              onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
               className="rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
             >
-              Book a demo →
-            </TrackedCta>
+              Download the app on Android →
+            </a>
 
           </div>
         </div>

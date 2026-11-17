@@ -53,7 +53,7 @@ export function Footer() {
           </div>
           <div className="space-y-3">
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">Start</h2>
-            <TrackedCta className="block text-neutral-400 hover:text-white" href="https://cal.com/georgeka/30min?overlayCalendar=true" label="Book a demo" location="footer:start_column" kind="demo_booking">Book a demo</TrackedCta>
+            <a className="block text-neutral-400 hover:text-white" href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk" download onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}>Download the app on Android</a>
             <TrackedCta className="block text-neutral-400 hover:text-white" href="/products" label="Open Impact Brain" location="footer:start_column" kind="product">Open Impact Brain</TrackedCta>
           </div>
         </div>
