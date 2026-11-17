@@ -36,14 +36,17 @@ export async function POST(req: Request) {
     }
   );
 
+  if (!routerResult.ok && routerResult.fieldErrors) {
+    return NextResponse.json(
+      { error: "Invalid submission", fields: routerResult.fieldErrors },
+      { status: 422 }
+    );
+  }
+
+  // If the router is unreachable, still accept the email and send the welcome
+  // note. The lead is captured via Resend below; the router is best-effort.
   if (!routerResult.ok) {
-    if (routerResult.fieldErrors) {
-      return NextResponse.json(
-        { error: "Invalid submission", fields: routerResult.fieldErrors },
-        { status: 422 }
-      );
-    }
-    return NextResponse.json({ error: "Failed to subscribe" }, { status: 502 });
+    console.warn("[subscribe] router unavailable; continuing with welcome email only");
   }
 
   try {
@@ -58,5 +61,5 @@ export async function POST(req: Request) {
     console.error("[subscribe] Resend error (lead already captured):", err);
   }
 
-  return NextResponse.json({ ok: true, id: routerResult.id });
+  return NextResponse.json({ ok: true, id: routerResult.ok ? routerResult.id : "local" });
 }
