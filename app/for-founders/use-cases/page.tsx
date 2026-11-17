@@ -134,7 +134,6 @@ export default function ForFoundersUseCasesPage() {
           <a
             href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk"
             download
-            onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
             className="inline-flex items-center rounded-lg border border-zinc-600 px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
           >
             Download the app on Android
