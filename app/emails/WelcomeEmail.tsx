@@ -47,62 +47,62 @@ export function WelcomeEmailHtml(): string {
       <div class="tagline">Impact Intelligence · Issue</div>
       <h1>When value becomes legible,<br/>capital can follow.</h1>
       <p style="margin:0; color:#9ca3af; font-size:14px;">
-        The infrastructure gap is real. The capital is there. The missing piece is <strong>translation</strong>.
+        You do the work. Then someone asks what it was worth. Impact Brain turns
+        what you did into proof — across the 17 UN SDGs, on your phone.
       </p>
     </div>
 
-    <div class="chapter-label">The Opportunity</div>
+    <div class="chapter-label">The problem</div>
     <p>
-      By turning task‑level data into a transparent <strong>"value ledger,"</strong>
-      FrontForumFocus creates an Internet of Value — a programmable, auditable layer
-      where impact‑driven capital behaves like blockchain transactions:
-      <strong>immutable, traceable, and automatically aligned with mission outcomes.</strong>
+      Every existing tool treats humans like stopwatches instead of value creators.
+      Freelancers and changemakers do real work, then have nothing to show for it.
+      Hours disappear into meetings and emails, and the actual outcome never gets
+      written down. Impact Brain fixes that: you type what you did, it maps it to
+      the 17 UN SDGs and scores it.
     </p>
 
     <hr class="divider" />
 
-    <div class="chapter-label">The Gap</div>
+    <div class="chapter-label">The idea</div>
     <p>
-      The African impact‑tech market faces a <strong>$4B+ infrastructure gap</strong>,
-      yet more than <strong>$10B of impact capital</strong> flows annually without
-      affordable measurement tools. By providing a unified OS that speaks both the
-      language of founders and the metrics demanded by investors, FrontForumFocus
-      bridges that gap and unlocks a new wave of capital distribution anchored in
-      real human contribution.
+      Translate your work into outcomes. The core loop is universal: one log, one
+      translation, one counter. Surface copy varies lightly depending on what you
+      want to do — prove your value to clients, or track and grow your impact —
+      but the engine underneath is the same for everyone.
     </p>
 
     <div class="stat-row">
       <div class="stat">
-        <div class="stat-value">$4B+</div>
-        <div class="stat-label">Infrastructure gap</div>
+        <div class="stat-value">17</div>
+        <div class="stat-label">UN SDGs scored</div>
       </div>
       <div class="stat">
-        <div class="stat-value">$10B+</div>
-        <div class="stat-label">Impact capital annually</div>
+        <div class="stat-value">4</div>
+        <div class="stat-label">Dimensions</div>
       </div>
       <div class="stat">
-        <div class="stat-value">1 OS</div>
-        <div class="stat-label">To bridge them</div>
+        <div class="stat-value">10s</div>
+        <div class="stat-label">To get a score</div>
       </div>
     </div>
 
     <div class="highlight-box">
       <blockquote style="border:none; background:none; padding:0; margin:0;">
-        "A programmable, auditable layer where impact‑driven capital behaves like
-        blockchain transactions: immutable, traceable, and automatically aligned
-        with mission outcomes."
+        "Every existing tool treats humans like stopwatches instead of value
+        creators. Impact Brain shows founders, freelancers, and mission-driven
+        organizations exactly what their impact is worth."
       </blockquote>
     </div>
 
     <hr class="divider" />
 
-    <div class="chapter-label">What's Next</div>
+    <div class="chapter-label">What's next</div>
     <p>This is Impact Intelligence — where every story is backed by proof.</p>
 
     <a href="https://frontforumfocus.com/impact-intelligence" class="cta">
       Read Impact Intelligence
     </a>
-    <a href="/impact-brain.apk" class="cta cta-outline">
+    <a href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk" class="cta cta-outline">
       Try Impact Brain free
     </a>
 
