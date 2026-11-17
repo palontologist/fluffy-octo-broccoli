@@ -17,6 +17,7 @@ export function EmailSubscribe() {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
   );
+  const [errorMessage, setErrorMessage] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -32,13 +33,15 @@ export function EmailSubscribe() {
         body: JSON.stringify({ email: submitted }),
       });
       if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
         trackLeadFailed(submitted, source, res.status);
-        throw new Error("Subscribe failed");
+        throw new Error(body?.error || "Subscribe failed");
       }
       trackLeadSucceeded(submitted, source);
       setStatus("success");
       setEmail("");
-    } catch {
+    } catch (err: any) {
+      setErrorMessage(err?.message || "");
       setStatus("error");
     }
   }
@@ -76,7 +79,7 @@ export function EmailSubscribe() {
       )}
       {status === "error" && (
         <p className="font-sans mt-3 text-sm text-red-400">
-          Something went wrong. Please try again.
+          {errorMessage || "Something went wrong. Please try again."}
         </p>
       )}
     </section>
