@@ -51,12 +51,21 @@ export async function POST(req: Request) {
 
   try {
     const resend = new Resend(process.env.RESEND_API_KEY);
-    await resend.emails.send({
-      from: "FrontForumFocus <support@frontforumfocus.com>",
+    // frontforumfocus.com is not yet verified in Resend, so fall back to
+    // Resend's sandbox sender. Verify the domain in Resend to use the branded
+    // from address in production.
+    const from = process.env.RESEND_FROM || "FrontForumFocus <onboarding@resend.dev>";
+    const result = await resend.emails.send({
+      from,
       to: normalized,
       subject: "When value becomes legible, capital can follow.",
       html: WelcomeEmailHtml(),
     });
+    if (result.error) {
+      console.error("[subscribe] Resend error:", result.error);
+    } else {
+      console.log("[subscribe] welcome email sent:", result.data?.id);
+    }
   } catch (err) {
     console.error("[subscribe] Resend error (lead already captured):", err);
   }
