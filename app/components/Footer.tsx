@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { EmailSubscribe } from "./EmailSubscribe";
+
 import { TrackedCta } from "./TrackedCta";
 
 export function Footer() {
@@ -29,7 +29,6 @@ export function Footer() {
               Book a demo
             </TrackedCta>
           </div>
-          <EmailSubscribe />
         </div>
 
         <div className="grid grid-cols-2 gap-8 border-t border-neutral-800/80 pt-8 text-sm sm:grid-cols-4">

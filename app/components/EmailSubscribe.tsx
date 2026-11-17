@@ -46,10 +46,10 @@ export function EmailSubscribe() {
   return (
     <section className="rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 md:p-10">
       <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
-        Subscribe to the newsletter & podcast
+        Subscribe for beta updates
       </h2>
       <p className="font-sans mt-2 text-zinc-400">
-        Get impact intelligence in your inbox. No spam.
+        Get updates on the Impact Brain beta. No spam.
       </p>
       <form onSubmit={handleSubmit} className="mt-6 flex flex-wrap gap-3">
         <input

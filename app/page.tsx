@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { TrackedCta } from "./components/TrackedCta";
+import { EmailSubscribe } from "./components/EmailSubscribe";
 import { trackCalculatorAdjusted } from "./lib/analytics";
 
 export default function Home() {
@@ -178,6 +179,9 @@ export default function Home() {
         <p className="text-xs text-neutral-500">
           {downloadCount === null ? "Loading downloads…" : `${downloadCount} beta download${downloadCount === 1 ? "" : "s"}`}
         </p>
+        <div className="mt-4 text-left">
+          <EmailSubscribe />
+        </div>
       </div>
 
     </main>
