@@ -15,7 +15,6 @@ export default function Home() {
   type ActivityKey = keyof typeof activities;
   const [activity, setActivity] = useState<ActivityKey>("solar");
   const [activityAmount, setActivityAmount] = useState(45);
-  const [downloadCount, setDownloadCount] = useState<number | null>(null);
   const selectedActivity = activities[activity];
   const contribution = activityAmount * selectedActivity.coefficient;
 
@@ -32,24 +31,7 @@ export default function Home() {
     });
   }, [activity, activityAmount, contribution, selectedActivity.sdg]);
 
-  useEffect(() => {
-    fetch("/api/downloads")
-      .then((r) => r.json())
-      .then((d) => setDownloadCount(typeof d.count === "number" ? d.count : 0))
-      .catch(() => setDownloadCount(0));
-  }, []);
 
-  const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("/api/downloads", { method: "POST" });
-      const d = await res.json();
-      if (typeof d.count === "number") setDownloadCount(d.count);
-    } catch {
-      // ignore
-    }
-    window.location.href = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
-  };
 
   const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Impact Brain?","acceptedAnswer":{"@type":"Answer","text":"Impact Brain turns what you did into a score across the 17 UN SDGs. Type an activity, get its impact. Runs on your phone."}},{"@type":"Question","name":"How does the impact calculator work?","acceptedAnswer":{"@type":"Answer","text":"You type an activity. Impact Brain maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score."}},{"@type":"Question","name":"Why can I trust the calculations?","acceptedAnswer":{"@type":"Answer","text":"Rules are open and inspectable, each SDG has a documented rationale, scores are bounded from -100 to 100, confidence is reported with every result, and it runs on your phone with no cloud black box."}},{"@type":"Question","name":"Who is Impact Brain for?","acceptedAnswer":{"@type":"Answer","text":"Freelancers and founders who want to prove their value, and individual contributors who want to track and grow their impact."}}]};
 
@@ -175,12 +157,26 @@ export default function Home() {
           <h2 className="text-xl sm:text-2xl font-serif text-white">Download Impact Brain</h2>
           <p className="text-xs text-neutral-400">Free. Runs on your phone. Android APK.</p>
         </div>
-        <p className="text-xs text-neutral-500">
-          {downloadCount === null ? "Loading downloads…" : `${downloadCount} beta download${downloadCount === 1 ? "" : "s"}`}
-        </p>
         <div className="mt-4 text-left">
           <EmailSubscribe />
         </div>
+      </div>
+
+      {/* Community Section */}
+      <div className="max-w-3xl w-full mt-6 p-6 sm:p-8 rounded-2xl border border-neutral-800/80 bg-neutral-900/20 space-y-4 text-center">
+        <div className="space-y-2">
+          <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Community</div>
+          <h2 className="text-xl sm:text-2xl font-serif text-white">Join the global impact community</h2>
+          <p className="text-xs text-neutral-400">Connect with impact changemakers and freelancers building with FrontForumFocus.</p>
+        </div>
+        <a
+          href="https://ubqt.joinubqt.com/l/E820fYTD"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
+        >
+          Join the community →
+        </a>
       </div>
 
     </main>
