@@ -102,8 +102,8 @@ export function WelcomeEmailHtml(): string {
     <a href="https://frontforumfocus.com/impact-intelligence" class="cta">
       Read Impact Intelligence
     </a>
-    <a href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk" class="cta cta-outline">
-      Try Impact Brain free
+    <a href="https://play.google.com/apps/internaltest/4699935012830144337" class="cta cta-outline">
+      Join the Android beta
     </a>
 
     <div class="footer">

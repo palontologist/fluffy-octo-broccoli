@@ -1,29 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
 
 export default function ProductsPage() {
-  const [downloadCount, setDownloadCount] = useState<number | null>(null);
-
-  useEffect(() => {
-    fetch("/api/downloads")
-      .then((r) => r.json())
-      .then((d) => setDownloadCount(typeof d.count === "number" ? d.count : 0))
-      .catch(() => setDownloadCount(0));
-  }, []);
-
-  const handleDownload = async (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("/api/downloads", { method: "POST" });
-      const d = await res.json();
-      if (typeof d.count === "number") setDownloadCount(d.count);
-    } catch {
-      // ignore
-    }
-    window.location.href = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
-  };
 
   return (
     <main className="min-h-screen bg-neutral-950 text-neutral-50 px-6 pt-24 pb-24 selection:bg-emerald-500 selection:text-black">
@@ -136,16 +115,14 @@ export default function ProductsPage() {
         {/* Download */}
         <section className="space-y-4 text-center">
           <a
-            href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk"
-            download
-            onClick={handleDownload}
+            href="https://play.google.com/apps/internaltest/4699935012830144337"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex px-6 py-3 rounded-xl bg-teal-500 hover:bg-teal-400 text-neutral-950 font-semibold text-sm transition-colors"
           >
-            Download Impact App APK (Beta) →
+            Join the Android beta →
           </a>
-          <p className="text-xs text-neutral-500">
-            {downloadCount === null ? "Loading downloads…" : `${downloadCount} beta download${downloadCount === 1 ? "" : "s"}`}
-          </p>
+          <p className="text-xs text-neutral-500">Free on Google Play. Runs on your phone.</p>
         </section>
 
       </div>

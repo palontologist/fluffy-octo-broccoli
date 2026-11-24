@@ -59,12 +59,12 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3.5 pt-8">
             <a
-              href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk"
-              download
-              onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
+              href="https://play.google.com/apps/internaltest/4699935012830144337"
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-white px-5 py-2.5 text-xs font-medium text-neutral-950 shadow-md transition-all duration-150 hover:scale-[1.01] hover:bg-neutral-200 sm:text-sm"
             >
-              Download the app on Android →
+              Join the Android beta →
             </a>
 
           </div>
@@ -154,8 +154,8 @@ export default function Home() {
       <div className="max-w-3xl w-full mt-20 p-6 sm:p-8 rounded-2xl border border-neutral-800/80 bg-neutral-900/20 space-y-6 text-center">
         <div className="space-y-2">
           <div className="text-xs font-mono text-emerald-400 uppercase tracking-wider">Beta</div>
-          <h2 className="text-xl sm:text-2xl font-serif text-white">Download Impact Brain</h2>
-          <p className="text-xs text-neutral-400">Free. Runs on your phone. Android APK.</p>
+          <h2 className="text-xl sm:text-2xl font-serif text-white">Get Impact Brain</h2>
+          <p className="text-xs text-neutral-400">Free. Runs on your phone. Join the Android beta on Google Play.</p>
         </div>
         <div className="mt-4 text-left">
           <EmailSubscribe />

@@ -10,7 +10,7 @@ import { TrackedCta } from "../components/TrackedCta";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const GRETA_APP_URL = "/impact-brain.apk";
+const GRETA_APP_URL = "https://play.google.com/apps/internaltest/4699935012830144337";
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForFoundersPage() {
@@ -113,10 +113,11 @@ export default function ForFoundersPage() {
         <div className="cta-group mt-12 flex flex-wrap items-center justify-center gap-4">
           <a
             href={GRETA_APP_URL}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="cta-button inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
-            Download Impact Brain
+            Join the Android beta
           </a>
           <Link
             href="/products"

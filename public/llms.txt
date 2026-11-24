@@ -13,7 +13,7 @@
 - [Our Story](https://frontforumfocus.com/our-story): The story behind FrontForumFocus.
 
 ## Product: Impact Brain
-- [Download APK (Android)](https://frontforumfocus.com/impact-brain.apk): Free beta. Runs on your phone, no cloud, no accounts.
+- [Join Android beta (Google Play)](https://play.google.com/apps/internaltest/4699935012830144337): Free beta. Runs on your phone.
 
 ## What it does
 - Translates any activity into a score across the 17 UN SDGs.

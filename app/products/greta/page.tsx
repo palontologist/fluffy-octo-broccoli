@@ -8,7 +8,7 @@ import { useScrollReveal } from "../../components/useScrollReveal";
 gsap.registerPlugin(ScrollTrigger);
 
 
-const GRETA_APP_URL = "/impact-brain.apk";
+const GRETA_APP_URL = "https://play.google.com/apps/internaltest/4699935012830144337";
 
 const features = [
   {
