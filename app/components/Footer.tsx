@@ -55,6 +55,7 @@ export function Footer() {
             <h2 className="font-mono text-[11px] uppercase tracking-wider text-neutral-500">Start</h2>
             <a className="block text-neutral-400 hover:text-white" href="https://play.google.com/apps/internaltest/4699935012830144337" target="_blank" rel="noopener noreferrer">Join the Android beta</a>
             <TrackedCta className="block text-neutral-400 hover:text-white" href="/products" label="Open Impact Brain" location="footer:start_column" kind="product">Open Impact Brain</TrackedCta>
+            <Link className="block text-neutral-400 hover:text-white" href="/privacy">Privacy Policy</Link>
           </div>
         </div>
 
