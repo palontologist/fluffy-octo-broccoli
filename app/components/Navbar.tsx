@@ -5,8 +5,8 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { TrackedCta } from "./TrackedCta";
 
-const GET_STARTED_HREF = "https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk";
-const GET_STARTED_LABEL = "Get started";
+const GET_STARTED_HREF = "https://play.google.com/apps/internaltest/4699935012830144337";
+const GET_STARTED_LABEL = "Join beta";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -51,8 +51,8 @@ export default function Navbar() {
             })}
             <a
               href={GET_STARTED_HREF}
-              download
-              onClick={() => { fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
+              target="_blank"
+              rel="noopener noreferrer"
               className="ml-1 rounded-full bg-emerald-500 px-3 py-1 font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}
@@ -67,8 +67,9 @@ export default function Navbar() {
             })}
             <a
               href={GET_STARTED_HREF}
-              download
-              onClick={() => { setIsOpen(false); fetch("/api/downloads", { method: "POST" }).catch(() => {}); }}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setIsOpen(false)}
               className="mt-1 rounded-xl bg-emerald-500 px-3 py-2.5 text-center text-sm font-medium text-neutral-950 transition-colors hover:bg-emerald-400"
             >
               {GET_STARTED_LABEL}

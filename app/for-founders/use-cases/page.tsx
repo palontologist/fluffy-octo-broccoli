@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TrackedCta } from "../../components/TrackedCta";
 
-const GRETA_APP_URL = "/impact-brain.apk";
+const GRETA_APP_URL = "https://play.google.com/apps/internaltest/4699935012830144337";
 const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForFoundersUseCasesPage() {
@@ -126,17 +126,11 @@ export default function ForFoundersUseCasesPage() {
         <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
           <a
             href={GRETA_APP_URL}
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
           >
-            Download Impact Brain
-          </a>
-          <a
-            href="https://github.com/palontologist/fluffy-octo-broccoli/releases/download/v0.1.0-beta/app-debug.apk"
-            download
-            className="inline-flex items-center rounded-lg border border-zinc-600 px-6 py-3 font-sans text-sm font-medium text-zinc-200 transition-colors hover:border-zinc-500 hover:text-white"
-          >
-            Download the app on Android
+            Join the Android beta
           </a>
         </div>
       </div>

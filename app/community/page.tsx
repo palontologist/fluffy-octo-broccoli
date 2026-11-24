@@ -50,11 +50,12 @@ export default function CommunityPage() {
               </p>
             </div>
             <a
-              href="/impact-brain.apk"
-              download
+              href="https://play.google.com/apps/internaltest/4699935012830144337"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full py-2.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-center text-xs font-semibold text-neutral-950 transition-colors"
             >
-              Get Impact Brain APK (Beta) →
+              Join the Android beta →
             </a>
           </div>
 
