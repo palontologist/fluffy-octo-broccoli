@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { TrackedCta } from "./components/TrackedCta";
 import { EmailSubscribe } from "./components/EmailSubscribe";
+import { TrustedBy } from "./components/TrustedBy";
 import { trackCalculatorAdjusted } from "./lib/analytics";
 
 export default function Home() {
@@ -124,6 +125,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <TrustedBy />
 
       {/* Log → Translate → Proof */}
       <section className="mt-24 w-full max-w-5xl space-y-8">
