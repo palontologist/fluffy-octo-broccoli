@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { TrackedCta } from "./components/TrackedCta";
 import { EmailSubscribe } from "./components/EmailSubscribe";
 import { TrustedBy } from "./components/TrustedBy";
+import { GretaShowcase } from "./components/GretaShowcase";
 import { trackCalculatorAdjusted } from "./lib/analytics";
 
 export default function Home() {
@@ -121,27 +122,23 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-[520px] lg:max-w-none">
-            <div className="absolute -inset-6 rounded-[2rem] bg-emerald-400/10 blur-3xl" />
-            <div className="glass-card relative overflow-hidden rounded-[2rem] p-3 sm:p-4">
-              <div className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-black/30 aspect-[4/5] sm:aspect-[5/6]">
-                <iframe
-                  src="https://player.mux.com/LnNXvJqpq6Q9bZ02uChMl6Ib16DHbaeLs9nO5kOP7bQ00?autoplay=true&muted=true&loop=true&controls=false"
-                  title="FrontForumFocus brand film"
-                  className="pointer-events-none absolute inset-0 h-full w-full scale-[1.03] border-0 opacity-80"
-                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-                  aria-hidden="true"
+          <div className="relative mx-auto w-full max-w-[360px] lg:max-w-[420px]">
+            <div className="absolute -inset-8 rounded-[3rem] bg-emerald-400/12 blur-3xl" />
+            <div className="glass-card relative rounded-[2.5rem] p-3 sm:p-4">
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-black/40 aspect-[9/19.5]">
+                <Image
+                  src="/Screenshot_20261124_150946_greta.jpg"
+                  alt="Greta app screenshot"
+                  fill
+                  className="object-cover object-top"
+                  sizes="(max-width: 1024px) 360px, 420px"
+                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#07090b] via-transparent to-transparent" />
-                <div className="absolute bottom-4 left-4 right-4 glass-card rounded-2xl p-4">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">Sample proof</p>
-                  <p className="mt-2 text-sm text-white">“Mentored 2 founders on clean energy pricing for 3 hours.”</p>
-                  <div className="mt-3 flex items-center justify-between text-xs text-neutral-400">
-                    <span>SDG 7 · Clean Energy</span>
-                    <span className="text-emerald-300">Confidence: High</span>
-                  </div>
-                </div>
               </div>
+            </div>
+            <div className="absolute -bottom-4 -left-2 sm:-left-6 glass-card rounded-2xl px-4 py-3 shadow-xl">
+              <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">Live proof</p>
+              <p className="mt-1 text-xs text-neutral-300">Log → SDG score → share</p>
             </div>
           </div>
         </div>
@@ -193,6 +190,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <GretaShowcase />
 
       {/* Interactive SDG impact calculator */}
       <section className="glass-card mt-24 w-full max-w-3xl rounded-3xl p-6 sm:p-8">
