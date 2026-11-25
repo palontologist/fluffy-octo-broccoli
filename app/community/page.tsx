@@ -28,6 +28,12 @@ export default function CommunityPage() {
               Join the global impact community →
             </a>
           </div>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-2 text-sm text-neutral-400">
+            <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-neutral-500">Follow</span>
+            <a href="https://www.linkedin.com/company/frontforumfocus/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">LinkedIn</a>
+            <a href="https://instagram.com/frontforumfocus" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">Instagram</a>
+            <a href="https://x.com/frontforumfocus" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">X</a>
+          </div>
         </header>
 
         {/* Community Initiatives */}
@@ -72,6 +78,37 @@ export default function CommunityPage() {
               </a>
             </article>
           </div>
+        </section>
+
+        {/* Events & Highlights */}
+        <section className="space-y-6">
+          <div className="max-w-2xl space-y-3">
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">Events &amp; highlights</p>
+            <h2 className="font-serif text-3xl text-white sm:text-4xl">Conversations that move impact forward.</h2>
+          </div>
+          <article className="glass-card rounded-3xl p-6 sm:p-7 space-y-4 max-w-3xl">
+            <div className="flex flex-wrap items-center gap-3 text-[11px] font-mono uppercase tracking-[0.16em] text-neutral-500">
+              <span className="text-emerald-400">Past event</span>
+              <span>•</span>
+              <span>Fri, Mar 7, 2025</span>
+              <span>•</span>
+              <span>2:00 PM - 3:00 PM</span>
+              <span>•</span>
+              <span>Online</span>
+            </div>
+            <h3 className="text-2xl font-serif text-white">Prove Your Impact—and Unlock Further Support</h3>
+            <p className="text-sm leading-relaxed text-neutral-400">
+              By FrontForumFocus. A conversation on making impact visible, verifiable, and ready for support.
+            </p>
+            <a
+              href="https://www.linkedin.com/events/7302775841225105409?viewAsMember=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center rounded-full border border-white/12 bg-white/[0.02] px-5 py-2.5 text-sm font-medium text-neutral-200 transition-all duration-200 hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+            >
+              View event on LinkedIn →
+            </a>
+          </article>
         </section>
 
         {/* Newsletter / Updates */}
