@@ -12,7 +12,15 @@ function currentSource() {
   return window.location.pathname.replace(/^\//, "").replace(/\//g, "_") || "home";
 }
 
-export function EmailSubscribe() {
+type EmailSubscribeProps = {
+  title?: string;
+  description?: string;
+};
+
+export function EmailSubscribe({
+  title = "Subscribe for beta updates",
+  description = "Get updates on the Impact Brain beta. No spam.",
+}: EmailSubscribeProps = {}) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle"
@@ -49,10 +57,10 @@ export function EmailSubscribe() {
   return (
     <section className="rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 md:p-10">
       <h2 className="font-serif text-xl font-semibold text-white md:text-2xl">
-        Subscribe for beta updates
+        {title}
       </h2>
       <p className="font-sans mt-2 text-zinc-400">
-        Get updates on the Impact Brain beta. No spam.
+        {description}
       </p>
       <form onSubmit={handleSubmit} className="mt-6 flex flex-wrap gap-3">
         <input
