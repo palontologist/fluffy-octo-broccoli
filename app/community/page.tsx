@@ -33,6 +33,7 @@ export default function CommunityPage() {
             <a href="https://www.linkedin.com/company/frontforumfocus/" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">LinkedIn</a>
             <a href="https://instagram.com/frontforumfocus" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">Instagram</a>
             <a href="https://x.com/frontforumfocus" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">X</a>
+            <a href="https://www.youtube.com/channel/UCRLh0JhKndUJppDIBegrRSg" target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-white">YouTube</a>
           </div>
         </header>
 

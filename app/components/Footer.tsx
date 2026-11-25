@@ -45,6 +45,7 @@ export function Footer() {
             <a className="block text-neutral-400 transition-colors hover:text-white" href="https://www.linkedin.com/company/frontforumfocus/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <a className="block text-neutral-400 transition-colors hover:text-white" href="https://instagram.com/frontforumfocus" target="_blank" rel="noopener noreferrer">Instagram</a>
             <a className="block text-neutral-400 transition-colors hover:text-white" href="https://x.com/frontforumfocus" target="_blank" rel="noopener noreferrer">X</a>
+            <a className="block text-neutral-400 transition-colors hover:text-white" href="https://www.youtube.com/channel/UCRLh0JhKndUJppDIBegrRSg" target="_blank" rel="noopener noreferrer">YouTube</a>
             <a className="block text-neutral-400 transition-colors hover:text-white" href="mailto:hello@frontforumfocus.com">Email us</a>
           </div>
           <div className="space-y-3">
