@@ -74,55 +74,75 @@ export default function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
 
       {/* Hero Section */}
-      <section className="relative isolate flex min-h-[calc(100vh-5rem)] w-full max-w-6xl items-center justify-center overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0f0c] shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_rgba(0,0,0,0.55)]">
-        <iframe
-          src="https://player.mux.com/LnNXvJqpq6Q9bZ02uChMl6Ib16DHbaeLs9nO5kOP7bQ00?autoplay=true&muted=true&loop=true&controls=false"
-          title="FrontForumFocus brand film"
-          className="pointer-events-none absolute inset-0 z-0 h-full w-full scale-[1.08] border-0 opacity-45"
-          allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
-          aria-hidden="true"
-        />
-        <div className="pointer-events-none absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top,rgba(52,211,153,0.18),transparent_40%),radial-gradient(ellipse_at_bottom_right,rgba(52,211,153,0.08),transparent_35%),linear-gradient(180deg,rgba(7,9,11,0.35),rgba(7,9,11,0.72)_55%,rgba(7,9,11,0.95))]" />
-        <div className="brand-grid pointer-events-none absolute inset-0 z-0 opacity-40" />
+      <section className="relative isolate w-full max-w-6xl overflow-hidden rounded-[2rem] border border-white/10 bg-[#0b0f0c] shadow-[0_0_0_1px_rgba(255,255,255,0.03),0_40px_120px_rgba(0,0,0,0.55)]">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(52,211,153,0.16),transparent_35%),radial-gradient(ellipse_at_80%_20%,rgba(52,211,153,0.08),transparent_30%),linear-gradient(180deg,rgba(7,9,11,0.2),rgba(7,9,11,0.65))]" />
+        <div className="brand-grid pointer-events-none absolute inset-0 opacity-30" />
 
-        <div className="relative z-10 flex min-h-[620px] w-full flex-col items-center justify-center px-6 py-24 text-center sm:px-12">
-          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-300/90 backdrop-blur-sm">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
-            frontforumfocus | impact OS
+        <div className="relative z-10 grid min-h-[680px] items-center gap-12 px-6 py-20 sm:px-10 lg:grid-cols-[1fr_0.95fr] lg:px-14 lg:py-24">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-300/90 backdrop-blur-sm">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.9)]" />
+              frontforumfocus | impact OS
+            </div>
+
+            <h1 className="mt-8 font-serif text-5xl font-normal leading-[0.93] tracking-tight text-white sm:text-7xl md:text-8xl">
+              Greta
+            </h1>
+
+            <p className="mt-7 max-w-xl text-balance text-base leading-relaxed text-neutral-300 sm:text-lg md:text-xl">
+              An impact brain that lives on your phone.
+              <span className="block text-white">Turn what you did into proof.</span>
+            </p>
+
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <a
+                href="https://play.google.com/apps/internaltest/4699935012830144337"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-neutral-950 shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_8px_30px_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100"
+              >
+                Join the Android beta
+                <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
+              </a>
+              <Link
+                href="/products"
+                className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.02] px-6 py-3 text-sm font-medium text-neutral-200 transition-all duration-200 hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
+              >
+                How it works
+              </Link>
+            </div>
+
+            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.16em] text-neutral-500">
+              <span>17 UN SDGs</span>
+              <span className="hidden h-1 w-1 rounded-full bg-neutral-700 sm:block" />
+              <span>On-device scoring</span>
+              <span className="hidden h-1 w-1 rounded-full bg-neutral-700 sm:block" />
+              <span>Proof, not promises</span>
+            </div>
           </div>
 
-          <h1 className="max-w-4xl font-serif text-5xl font-normal leading-[0.95] tracking-tight text-white sm:text-7xl md:text-8xl lg:text-[7rem]">
-            Greta
-          </h1>
-
-          <p className="mt-8 max-w-2xl text-balance text-base font-normal leading-relaxed text-neutral-300 sm:text-lg md:text-xl">
-            An impact brain that lives on your phone. <span className="text-white">Turn what you did into proof.</span>
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a
-              href="https://play.google.com/apps/internaltest/4699935012830144337"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-neutral-950 shadow-[0_0_0_1px_rgba(255,255,255,0.2),0_8px_30px_rgba(255,255,255,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100"
-            >
-              Join the Android beta
-              <span className="transition-transform duration-200 group-hover:translate-x-0.5">→</span>
-            </a>
-            <Link
-              href="/products"
-              className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.02] px-6 py-3 text-sm font-medium text-neutral-200 backdrop-blur-sm transition-all duration-200 hover:border-white/20 hover:bg-white/[0.05] hover:text-white"
-            >
-              How it works
-            </Link>
-          </div>
-
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] font-mono uppercase tracking-[0.16em] text-neutral-500">
-            <span>17 UN SDGs</span>
-            <span className="hidden h-1 w-1 rounded-full bg-neutral-700 sm:block" />
-            <span>On-device scoring</span>
-            <span className="hidden h-1 w-1 rounded-full bg-neutral-700 sm:block" />
-            <span>Proof, not promises</span>
+          <div className="relative mx-auto w-full max-w-[520px] lg:max-w-none">
+            <div className="absolute -inset-6 rounded-[2rem] bg-emerald-400/10 blur-3xl" />
+            <div className="glass-card relative overflow-hidden rounded-[2rem] p-3 sm:p-4">
+              <div className="relative overflow-hidden rounded-[1.4rem] border border-white/10 bg-black/30 aspect-[4/5] sm:aspect-[5/6]">
+                <iframe
+                  src="https://player.mux.com/LnNXvJqpq6Q9bZ02uChMl6Ib16DHbaeLs9nO5kOP7bQ00?autoplay=true&muted=true&loop=true&controls=false"
+                  title="FrontForumFocus brand film"
+                  className="pointer-events-none absolute inset-0 h-full w-full scale-[1.03] border-0 opacity-80"
+                  allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture"
+                  aria-hidden="true"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#07090b] via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 glass-card rounded-2xl p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">Sample proof</p>
+                  <p className="mt-2 text-sm text-white">“Mentored 2 founders on clean energy pricing for 3 hours.”</p>
+                  <div className="mt-3 flex items-center justify-between text-xs text-neutral-400">
+                    <span>SDG 7 · Clean Energy</span>
+                    <span className="text-emerald-300">Confidence: High</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
