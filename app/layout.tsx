@@ -98,7 +98,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${newsreader.variable} bg-neutral-950 text-neutral-100 antialiased selection:bg-emerald-500 selection:text-black`}>
+      <body className={`${inter.variable} ${newsreader.variable} bg-background text-foreground antialiased`}>
         <PosthogProvider>
           <Suspense fallback={null}>
             <PosthogPageView />
