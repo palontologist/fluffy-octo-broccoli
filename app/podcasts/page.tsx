@@ -76,7 +76,7 @@ export default function PodcastPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-zinc-950 to-black pt-24">
+    <div className="min-h-screen pt-28">
       {/* Hero Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-12">
         <div className="max-w-6xl mx-auto">

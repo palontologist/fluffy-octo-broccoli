@@ -2,44 +2,48 @@ import Link from "next/link";
 
 export default function UseCasesHubPage() {
   return (
-    <main className="min-h-screen px-6 pb-32 pt-16 md:px-12 lg:px-24">
-      <div className="mx-auto max-w-2xl text-center">
-        <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl">
+    <main className="min-h-screen px-6 pb-32 pt-28">
+      <div className="mx-auto max-w-3xl text-center">
+        <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-300/90">
+          <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+          Use cases
+        </div>
+        <h1 className="mt-6 font-serif text-4xl font-normal tracking-tight text-white sm:text-6xl">
           Explore use cases
         </h1>
-        <p className="font-sans mt-4 text-zinc-400">
-          Choose the offer that fits you.
+        <p className="mt-4 text-base text-neutral-400">
+          Choose the path that fits what you&apos;re building.
         </p>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2">
+        <div className="mt-16 grid gap-5 sm:grid-cols-2">
           <Link
             href="/for-founders/use-cases"
-            className="rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 text-left transition-colors hover:border-zinc-600 hover:bg-zinc-900/60"
+            className="glass-card rounded-3xl p-7 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-white/15"
           >
-            <h2 className="font-serif text-xl font-semibold text-white">
-              For Founders
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-400">For Founders</p>
+            <h2 className="mt-3 font-serif text-2xl text-white">
+              Prove your value
             </h2>
-            <p className="font-sans mt-2 text-sm text-zinc-400">
-              How Impact Brain works: connect your calendar, get AI-powered insights,
-              and see your mission alignment. Try Impact Brain free or book a demo.
+            <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+              How Impact Brain works: log activities, get AI-powered insights, and see your mission alignment.
             </p>
-            <span className="font-sans mt-4 inline-block text-sm font-medium text-emerald-400">
+            <span className="mt-5 inline-block text-sm font-medium text-emerald-300">
               View founder use cases →
             </span>
           </Link>
 
           <Link
             href="/for-organizations/use-cases"
-            className="rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 text-left transition-colors hover:border-zinc-600 hover:bg-zinc-900/60"
+            className="glass-card rounded-3xl p-7 text-left transition-all duration-200 hover:-translate-y-0.5 hover:border-white/15"
           >
-            <h2 className="font-serif text-xl font-semibold text-white">
-              For Organizations
+            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-400">For Organizations</p>
+            <h2 className="mt-3 font-serif text-2xl text-white">
+              Measure impact at scale
             </h2>
-            <p className="font-sans mt-2 text-sm text-zinc-400">
-              Unified impact dashboard, ESG reporting, and real-time monitoring.
-              Core capabilities and sample dashboard. Book a demo.
+            <p className="mt-3 text-sm leading-relaxed text-neutral-400">
+              Unified impact dashboard, ESG reporting, and real-time monitoring for teams and organizations.
             </p>
-            <span className="font-sans mt-4 inline-block text-sm font-medium text-emerald-400">
+            <span className="mt-5 inline-block text-sm font-medium text-emerald-300">
               View organization use cases →
             </span>
           </Link>

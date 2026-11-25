@@ -7,17 +7,18 @@ export default function ImpactIntelligencePage() {
   const [activeEdition, setActiveEdition] = useState<"final" | "part2" | "part1">("final");
 
   return (
-    <main className="min-h-screen bg-neutral-950 text-neutral-100 px-6 pt-32 pb-32 selection:bg-emerald-500 selection:text-black font-sans antialiased">
+    <main className="min-h-screen px-6 pt-28 pb-32 font-sans">
       <div className="max-w-4xl mx-auto space-y-16">
         
         {/* Header */}
-        <div className="text-center space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-neutral-800 bg-neutral-900 text-xs text-emerald-400">
-            Impact Intelligence • Publication Archive
+        <div className="text-center space-y-5">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-300/90">
+            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+            Impact Intelligence
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl font-normal tracking-tight text-white">
+          <h1 className="font-serif text-4xl sm:text-6xl font-normal tracking-tight text-white text-balance">
             Where changemakers connect, compound, <br className="hidden sm:inline" />
-            <span className="italic font-serif text-emerald-400">and unlock what's next.</span>
+            <span className="text-emerald-300">and unlock what&apos;s next.</span>
           </h1>
           <p className="text-sm sm:text-base text-neutral-400 max-w-xl mx-auto leading-relaxed">
             Read the complete trilogy exploring the death of performative ESG and the rise of verifiable sovereign infrastructure.
@@ -25,7 +26,7 @@ export default function ImpactIntelligencePage() {
         </div>
 
         {/* Edition Selector Navigation */}
-        <div className="flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl border border-neutral-800 bg-neutral-900/60 max-w-2xl mx-auto backdrop-blur-md">
+        <div className="glass-card flex flex-wrap items-center justify-center gap-2 p-1.5 rounded-2xl max-w-2xl mx-auto">
           <button
             onClick={() => setActiveEdition("final")}
             className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all ${
@@ -59,7 +60,7 @@ export default function ImpactIntelligencePage() {
         </div>
 
         {/* Reader Container */}
-        <article className="p-8 sm:p-12 rounded-3xl border border-neutral-800/80 bg-neutral-900/40 backdrop-blur-xl shadow-2xl space-y-8">
+        <article className="glass-card p-8 sm:p-12 rounded-3xl space-y-8">
           
           {activeEdition === "final" && (
             <div className="space-y-8">

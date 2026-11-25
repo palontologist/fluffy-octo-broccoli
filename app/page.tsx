@@ -8,9 +8,40 @@ import { trackCalculatorAdjusted } from "./lib/analytics";
 
 export default function Home() {
   const activities = {
-    solar: { label: "Clean energy generated", unit: "MWh", sdg: "SDG 7 · Affordable & Clean Energy", coefficient: 0.72, outcome: "tonnes of CO₂e avoided" },
-    education: { label: "Learner hours supported", unit: "hours", sdg: "SDG 4 · Quality Education", coefficient: 0.04, outcome: "learners reached" },
-    waste: { label: "Waste diverted", unit: "tonnes", sdg: "SDG 12 · Responsible Consumption", coefficient: 18, outcome: "household-equivalent waste days avoided" },
+    solar: {
+      label: "Clean energy generated",
+      unit: "MWh",
+      sdg: "SDG 7 · Affordable & Clean Energy",
+      coefficient: 0.72,
+      outcome: "tonnes of CO₂e avoided",
+      equivalent: (value: number) => {
+        const km = Math.round(value * 4023); // ~4,023 km per tonne CO2e (avg passenger car)
+        const bottles = Math.round(value * 12195); // ~0.082kg CO2e per 500ml PET bottle
+        return `≈ ${km.toLocaleString()} km in a petrol car · ≈ ${bottles.toLocaleString()} plastic bottles worth of emissions`;
+      },
+    },
+    education: {
+      label: "Learner hours supported",
+      unit: "hours",
+      sdg: "SDG 4 · Quality Education",
+      coefficient: 0.04,
+      outcome: "learners reached",
+      equivalent: (value: number) => {
+        const classrooms = Math.max(1, Math.round(value / 30));
+        return `≈ ${classrooms.toLocaleString()} classroom${classrooms === 1 ? "" : "s"} of learners (30 per class)`;
+      },
+    },
+    waste: {
+      label: "Waste diverted",
+      unit: "tonnes",
+      sdg: "SDG 12 · Responsible Consumption",
+      coefficient: 18,
+      outcome: "household-equivalent waste days avoided",
+      equivalent: (value: number) => {
+        const bins = Math.round(value * 2); // rough: ~240L wheelie bin per 0.5 household-day equiv
+        return `≈ ${bins.toLocaleString()} wheelie bins kept out of landfill`;
+      },
+    },
   } as const;
   type ActivityKey = keyof typeof activities;
   const [activity, setActivity] = useState<ActivityKey>("solar");
@@ -94,6 +125,51 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Log → Translate → Proof */}
+      <section className="mt-24 w-full max-w-5xl space-y-8">
+        <div className="mx-auto max-w-2xl space-y-3 text-center">
+          <div className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-400">How it works</div>
+          <h2 className="font-serif text-3xl text-white sm:text-4xl text-balance">Log. Translate. Proof.</h2>
+          <p className="text-sm leading-relaxed text-neutral-400 sm:text-base">
+            One simple loop. Type what you did, and Impact Brain turns it into impact you can show.
+          </p>
+        </div>
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              step: "01",
+              title: "Log",
+              body: "Type what you did in your own words. “Spent 3 hours mentoring two founders on clean energy pricing.”",
+              proof: "Your input: real work, real hours.",
+            },
+            {
+              step: "02",
+              title: "Translate",
+              body: "Impact Brain maps the activity across the 17 UN SDGs and scores it across economic, social, environmental, and time dimensions.",
+              proof: "Output: SDG mapping + confidence score.",
+            },
+            {
+              step: "03",
+              title: "Proof",
+              body: "Share a clear proof card with clients, collaborators, or your community. The same log becomes value proof or impact proof.",
+              proof: "Result: evidence you can show.",
+            },
+          ].map((item) => (
+            <div key={item.step} className="glass-card rounded-3xl p-6 space-y-4">
+              <div className="flex items-center justify-between">
+                <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">{item.step}</span>
+                <span className="h-px flex-1 mx-4 bg-white/10" />
+                <span className="text-sm font-medium text-white">{item.title}</span>
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-400">{item.body}</p>
+              <div className="rounded-2xl border border-emerald-400/12 bg-emerald-400/[0.04] px-4 py-3 text-xs text-emerald-200/90">
+                {item.proof}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Interactive SDG impact calculator */}
       <section className="glass-card mt-24 w-full max-w-3xl rounded-3xl p-6 sm:p-8">
         <div className="space-y-3 text-center">
@@ -131,14 +207,20 @@ export default function Home() {
             </div>
           </label>
         </div>
-        <div className="mt-6 flex flex-col items-start justify-between gap-4 rounded-2xl border border-emerald-400/15 bg-emerald-400/[0.06] p-5 sm:flex-row sm:items-center">
-          <div>
-            <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">Mapped SDG contribution</div>
-            <div className="mt-2 text-sm font-semibold text-emerald-300">{selectedActivity.sdg}</div>
+        <div className="mt-6 rounded-2xl border border-emerald-400/15 bg-emerald-400/[0.06] p-5 space-y-4">
+          <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
+            <div>
+              <div className="text-xs font-mono uppercase tracking-wider text-neutral-400">Mapped SDG contribution</div>
+              <div className="mt-2 text-sm font-semibold text-emerald-300">{selectedActivity.sdg}</div>
+            </div>
+            <div className="text-left sm:text-right">
+              <div className="font-mono text-3xl font-bold text-white">{contribution.toFixed(1)}</div>
+              <div className="text-xs text-neutral-400">{selectedActivity.outcome}</div>
+            </div>
           </div>
-          <div className="text-left sm:text-right">
-            <div className="font-mono text-3xl font-bold text-white">{contribution.toFixed(1)}</div>
-            <div className="text-xs text-neutral-400">{selectedActivity.outcome}</div>
+          <div className="border-t border-emerald-400/10 pt-4">
+            <div className="text-[11px] font-mono uppercase tracking-[0.16em] text-neutral-500">Actionable equivalent</div>
+            <p className="mt-1 text-sm text-neutral-300">{selectedActivity.equivalent(contribution)}</p>
           </div>
         </div>
         <p className="mt-4 text-center text-[11px] leading-relaxed text-neutral-500">
