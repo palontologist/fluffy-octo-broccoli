@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { EmailSubscribe } from "../components/EmailSubscribe";
 
 const UBQT_COMMUNITY_URL = "https://ubqt.joinubqt.com/l/E820fYTD";
@@ -48,16 +49,22 @@ export default function CommunityPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            <article className="glass-card glow-accent rounded-3xl p-6 sm:p-7 space-y-5 flex flex-col justify-between">
-              <div className="space-y-3">
-                <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-emerald-400">Impact Measurement</div>
-                <h3 className="text-2xl font-serif text-white">Electric Vehicle Impact Project</h3>
-                <p className="text-sm leading-relaxed text-neutral-300">
-                  We used the Impact Brain measurement app in an electric vehicle project in collaboration with Skill Shark and FrontForumFocus community members. The initiative explored how real-world mobility actions can be logged, measured, and turned into verifiable impact.
-                </p>
+            <article className="glass-card glow-accent rounded-3xl overflow-hidden flex flex-col justify-between">
+              <div className="relative h-44 w-full">
+                <Image src="/community.jpg" alt="FrontForumFocus community initiative" fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0b0f0c] via-transparent to-transparent" />
               </div>
-              <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-xs text-neutral-400">
-                Collaboration: <span className="text-neutral-200">Skill Shark × FrontForumFocus community</span>
+              <div className="p-6 sm:p-7 space-y-5 flex flex-col justify-between flex-1">
+                <div className="space-y-3">
+                  <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-emerald-400">Impact Measurement</div>
+                  <h3 className="text-2xl font-serif text-white">Electric Vehicle Impact Project</h3>
+                  <p className="text-sm leading-relaxed text-neutral-300">
+                    We used the Impact Brain measurement app in an electric vehicle project in collaboration with Skill Shark and FrontForumFocus community members. The initiative explored how real-world mobility actions can be logged, measured, and turned into verifiable impact.
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-white/8 bg-white/[0.02] px-4 py-3 text-xs text-neutral-400">
+                  Collaboration: <span className="text-neutral-200">Skill Shark × FrontForumFocus community</span>
+                </div>
               </div>
             </article>
 

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { TrackedCta } from "./components/TrackedCta";
 import { EmailSubscribe } from "./components/EmailSubscribe";
@@ -229,6 +230,54 @@ export default function Home() {
         <p className="mt-4 text-center text-[11px] leading-relaxed text-neutral-500">
           Illustrative conversion for exploration. Verified impact depends on methodology, baseline, geography, and supporting evidence.
         </p>
+      </section>
+
+      {/* Visual proof */}
+      <section className="mt-24 w-full max-w-5xl">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr] items-stretch">
+          <div className="relative min-h-[360px] overflow-hidden rounded-3xl border border-white/10">
+            <Image
+              src="/event.jpg"
+              alt="FrontForumFocus community event"
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 55vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#07090b] via-[#07090b]/20 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8">
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-300">In the real world</p>
+              <h2 className="mt-2 font-serif text-3xl text-white sm:text-4xl">Impact you can see.</h2>
+              <p className="mt-3 max-w-lg text-sm leading-relaxed text-neutral-300">
+                From community events to field projects, FrontForumFocus helps people turn real work into verifiable proof.
+              </p>
+            </div>
+          </div>
+
+          <div className="glass-card rounded-3xl p-6 sm:p-8 flex flex-col justify-center space-y-5">
+            <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">Proof card</p>
+            <div className="rounded-2xl border border-white/10 bg-black/20 p-5 space-y-4">
+              <div>
+                <p className="text-xs text-neutral-500">Activity logged</p>
+                <p className="mt-1 text-sm text-white">“Ran an electric vehicle impact measurement session with Skill Shark and community members.”</p>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-xl border border-emerald-400/15 bg-emerald-400/[0.05] p-3">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">SDG</p>
+                  <p className="mt-1 text-sm font-medium text-emerald-300">13 · Climate Action</p>
+                </div>
+                <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">Confidence</p>
+                  <p className="mt-1 text-sm font-medium text-white">High</p>
+                </div>
+              </div>
+              <div className="border-t border-white/8 pt-4">
+                <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">Actionable equivalent</p>
+                <p className="mt-1 text-sm text-neutral-300">≈ 18 km in a petrol car avoided · ≈ 220 plastic bottles worth of emissions</p>
+              </div>
+            </div>
+            <p className="text-xs text-neutral-500">Sample proof card for illustration — real proofs come from your logged activities.</p>
+          </div>
+        </div>
       </section>
 
       <section className="mt-24 w-full max-w-3xl space-y-6">
