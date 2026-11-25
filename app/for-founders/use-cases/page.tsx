@@ -1,136 +1,89 @@
 import Link from "next/link";
-import { TrackedCta } from "../../components/TrackedCta";
 
 const GRETA_APP_URL = "https://play.google.com/apps/internaltest/4699935012830144337";
-const CAL_DEMO_URL = "https://cal.com/georgekarani/30min";
 
 export default function ForFoundersUseCasesPage() {
   return (
-    <main className="min-h-screen px-6 pb-32 pt-16 md:px-12 lg:px-24">
+    <main className="min-h-screen px-6 pb-32 pt-28">
       <div className="mx-auto max-w-4xl">
         <Link
           href="/for-founders"
-          className="font-sans mb-8 inline-block text-sm text-zinc-400 hover:text-white"
+          className="mb-8 inline-block text-sm text-neutral-400 transition-colors hover:text-white"
         >
           ← Back to For Founders
         </Link>
 
-        <h1 className="font-serif text-3xl font-semibold text-white md:text-4xl">
-          Impact Brain for Founders
-        </h1>
-        <p className="font-sans mt-4 text-zinc-400">
-          Track your activities against your Life Mission and get The Verdict — 
-          an AI-powered Impact Score that's brutally honest about your impact.
-        </p>
+        <div className="max-w-2xl space-y-4">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-300/90">
+            For Founders
+          </div>
+          <h1 className="font-serif text-4xl font-normal tracking-tight text-white sm:text-5xl">
+            Impact Brain for Founders
+          </h1>
+          <p className="text-base leading-relaxed text-neutral-400">
+            Track your activities against your Life Mission and get The Verdict — an AI-powered Impact Score that&apos;s brutally honest about your impact.
+          </p>
+        </div>
 
         {/* How it works */}
-        <section className="mt-16">
-          <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
-            How Impact Brain works
-          </h2>
-          <div className="mt-8 grid gap-8 md:grid-cols-3">
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <span className="font-mono text-sm font-medium text-emerald-400">
-                1
-              </span>
-              <h3 className="font-serif mt-2 text-lg font-semibold text-white">
-                Define Your Life Mission
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Set your North Star — the core purpose that drives your work as a founder.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <span className="font-mono text-sm font-medium text-emerald-400">
-                2
-              </span>
-              <h3 className="font-serif mt-2 text-lg font-semibold text-white">
-                Track Activities
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Log your daily work — meetings, building, fundraising, admin — and let Impact Brain analyze it.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <span className="font-mono text-sm font-medium text-emerald-400">
-                3
-              </span>
-              <h3 className="font-serif mt-2 text-lg font-semibold text-white">
-                Get The Verdict
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Receive your Impact Score with brutal, sarcastic honesty about how aligned you are with your mission.
-              </p>
-            </div>
+        <section className="mt-16 space-y-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">How it works</p>
+          <h2 className="font-serif text-3xl text-white sm:text-4xl">Three steps to clarity.</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              ["1", "Define Your Life Mission", "Set your North Star — the core purpose that drives your work as a founder."],
+              ["2", "Track Activities", "Log your daily work — meetings, building, fundraising, admin — and let Impact Brain analyze it."],
+              ["3", "Get The Verdict", "Receive your Impact Score with brutal, honest feedback about how aligned you are with your mission."],
+            ].map(([num, title, body]) => (
+              <div key={num} className="glass-card rounded-3xl p-6">
+                <span className="font-mono text-sm text-emerald-400">{num}</span>
+                <h3 className="mt-3 text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-400">{body}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Core Features */}
-        <section className="mt-16">
-          <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
-            Core Features
-          </h2>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <h3 className="font-serif text-lg font-semibold text-white">
-                The Verdict
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                AI that analyzes your activities against your mission and delivers a blunt, sarcastic Impact Score. No fluff — just the truth.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <h3 className="font-serif text-lg font-semibold text-white">
-                Connect with Changemakers
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Find and connect with founders who share your goals and mission. Build your tribe of impact-driven peers.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <h3 className="font-serif text-lg font-semibold text-white">
-                Opportunity Tab
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Access exclusive communities, job opportunities, and resources tailored to your mission and goals.
-              </p>
-            </div>
-            <div className="rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-              <h3 className="font-serif text-lg font-semibold text-white">
-                Value over Noise
-              </h3>
-              <p className="font-sans mt-2 text-sm text-zinc-400 leading-relaxed">
-                Impact Brain isn't a productivity app — it's an impact instrument. Focus on quality, not just quantity.
-              </p>
-            </div>
+        <section className="mt-16 space-y-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">Core features</p>
+          <h2 className="font-serif text-3xl text-white sm:text-4xl">Built for focus, not noise.</h2>
+          <div className="grid gap-4 md:grid-cols-2">
+            {[
+              ["The Verdict", "AI that analyzes your activities against your mission and delivers a blunt, honest Impact Score. No fluff — just the truth."],
+              ["Connect with Changemakers", "Find and connect with founders who share your goals and mission. Build your tribe of impact-driven peers."],
+              ["Opportunity Tab", "Access exclusive communities, job opportunities, and resources tailored to your mission and goals."],
+              ["Value over Noise", "Impact Brain isn't a productivity app — it's an impact instrument. Focus on quality, not just quantity."],
+            ].map(([title, body]) => (
+              <div key={title} className="glass-card rounded-3xl p-6">
+                <h3 className="text-lg font-semibold text-white">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-neutral-400">{body}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         {/* Sample Verdict */}
-        <section className="mt-16">
-          <h2 className="font-serif text-2xl font-semibold text-white md:text-3xl">
-            Sample Verdict
-          </h2>
-          <div className="mt-6 rounded-xl border border-zinc-700/50 bg-zinc-900/40 p-6">
-            <div className="font-mono text-sm text-zinc-400 mb-4">
-              Your Impact Score: <span className="text-amber-400">62/100</span>
+        <section className="mt-16 space-y-6">
+          <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">Sample verdict</p>
+          <div className="glass-card rounded-3xl p-6 sm:p-8">
+            <div className="font-mono text-sm text-neutral-400 mb-4">
+              Your Impact Score: <span className="text-emerald-300">62/100</span>
             </div>
-            <p className="font-serif text-lg text-white italic">
-              "You're spending 40% of your time on investor updates. Noble, but the ROI is questionable. 
-              Your product work? That's where the magic happens — keep doubling down there. 
-              And please, stop doomscrolling LinkedIn at 2am thinking it's 'market research.'"
+            <p className="font-serif text-xl leading-relaxed text-white/90">
+              &ldquo;You&apos;re spending 40% of your time on investor updates. Noble, but the ROI is questionable. Your product work? That&apos;s where the magic happens — keep doubling down there. And please, stop doomscrolling LinkedIn at 2am thinking it&apos;s &apos;market research.&apos;&rdquo;
             </p>
           </div>
         </section>
 
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-4">
+        <div className="mt-16 flex flex-wrap items-center gap-4">
           <a
             href={GRETA_APP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center rounded-lg bg-emerald-600 px-6 py-3 font-sans text-sm font-medium text-white transition-colors hover:bg-emerald-500"
+            className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-neutral-950 transition-all duration-200 hover:-translate-y-0.5 hover:bg-neutral-100"
           >
-            Join the Android beta
+            Join the Android beta →
           </a>
         </div>
       </div>

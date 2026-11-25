@@ -75,7 +75,7 @@ export default function ForFoundersPage() {
         </section>
 
         <section className="mt-16 flex flex-col items-center justify-center gap-6 md:flex-row md:gap-8">
-          <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/40 shadow-xl md:w-[240px]">
+          <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-xl md:w-[240px]">
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/n.png"
@@ -86,7 +86,7 @@ export default function ForFoundersPage() {
               />
             </div>
           </div>
-          <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/40 shadow-xl md:w-[240px]">
+          <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-xl md:w-[240px]">
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/nn.png"
@@ -97,7 +97,7 @@ export default function ForFoundersPage() {
               />
             </div>
           </div>
-          <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-zinc-700/50 bg-zinc-900/40 shadow-xl md:w-[240px]">
+          <div className="phone-screenshot flex-shrink-0 w-[280px] overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] shadow-xl md:w-[240px]">
             <div className="relative aspect-[9/19] w-full">
               <Image
                 src="/screenshot.png"
