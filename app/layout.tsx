@@ -60,6 +60,7 @@ export default function RootLayout({
     <html lang="en" className="dark scroll-smooth">
       <head>
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
+        <script src="https://monicah.zerobionicafrica.com/monicah.js" defer></script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
