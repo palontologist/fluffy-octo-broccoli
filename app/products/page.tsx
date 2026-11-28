@@ -13,10 +13,10 @@ export default function ProductsPage() {
             About Impact Brain
           </div>
           <h1 className="max-w-3xl font-serif text-4xl font-normal leading-[0.98] tracking-tight text-white sm:text-6xl md:text-7xl">
-            Turn what you did into proof.
+            Capture forgotten work. Prove your value.
           </h1>
           <p className="max-w-2xl text-base leading-relaxed text-neutral-400 sm:text-lg">
-            Impact Brain is an impact OS for freelancers, founders, and changemakers. Type an activity, map it to the 17 UN SDGs, and get a score you can show.
+            Impact Brain helps freelancers and changemakers catch forgotten activities — work, transport, spending, learning — and turn them into Weekly Impact Proof Reports mapped to the 17 UN SDGs.
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             <a
@@ -60,10 +60,10 @@ export default function ProductsPage() {
           </div>
           <div className="glass-card rounded-3xl p-6 sm:p-8 space-y-4 text-sm leading-relaxed text-neutral-300 sm:text-base">
             <p>
-              It started as a way to prove value. Freelancers and founders do real work, then have nothing to show for it. Hours disappear into meetings and emails, and the actual outcome never gets written down. Impact Brain fixes that: you type what you did, it maps it to the 17 UN SDGs and scores it.
+              It started as a way to prove value. Freelancers and changemakers do real work, but forgotten activities never become evidence. A bus trip, an M-Pesa payment, a lab session, a client call — the value disappears when it&apos;s time to get paid, win a client, or pass a review.
             </p>
             <p>
-              Then it became clear the same loop works for impact. An individual contributor tracking real contributions toward a goal uses the exact same log. So instead of two products, there is one, with intent-aware copy on top.
+              Impact Brain fixes that with a simple loop: capture the activity, confirm the evidence, map it to SDGs and defensible metrics, and generate a Weekly Impact Proof Report you can actually use.
             </p>
           </div>
         </section>
@@ -77,9 +77,9 @@ export default function ProductsPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <div className="glass-card rounded-3xl p-6 space-y-3">
               <div className="text-[11px] font-mono uppercase tracking-[0.18em] text-emerald-400">Prove value</div>
-              <h3 className="text-lg font-semibold text-white">Freelancers and founders</h3>
+              <h3 className="text-lg font-semibold text-white">Freelancers and changemakers</h3>
               <p className="text-sm leading-relaxed text-neutral-400">
-                Turn hours worked into outcomes you can pitch, invoice, or share. See your real effective rate after meetings, emails, and admin. Client and value proof, built from the same translated outcomes.
+                Capture forgotten activities and turn them into Weekly Impact Proof Reports. Justify your rate, win clients, support invoices, and show real SDG-aligned value.
               </p>
             </div>
             <div className="glass-card rounded-3xl p-6 space-y-3">

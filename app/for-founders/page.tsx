@@ -69,8 +69,8 @@ export default function ForFoundersPage() {
             For Founders
           </h1>
           <p className="font-sans mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-zinc-300 animate-on-scroll">
-            Impact Brain helps freelancers and founders understand their real effective hourly rate.
-            Enter your rate and hours spent on meetings and emails—get instant clarity on what you're actually earning.
+            Impact Brain helps freelancers and founders capture forgotten evidence and prove their value.
+            Log activities, confirm what counts, and generate Weekly Impact Proof Reports for clients, proposals, and reviews.
           </p>
         </section>
 

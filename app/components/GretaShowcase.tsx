@@ -16,7 +16,7 @@ export function GretaShowcase() {
         <div className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-400">See it in action</div>
         <h2 className="font-serif text-3xl text-white sm:text-4xl text-balance">Greta, on your phone.</h2>
         <p className="text-sm leading-relaxed text-neutral-400 sm:text-base">
-          Real screenshots from Impact Brain. Log what you did, see the SDG score, and share your proof.
+          Real screenshots from Impact Brain. Capture what you did, confirm the evidence, and share your impact proof.
         </p>
       </div>
 

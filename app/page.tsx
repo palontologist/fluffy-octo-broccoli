@@ -67,7 +67,7 @@ export default function Home() {
 
 
 
-  const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Impact Brain?","acceptedAnswer":{"@type":"Answer","text":"Impact Brain turns what you did into a score across the 17 UN SDGs. Type an activity, get its impact. Runs on your phone."}},{"@type":"Question","name":"How does the impact calculator work?","acceptedAnswer":{"@type":"Answer","text":"You type an activity. Impact Brain maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score."}},{"@type":"Question","name":"Why can I trust the calculations?","acceptedAnswer":{"@type":"Answer","text":"Rules are open and inspectable, each SDG has a documented rationale, scores are bounded from -100 to 100, confidence is reported with every result, and it runs on your phone with no cloud black box."}},{"@type":"Question","name":"Who is Impact Brain for?","acceptedAnswer":{"@type":"Answer","text":"Freelancers and founders who want to prove their value, and individual contributors who want to track and grow their impact."}}]};
+  const faqJsonLd = {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is Impact Brain?","acceptedAnswer":{"@type":"Answer","text":"Impact Brain helps freelancers and changemakers capture forgotten activities and turn them into Weekly Impact Proof Reports mapped to the 17 UN SDGs."}},{"@type":"Question","name":"How does it capture activities?","acceptedAnswer":{"@type":"Answer","text":"You can log activities manually, paste an M-Pesa or transaction message, or add quick notes. Greta drafts an evidence card, you confirm the details, and only confirmed activities are saved."}},{"@type":"Question","name":"Why can I trust the impact proof?","acceptedAnswer":{"@type":"Answer","text":"Every metric is labeled Confirmed, Estimated, or Unknown. Greta shows assumptions, uses transparent SDG mapping rules, and avoids overclaiming where evidence is weak."}},{"@type":"Question","name":"Who is Impact Brain for?","acceptedAnswer":{"@type":"Answer","text":"Freelancers and changemakers who need to prove value to clients, funders, reviewers, or teams — especially when important work gets forgotten."}}]};
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-start px-6 pt-20 pb-32 font-sans">
@@ -91,8 +91,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-7 max-w-xl text-balance text-base leading-relaxed text-neutral-300 sm:text-lg md:text-xl">
-              An impact brain that lives on your phone.
-              <span className="block text-white">Turn what you did into proof.</span>
+              The evidence tool for freelancers and changemakers.
+              <span className="block text-white">Capture forgotten activities. Turn them into proof.</span>
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
             <div className="absolute -bottom-4 -left-2 sm:-left-6 glass-card rounded-2xl px-4 py-3 shadow-xl">
               <p className="font-mono text-[10px] uppercase tracking-[0.18em] text-emerald-400">Live proof</p>
-              <p className="mt-1 text-xs text-neutral-300">Log → SDG score → share</p>
+              <p className="mt-1 text-xs text-neutral-300">Capture → confirm → report</p>
             </div>
           </div>
         </div>
@@ -150,30 +150,30 @@ export default function Home() {
       <section className="mt-24 w-full max-w-5xl space-y-8">
         <div className="mx-auto max-w-2xl space-y-3 text-center">
           <div className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-400">How it works</div>
-          <h2 className="font-serif text-3xl text-white sm:text-4xl text-balance">Log. Translate. Proof.</h2>
+          <h2 className="font-serif text-3xl text-white sm:text-4xl text-balance">Capture. Confirm. Prove.</h2>
           <p className="text-sm leading-relaxed text-neutral-400 sm:text-base">
-            One simple loop. Type what you did, and Impact Brain turns it into impact you can show.
+            Catch the activities you&apos;d normally forget — transport, spending, work, learning — and turn them into a Weekly Impact Proof Report.
           </p>
         </div>
         <div className="grid gap-4 md:grid-cols-3">
           {[
             {
               step: "01",
-              title: "Log",
-              body: "Type what you did in your own words. “Spent 3 hours mentoring two founders on clean energy pricing.”",
-              proof: "Your input: real work, real hours.",
+              title: "Capture",
+              body: "Add what you did manually, paste an M-Pesa message, or log a quick note. “Took public transport to Westlands and back, 4 hours.”",
+              proof: "Input: forgotten activity, captured fast.",
             },
             {
               step: "02",
-              title: "Translate",
-              body: "Impact Brain maps the activity across the 17 UN SDGs and scores it across economic, social, environmental, and time dimensions.",
-              proof: "Output: SDG mapping + confidence score.",
+              title: "Confirm",
+              body: "Greta drafts an evidence card. You confirm the details, assumptions, and what counts before anything is saved.",
+              proof: "Output: confirmed evidence, not guesswork.",
             },
             {
               step: "03",
-              title: "Proof",
-              body: "Share a clear proof card with clients, collaborators, or your community. The same log becomes value proof or impact proof.",
-              proof: "Result: evidence you can show.",
+              title: "Prove",
+              body: "Generate a Weekly Impact Proof Report you can send to a client, funder, reviewer, or team — with SDG signals and confidence labels.",
+              proof: "Result: proof you can use to get paid or win trust.",
             },
           ].map((item) => (
             <div key={item.step} className="glass-card rounded-3xl p-6 space-y-4">
@@ -276,22 +276,22 @@ export default function Home() {
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-emerald-400">Proof card</p>
             <div className="rounded-2xl border border-white/10 bg-black/20 p-5 space-y-4">
               <div>
-                <p className="text-xs text-neutral-500">Activity logged</p>
-                <p className="mt-1 text-sm text-white">“Ran an electric vehicle impact measurement session with Skill Shark and community members.”</p>
+                <p className="text-xs text-neutral-500">Forgotten activity captured</p>
+                <p className="mt-1 text-sm text-white">“Took public bus roundtrip from Utawala to Westlands and back, ~4 hours. Paid fare via M-Pesa.”</p>
               </div>
               <div className="grid grid-cols-2 gap-3">
                 <div className="rounded-xl border border-emerald-400/15 bg-emerald-400/[0.05] p-3">
-                  <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">SDG</p>
-                  <p className="mt-1 text-sm font-medium text-emerald-300">13 · Climate Action</p>
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">SDG signal</p>
+                  <p className="mt-1 text-sm font-medium text-emerald-300">11 · 13 · 3</p>
                 </div>
                 <div className="rounded-xl border border-white/10 bg-white/[0.02] p-3">
                   <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">Confidence</p>
-                  <p className="mt-1 text-sm font-medium text-white">High</p>
+                  <p className="mt-1 text-sm font-medium text-white">Estimated</p>
                 </div>
               </div>
               <div className="border-t border-white/8 pt-4">
-                <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">Actionable equivalent</p>
-                <p className="mt-1 text-sm text-neutral-300">≈ 18 km in a petrol car avoided · ≈ 220 plastic bottles worth of emissions</p>
+                <p className="text-[11px] font-mono uppercase tracking-wider text-neutral-500">Proof report line</p>
+                <p className="mt-1 text-sm text-neutral-300">≈ 3.13 kg CO2e avoided vs petrol car · confirmed by user · included in weekly impact proof report</p>
               </div>
             </div>
             <p className="text-xs text-neutral-500">Sample proof card for illustration — real proofs come from your logged activities.</p>
@@ -306,10 +306,10 @@ export default function Home() {
         </div>
         <div className="glass-card divide-y divide-white/8 rounded-3xl overflow-hidden">
           {[
-            ["What is Impact Brain?", "Impact Brain turns what you did into a score across the 17 UN SDGs. Type an activity, get its impact. Runs on your phone."],
-            ["How does the impact calculator work?", "You type an activity. Impact Brain maps it to all 17 UN SDGs and scores it across four dimensions: economic, social, environmental, and time. Time is money, so hours times your rate. Every result comes with a confidence score."],
-            ["Why can I trust the calculations?", "Rules are open and inspectable, each SDG has a documented rationale, scores are bounded from -100 to 100, confidence is reported with every result, and it runs on your phone with no cloud black box."],
-            ["Who is Impact Brain for?", "Freelancers and founders who want to prove their value, and individual contributors who want to track and grow their impact."],
+            ["What is Impact Brain?", "Impact Brain helps freelancers and changemakers capture forgotten activities and turn them into Weekly Impact Proof Reports mapped to the 17 UN SDGs."],
+            ["How does it capture activities?", "You can log activities manually, paste an M-Pesa or transaction message, or add quick notes. Greta drafts an evidence card, you confirm the details, and only confirmed activities are saved."],
+            ["Why can I trust the impact proof?", "Every metric is labeled Confirmed, Estimated, or Unknown. Greta shows assumptions, uses transparent SDG mapping rules, and avoids overclaiming where evidence is weak."],
+            ["Who is Impact Brain for?", "Freelancers and changemakers who need to prove value to clients, funders, reviewers, or teams — especially when important work gets forgotten."],
           ].map(([question, answer]) => (
             <details key={question} className="group p-5 sm:p-6">
               <summary className="cursor-pointer list-none text-sm font-medium text-white marker:hidden">
@@ -329,7 +329,7 @@ export default function Home() {
         <div className="space-y-3">
           <div className="text-[11px] font-mono uppercase tracking-[0.2em] text-emerald-400">Beta</div>
           <h2 className="text-2xl sm:text-3xl font-serif text-white">Get Impact Brain</h2>
-          <p className="text-sm text-neutral-400">Free. Runs on your phone. Join the Android beta on Google Play.</p>
+          <p className="text-sm text-neutral-400">Capture forgotten activities and turn them into Weekly Impact Proof Reports. Join the Android beta on Google Play.</p>
         </div>
         <div className="mt-4 text-left">
           <EmailSubscribe />

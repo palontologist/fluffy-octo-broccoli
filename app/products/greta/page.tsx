@@ -12,47 +12,47 @@ const GRETA_APP_URL = "https://play.google.com/apps/internaltest/469993501283014
 
 const features = [
   {
-    title: "Know Your Real Rate",
+    title: "Catch Forgotten Evidence",
     description:
-      "Enter your hourly rate and billable hours. Impact Brain tracks the time you spend on meetings, emails, and admin. Then it shows you what you're actually earning per hour.",
+      "Log activities manually, paste an M-Pesa message, or add quick notes after the day is done. Greta turns forgotten work, travel, and spending into evidence cards you can confirm in seconds.",
   },
   {
-    title: "Impact Score",
+    title: "Weekly Impact Proof Report",
     description:
-      "Track activities aligned with your Life Mission. Impact Brain gives you an Impact Score based on how much of your time goes toward what actually matters to you.",
+      "Get a client-ready weekly report with what you did, what it enabled, and the SDG/impact signals behind it. Use it in proposals, invoices, check-ins, or reviews.",
   },
   {
-    title: "Data-Driven Pricing",
+    title: "Defensible Metrics, Not Guesses",
     description:
-      "Stop guessing what to charge. See what your effective rate is after non-billable time, and price your services based on real data.",
+      "Greta labels every metric as Confirmed, Estimated, or Unknown. Transport can show estimated CO2e avoided vs a baseline; work and spending can be logged as SDG-aligned evidence.",
   },
   {
-    title: "Weekly Calibration",
+    title: "Built for Painful Moments",
     description:
-      "A simple weekly check-in. What did you work on? Was it high-impact? Impact Brain helps you spot patterns and optimize where your time goes.",
+      "When you need to justify your rate, win a client, pass a review, or report ESG, Greta gives you proof from activities you already did — before they disappear from memory.",
   },
 ];
 
 const howItWorks = [
   {
     step: "01",
-    title: "Set Your Rate",
-    description: "Enter your hourly or project rate. Be honest — this is just for you.",
+    title: "Capture",
+    description: "Add an activity manually, paste an M-Pesa message, or drop a quick note from your day.",
   },
   {
     step: "02",
-    title: "Track Your Time",
-    description: "Log billable hours and the time you spend on non-billable work.",
+    title: "Confirm",
+    description: "Greta drafts an evidence card. You confirm the details, edit assumptions, and choose what counts.",
   },
   {
     step: "03",
-    title: "See Your Real Rate",
-    description: "Impact Brain calculates your effective hourly rate after all costs.",
+    title: "Measure",
+    description: "Greta maps confirmed activities to SDGs and defensible metrics, with confidence labels.",
   },
   {
     step: "04",
-    title: "Optimize for Impact",
-    description: "Use your Impact Score to focus on what moves the needle.",
+    title: "Prove",
+    description: "Export a Weekly Impact Proof Report you can send to a client, funder, reviewer, or team.",
   },
 ];
 
@@ -61,12 +61,12 @@ const tiers = [
     name: "Core",
     price: "$20",
     period: "one-time",
-    description: "The full Impact Brain tool. Calculate your real rate, track your Impact Score, and make data-driven pricing decisions.",
+    description: "Capture forgotten activities and turn them into clear impact evidence you can keep and share.",
     features: [
-      "Real rate calculator",
-      "Impact Score tracking",
-      "Weekly calibration",
-      "Data export",
+      "Manual activity capture",
+      "M-Pesa/message paste draft flow",
+      "SDG impact mapping",
+      "Confirmed / Estimated / Unknown labels",
       "Lifetime access",
     ],
     cta: "Get Core",
@@ -77,14 +77,13 @@ const tiers = [
     name: "Pro",
     price: "$9",
     period: "/month",
-    description: "Everything in Core, plus advanced analytics, community access, and impact benchmarking.",
+    description: "Everything in Core, plus recurring proof reports and smarter capture for people who need to show value often.",
     features: [
       "Everything in Core",
-      "Advanced analytics dashboard",
-      "Community access",
-      "Impact benchmarking",
-      "Weekly impact reports",
-      "Priority support",
+      "Weekly Impact Proof Reports",
+      "Client/review-ready share links",
+      "Advanced analytics & trends",
+      "Priority capture features (GPS/day review, coming soon)",
     ],
     cta: "Start Pro",
     href: GRETA_APP_URL,
@@ -138,7 +137,7 @@ export default function ImpactBrainPage() {
             Impact Brain
           </h1>
           <p className="font-sans mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-zinc-300">
-            The Impact Instrument for changemakers. Know what your work is really worth.
+            The evidence tool for freelancers and changemakers. Capture forgotten activities. Turn them into Weekly Impact Proof Reports.
           </p>
         </section>
 
@@ -217,7 +216,7 @@ export default function ImpactBrainPage() {
         <section className="mt-16 animate-on-scroll">
           <div className="rounded-2xl border border-zinc-700/50 bg-zinc-900/40 p-8 md:p-12">
             <blockquote className="font-serif text-xl font-medium text-white md:text-2xl leading-relaxed">
-              "Most freelancers don't know what they actually earn. They charge $100/hour, work 40 hours, and think they made $4,000. But after meetings, emails, revisions, and chasing invoices, their real rate is closer to $40."
+              &ldquo;Most freelancers and changemakers do valuable work every week, but forget to capture the evidence. When it&apos;s time to justify a rate, win a client, pass a review, or report impact, the proof is gone.&rdquo;
             </blockquote>
             <p className="mt-4 font-sans text-zinc-400">
               — The problem Impact Brain solves
@@ -282,13 +281,13 @@ export default function ImpactBrainPage() {
             </h2>
             <div className="mt-6 space-y-4 font-sans text-zinc-300">
               <p>
-                <strong className="text-white">$20 one-time</strong> gets you the core tool. It's enough to make you value it, cheap enough to be an impulse decision.
+                <strong className="text-white">$20 one-time</strong> gets you the core capture and impact-mapping tool. It&apos;s enough to start building a proof habit without a big commitment.
               </p>
               <p>
-                <strong className="text-white">$9/month</strong> gets you compounding value. Advanced analytics, community access, and weekly reports that actually improve your pricing over time.
+                <strong className="text-white">$9/month</strong> is for people who need to prove value regularly. Weekly Impact Proof Reports, shareable outputs, and smarter capture compound over time.
               </p>
               <p className="text-zinc-400">
-                We want startups, not lifestyle businesses. Recurring revenue lets us invest in the product. One-time purchases don't.
+                The goal isn&apos;t to track more. It&apos;s to make sure the value you already create doesn&apos;t disappear when you need to prove it.
               </p>
             </div>
           </div>
@@ -297,10 +296,10 @@ export default function ImpactBrainPage() {
         {/* CTA */}
         <section className="mt-16 text-center animate-on-scroll">
           <h2 className="font-serif text-2xl font-semibold text-white">
-            Stop Guessing. Know Your Rate.
+            Don&apos;t Lose the Proof.
           </h2>
           <p className="mt-4 font-sans text-zinc-400">
-            Start with Core. Upgrade when you see the value.
+            Capture forgotten activities. Send a Weekly Impact Proof Report when it matters.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <a
